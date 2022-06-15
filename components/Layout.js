@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { XIcon } from '@heroicons/react/outline';
+// import { XIcon } from '@heroicons/react/outline';
 const navigation = [
 	{
 		name: 'Facebook',
