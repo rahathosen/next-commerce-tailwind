@@ -67,9 +67,9 @@ export default function Layout({ title, children }) {
 				<header>
 					<nav className="flex h-12 items-center  px-4 justify-between shadow-md pb-5">
 						<Link href="/">
-							<div className="text-lg font-bold">NextCommerce</div>
+							<div className="text-xl text-stone-600 font-bold">NextCommerce</div>
 						</Link>
-						<div>
+						<div className="text-neutral-700 font-bold">
 							<Link href="/cart">
 								<a className="p-2">Cart</a>
 							</Link>
