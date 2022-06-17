@@ -94,21 +94,21 @@ export default function Layout({ title, children }) {
 						<div className="flex justify-around gap-10 md:order-2">
 							<div className="text-center text-base text-gray-500">
 								<p>
-									<Link rel="stylesheet" href="">
+									<Link rel="stylesheet" href="/">
 										<a>Terms of service </a>
 									</Link>
 								</p>
 							</div>
 							<div className="text-center text-base text-gray-500">
 								<p>
-									<Link rel="stylesheet" href="">
+									<Link rel="stylesheet" href="/">
 										<a>Security</a>
 									</Link>
 								</p>
 							</div>
 							<div className="text-center text-base text-gray-500 ">
 								<p>
-									<Link rel="stylesheet" href="">
+									<Link rel="stylesheet" href="/">
 										<a>Privacy Policy</a>
 									</Link>
 								</p>
