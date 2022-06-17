@@ -24,10 +24,10 @@ export default function ProductItem({ product }) {
 						<div className="flex flex-col items-center">
 							<Link href={`/product/${product.slug}`}>
 								<a>
-									<h2 className="md:text-xl font-bold text-stone-700">{product.name}</h2>
+									<h2 className="md:text-xl font-bold text-neutral-600">{product.name}</h2>
 								</a>
 							</Link>
-							<p className="mb-2 text-gray-700">{product.brand}</p>
+							<p className="mb-2 text-gray-600 font-semibold">{product.brand}</p>
 						</div>
 					</div>
 					<div className="flex  md:gap-10 gap-5 justify-around items-center pt-2 pb-3 md:px-0 ">
@@ -38,7 +38,7 @@ export default function ProductItem({ product }) {
 							Details
 						</button>
 						<button
-							className="relative flex bg-neutral-100 border border-transparent py-2 rounded-md  px-4 items-center justify-center text-sm font-medium text-gray-600 hover:bg-neutral-300"
+							className="relative  flex bg-neutral-100 border border-transparent py-2 rounded-md  px-4 items-center justify-center text-sm font-bold text-gray-500 hover:bg-neutral-300"
 							type="button"
 						>
 							Add to cart

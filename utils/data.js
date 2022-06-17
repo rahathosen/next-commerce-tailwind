@@ -13,6 +13,18 @@ const data = {
 			description: 'A popular shirt'
 		},
 		{
+			name: 'Slim Shirt',
+			slug: 'slim-shirt',
+			category: 'Shirts',
+			image: '/images/shirt3.jpg',
+			price: 99,
+			brand: 'Raymond',
+			rating: 4.5,
+			numReviews: 10,
+			countInStock: 20,
+			description: 'A popular shirt'
+		},
+		{
 			name: 'Free Shirt2',
 			slug: 'free-shirt2',
 			category: 'Shirts',
@@ -60,18 +72,7 @@ const data = {
 			countInStock: 20,
 			description: 'A popular shirt'
 		},
-		{
-			name: 'Slim Shirt',
-			slug: 'slim-shirt',
-			category: 'Shirts',
-			image: '/images/shirt3.jpg',
-			price: 99,
-			brand: 'Raymond',
-			rating: 4.5,
-			numReviews: 10,
-			countInStock: 20,
-			description: 'A popular shirt'
-		},
+
 		{
 			name: 'Golf Pants',
 			slug: 'golf-pants',
