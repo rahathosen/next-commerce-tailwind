@@ -2,8 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-
-// 
+//  For Blur placeholder down V
 const keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
 const triplet = (e1, e2, e3) =>
 	keyStr.charAt(e1 >> 2) +
@@ -13,8 +12,7 @@ const triplet = (e1, e2, e3) =>
 const rgbDataURL = (r, g, b) =>
 	`data:image/gif;base64,R0lGODlhAQABAPAA${triplet(0, r, g) +
 		triplet(b, 255, 255)}/yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==`;
-
-
+// For Blur placeholder up  /\
 
 export default function ProductItem({ product }) {
 	return (
@@ -48,14 +46,16 @@ export default function ProductItem({ product }) {
 						</div>
 					</div>
 					<div className="flex  md:gap-10 gap-5 justify-around items-center pt-2 pb-3 md:px-0 ">
+						<Link href={`/product/${product.slug}`}>
+							<button
+								className="relative flex bg-neutral-100 border border-transparent  py-2 rounded-md  px-4 items-center justify-center text-sm font-medium text-gray-700 hover:bg-neutral-200"
+								type="button"
+							>
+								Details
+							</button>
+						</Link>
 						<button
-							className="relative flex bg-neutral-100 border border-transparent py-2 rounded-md  px-4 items-center justify-center text-sm font-medium text-gray-600 hover:bg-neutral-200"
-							type="button"
-						>
-							Details
-						</button>
-						<button
-							className="relative  flex bg-neutral-100 border border-transparent py-2 rounded-md  px-4 items-center justify-center text-sm font-bold text-gray-500 hover:bg-neutral-300"
+							className="relative flex bg-neutral-200 border border-transparent py-2 rounded-md  px-4 items-center justify-center text-sm font-bold text-gray-500 hover:bg-neutral-300"
 							type="button"
 						>
 							Add to cart
