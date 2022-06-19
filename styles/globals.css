@@ -18,7 +18,7 @@ a {
 	box-sizing: border-box;
 }
 .card {
-  @apply mb-5  block   rounded-xl border border-gray-200  shadow-xl;
+  @apply mb-5  block   rounded-xl border border-gray-200  shadow-2xl;
 }
 
 .primary-button {
