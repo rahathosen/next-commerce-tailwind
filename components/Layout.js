@@ -55,7 +55,8 @@ const navigation = [
 ];
 
 export default function Layout({ title, children }) {
-	const { state, dispatch } = useContext(Store);
+	// const { state, dispatch } = useContext(Store);
+	const { state } = useContext(Store);
 	const { cart } = state;
 	return (
 		<div>
