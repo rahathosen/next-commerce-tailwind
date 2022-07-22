@@ -1,6 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useContext } from 'react';
+import { Store } from '../utils/Store';
 const navigation = [
 	{
 		name: 'Facebook',
@@ -53,6 +55,9 @@ const navigation = [
 ];
 
 export default function Layout({ title, children }) {
+	// const { state, dispatch } = useContext(Store);
+	const { state } = useContext(Store);
+	const { cart } = state;
 	return (
 		<div>
 			{/* Banner Start */}
@@ -67,11 +72,18 @@ export default function Layout({ title, children }) {
 				<header>
 					<nav className="flex h-12 items-center  px-4 justify-between shadow-md pb-5">
 						<Link href="/">
-							<div className="text-xl text-stone-600 font-bold cursor-pointer">NextCommerce</div>
+							<div className="text-xl text-stone-600 font-bold cursor-pointer">NextElite</div>
 						</Link>
 						<div className="text-neutral-700 font-bold">
 							<Link href="/cart">
-								<a className="p-2">Cart</a>
+								<a className="p-2">
+									Cart
+									{cart.cartItems.length > 0 && (
+										<span className="ml-1 rounded-full bg-red-600 px-2 py-1 text-sm font-bold text-white  ">
+											{cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
+										</span>
+									)}
+								</a>
 							</Link>
 							<Link href="/login">
 								<a className="p-2">Login</a>
