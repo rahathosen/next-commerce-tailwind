@@ -3,6 +3,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useContext } from 'react';
 import { Store } from '../utils/Store';
+import { useState } from 'react';
+import { useEffect } from 'react';
 const navigation = [
 	{
 		name: 'Facebook',
@@ -55,9 +57,16 @@ const navigation = [
 ];
 
 export default function Layout({ title, children }) {
-	// const { state, dispatch } = useContext(Store);
 	const { state } = useContext(Store);
+	const [ cartItemsCount, setcartItemsCount ] = useState(0);
 	const { cart } = state;
+	useEffect(
+		() => {
+			setcartItemsCount(cart.cartItems.reduce((a, c) => a + c.quantity, 0));
+		},
+		[ cart.cartItems ]
+	);
+
 	return (
 		<div>
 			{/* Banner Start */}
@@ -78,9 +87,9 @@ export default function Layout({ title, children }) {
 							<Link href="/cart">
 								<a className="p-2">
 									Cart
-									{cart.cartItems.length > 0 && (
+									{cartItemsCount > 0 && (
 										<span className="ml-1 rounded-full bg-red-600 px-2 py-1 text-sm font-bold text-white  ">
-											{cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
+											{cartItemsCount}
 										</span>
 									)}
 								</a>
