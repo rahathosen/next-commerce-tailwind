@@ -5,11 +5,12 @@ import { useContext } from 'react';
 import Layout from '../components/Layout';
 import { Store } from '../utils/Store';
 import { XCircleIcon } from '@heroicons/react/outline';
+import { useRouter } from 'next/router';
 
 export default function CartScreen() {
 	const { state, dispatch } = useContext(Store);
 	const { cart: { cartItems } } = state;
-
+	const router = useRouter();
 	const removeItemHandler = (item) => {
 		dispatch({ type: 'CART_REMOVE_ITEM', payload: item });
 	};
@@ -62,6 +63,16 @@ export default function CartScreen() {
 							<li className="pb-3 text-xl font-bold">
 								Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}) : $
 								{cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}
+							</li>
+							<li>
+								<button
+									onClick={() => {
+										router.push('/shipping');
+									}}
+									className="primary-button w-full font-semibold"
+								>
+									CheckOut
+								</button>
 							</li>
 						</ul>
 					</div>
