@@ -58,11 +58,11 @@ const navigation = [
 
 export default function Layout({ title, children }) {
 	const { state } = useContext(Store);
-	const [ cartItemsCount, setcartItemsCount ] = useState(0);
+	const [ cartItemsCount, setCartItemsCount ] = useState(0);
 	const { cart } = state;
 	useEffect(
 		() => {
-			setcartItemsCount(cart.cartItems.reduce((a, c) => a + c.quantity, 0));
+			setCartItemsCount(cart.cartItems.reduce((a, c) => a + c.quantity, 0));
 		},
 		[ cart.cartItems ]
 	);
