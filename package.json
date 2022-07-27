@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3005",
+    "dev": "next dev ",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.6.6",
     "@heroicons/react": "^1.0.6",
     "bcryptjs": "^2.4.3",
     "js-cookie": "^3.0.1",
