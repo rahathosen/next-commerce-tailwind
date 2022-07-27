@@ -63,7 +63,7 @@ export default function ProductItem({ product }) {
               </button>
             </Link>
             <button
-              className="relative flex bg-neutral-200 border border-transparent py-2 rounded-md  px-4 items-center justify-center text-sm font-bold md:font-semibold md:px-2 md:text-red-500   lg:text-blue-500 text-gray-500 hover:bg-neutral-300"
+              className="relative flex bg-neutral-200 border border-transparent py-2 rounded-md  px-4 items-center justify-center text-sm font-bold md:font-semibold md:px-2  text-gray-500 hover:bg-neutral-300"
               type="button"
             >
               Add to cart
