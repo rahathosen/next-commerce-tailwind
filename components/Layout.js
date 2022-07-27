@@ -64,16 +64,17 @@ const navigation = [
 
 export default function Layout({ title, children }) {
   const { status, data: session } = useSession();
-  const { state } = useContext(Store);
+  const { state, dispatch } = useContext(Store);
   const [cartItemsCount, setCartItemsCount] = useState(0);
   const { cart } = state;
   useEffect(() => {
     setCartItemsCount(cart.cartItems.reduce((a, c) => a + c.quantity, 0));
   }, [cart.cartItems]);
-  // const logoutClickHandler = () => {
-  //   Cookies.remove("cart");
-  //   signOut({ callbakcUrl: "/login" });
-  // };
+  const logoutClickHandler = () => {
+    dispatch({ type: "CART_RESET" });
+    Cookies.remove("cart");
+    signOut({ callbackUrl: "/login" });
+  };
   return (
     <div>
       {/* Banner Start */}
@@ -129,7 +130,7 @@ export default function Layout({ title, children }) {
                       <a
                         className="dropdown-link"
                         href="#"
-                        // onClick={logoutClickHandler}
+                        onClick={logoutClickHandler}
                       >
                         Logout
                       </a>
