@@ -5,7 +5,8 @@ import { useForm } from 'react-hook-form';
 
 export default function LoginScreen() {
 	const { handleSubmit, register, formState: { errors } } = useForm();
-	const submitHandler = ({ email, password }) => {};
+	const submitHandler = () => {};
+	// const submitHandler = ({ email, password }) => {};
 
 	return (
 		<Layout title="login">
