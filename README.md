@@ -1,5 +1,5 @@
 # NextCommerce
-# [Live](https://next-bdcommerce.vercel.app/)
+# [Live](https://nextelite.vercel.app/)
 
 ## Getting Started
 
