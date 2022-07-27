@@ -88,7 +88,7 @@ export default function Layout({ title, children }) {
 								<a className="p-2">
 									Cart
 									{cartItemsCount > 0 && (
-										<span className="ml-1 rounded-full bg-red-600 px-2 py-1 text-sm font-bold text-white  ">
+										<span className="ml-1 rounded-full bg-yellow-600 px-[9px] py-1 text-sm font-semibold text-white  ">
 											{cartItemsCount}
 										</span>
 									)}
@@ -137,7 +137,7 @@ export default function Layout({ title, children }) {
 						</div>
 						<div className="mt-5 md:mt-0 md:order-1 ">
 							<p className="text-center md:pb-0 pb-5 text-base text-gray-500">
-								&copy; 2022 NextCommerce, Inc. All rights reserved.
+								&copy; 2022 NextElite, Inc. All rights reserved.
 							</p>
 						</div>
 					</div>
