@@ -5,6 +5,9 @@ import { useContext } from 'react';
 import { Store } from '../utils/Store';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import {useSession} from 'next-auth/react';
 const navigation = [
 	{
 		name: 'Facebook',
@@ -57,6 +60,7 @@ const navigation = [
 ];
 
 export default function Layout({ title, children }) {
+	const {status, data:session} = useSession();
 	const { state } = useContext(Store);
 	const [ cartItemsCount, setCartItemsCount ] = useState(0);
 	const { cart } = state;
@@ -77,6 +81,7 @@ export default function Layout({ title, children }) {
 				<meta name="description" content="ECommerce Website" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
+			<ToastContainer position="bottom-center" limit={1} />
 			<div className="flex min-h-screen flex-col justify-between py-5 ">
 				<header>
 					<nav className="flex h-12 items-center  px-4 justify-between shadow-md pb-5">
@@ -88,15 +93,21 @@ export default function Layout({ title, children }) {
 								<a className="p-2">
 									Cart
 									{cartItemsCount > 0 && (
-										<span className="ml-1 rounded-full bg-red-600 px-2 py-1 text-sm font-bold text-white  ">
+										<span className="ml-1 rounded-full bg-yellow-600 px-[9px] py-1 text-sm font-semibold text-white  ">
 											{cartItemsCount}
 										</span>
 									)}
 								</a>
+						
 							</Link>
-							<Link href="/login">
-								<a className="p-2">Login</a>
-							</Link>
+								{status==='loading'? ('Loading'):
+								session?.user? (session.user.name) :
+								(<Link href='/login'>
+									<a className='p-2'>Login</a>
+								</Link>
+								)
+							}
+							
 						</div>
 					</nav>
 				</header>
@@ -137,7 +148,7 @@ export default function Layout({ title, children }) {
 						</div>
 						<div className="mt-5 md:mt-0 md:order-1 ">
 							<p className="text-center md:pb-0 pb-5 text-base text-gray-500">
-								&copy; 2022 NextCommerce, Inc. All rights reserved.
+								&copy; 2022 NextElite, Inc. All rights reserved.
 							</p>
 						</div>
 					</div>
