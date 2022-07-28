@@ -43,7 +43,7 @@ export default function ProductItem({ product }) {
             <div className="flex flex-col items-center">
               <Link href={`/product/${product.slug}`}>
                 <a>
-                  <h2 className="xl:text-xl lg:text-xl md:text-lg sm:text-xl text-xl font-bold text-stone-700">
+                  <h2 className="xl:text-xl lg:text-xl md:text-lg sm:text-xl text-xl font-bold text-stone-600">
                     {product.name}
                   </h2>
                 </a>
@@ -56,14 +56,14 @@ export default function ProductItem({ product }) {
           <div className="flex  md:gap-7 xl:gap-8 sm:gap-8 gap-8 justify-around items-center pt-2 pb-3 md:px-0">
             <Link href={`/product/${product.slug}`}>
               <button
-                className="relative flex bg-neutral-100 border border-transparent  py-2 rounded-md sm:px-8 px-8 xl:px-4 items-center justify-center text-sm font-medium md:font-semibold md:px-2 text-stone-700 hover:bg-neutral-200"
+                className="relative flex bg-stone-200 border border-transparent  py-2 rounded-lg sm:px-8 px-8 xl:px-4 items-center justify-center text-sm  font-semibold md:px-2 text-stone-700 hover:bg-neutral-200"
                 type="button"
               >
                 Details
               </button>
             </Link>
             <button
-              className="relative flex bg-neutral-200 border border-transparent py-2 rounded-md  px-4 items-center justify-center text-sm font-bold md:font-semibold md:px-2  text-stone-600 hover:bg-neutral-300"
+              className="relative flex bg-stone-200 border border-transparent py-2 rounded-lg  px-4 items-center justify-center text-sm font-bold  md:px-2  text-stone-600 hover:bg-neutral-300"
               type="button"
             >
               Add to cart
