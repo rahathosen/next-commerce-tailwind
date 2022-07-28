@@ -90,11 +90,11 @@ export default function Layout({ title, children }) {
         <header>
           <nav className="flex h-12 items-center  px-4 justify-between shadow-md pb-5">
             <Link href="/">
-              <div className="text-xl text-stone-600 font-bold cursor-pointer">
+              <div className="text-xl text-stone-500 font-bold cursor-pointer">
                 NextElite
               </div>
             </Link>
-            <div className="text-neutral-700 font-semibold">
+            <div className="text-stone-600 font-semibold">
               <Link href="/cart">
                 <a className="p-2">
                   Cart
@@ -109,10 +109,10 @@ export default function Layout({ title, children }) {
                 "Loading"
               ) : session?.user ? (
                 <Menu as="div" className="relative inline-block">
-                  <Menu.Button className="text-yellow-700">
+                  <Menu.Button className="text-yellow-700 font-bold">
                     {session.user.name}
                   </Menu.Button>
-                  <Menu.Items className="z-10 absolute right-0 w-[140px] origin-top-right rounded-md bg-gray-100 shadow-lg ">
+                  <Menu.Items className="z-10 absolute right-0 w-[140px] origin-top-right rounded-md text-stone-500 bg-stone-100 shadow-lg ">
                     <Menu.Item>
                       <DropdownLink className="dropdown-link " href="/profile">
                         Profile

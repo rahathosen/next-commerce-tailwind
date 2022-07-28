@@ -56,14 +56,14 @@ export default function ProductItem({ product }) {
           <div className="flex  md:gap-7 xl:gap-8 sm:gap-8 gap-8 justify-around items-center pt-2 pb-3 md:px-0">
             <Link href={`/product/${product.slug}`}>
               <button
-                className="relative flex bg-stone-200 border border-transparent  py-2 rounded-lg sm:px-8 px-8 xl:px-4 items-center justify-center text-sm  font-semibold md:px-2 text-stone-700 hover:bg-neutral-200"
+                className="relative flex bg-stone-200 border border-transparent  py-2 rounded-md hover:rounded-md sm:px-8 px-8 xl:px-4 items-center justify-center text-sm  font-semibold md:px-2 text-stone-700 hover:bg-stone-300"
                 type="button"
               >
                 Details
               </button>
             </Link>
             <button
-              className="relative flex bg-stone-200 border border-transparent py-2 rounded-lg  px-4 items-center justify-center text-sm font-bold  md:px-2  text-stone-600 hover:bg-neutral-300"
+              className="relative flex bg-stone-200 border border-transparent py-2 rounded-md hover:rounded-md px-4 items-center justify-center text-sm font-bold  md:px-2  text-stone-600 hover:bg-stone-300"
               type="button"
             >
               Add to cart
