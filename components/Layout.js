@@ -90,7 +90,7 @@ export default function Layout({ title, children }) {
         <header>
           <nav className="flex h-12 items-center  px-4 justify-between shadow-md pb-5">
             <Link href="/">
-              <div className="text-xl text-stone-500 font-bold cursor-pointer">
+              <div className="text-xl text-stone-600 font-bold cursor-pointer">
                 NextElite
               </div>
             </Link>
@@ -150,7 +150,7 @@ export default function Layout({ title, children }) {
         </main>
 
         <footer className="bg-white shadow-inner">
-          <div className="h-10 mx-auto py-8 px-4 sm:px-6 md:flex   md:items-center md:justify-between  lg:px-8">
+          <div className="h-10 mx-auto pt-8 pb-8 xl:pt-10 2x:pt-10 px-4 sm:px-6 md:flex   md:items-center md:justify-between  lg:px-8">
             <div className="flex justify-center space-x-6 md:order-3 md:pb-0 pb-5">
               {navigation.map((item) => (
                 <a
