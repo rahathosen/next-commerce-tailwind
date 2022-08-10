@@ -36,34 +36,34 @@ export default function ProductItem({ product }) {
         </Link>
 
         <div className="flex flex-col items-center justify-center pt-2 pb-2 ">
-          <div className="flex flex-row gap-[70px] sm:gap-[70px] md:gap-8  lg:gap-6  items-center">
-            <p className="font-bold md:text-4xl sm:text-4xl text-4xl text-stone-500">
+          <div className="flex flex-row items-center gap-[70px] sm:gap-[70px]  md:gap-8  lg:gap-6">
+            <p className="text-4xl font-bold text-stone-500 sm:text-4xl md:text-4xl">
               ${product.price}
             </p>
             <div className="flex flex-col items-center">
               <Link href={`/product/${product.slug}`}>
                 <a>
-                  <h2 className="xl:text-xl lg:text-xl md:text-lg sm:text-xl text-xl font-bold text-stone-600">
+                  <h2 className="text-xl font-bold text-stone-600 sm:text-xl md:text-lg lg:text-xl xl:text-xl">
                     {product.name}
                   </h2>
                 </a>
               </Link>
-              <p className="mb-2 text-stone-500 xl:font-md md:font-md sm:font-bold font-semibold">
+              <p className="xl:font-md md:font-md mb-2 font-semibold text-stone-500 sm:font-bold">
                 {product.brand}
               </p>
             </div>
           </div>
-          <div className="flex  md:gap-7 xl:gap-8 sm:gap-8 gap-8 justify-around items-center pt-2 pb-3 md:px-0">
+          <div className="flex  items-center justify-around gap-8 pt-2 pb-3 sm:gap-8 md:gap-7 md:px-0 xl:gap-8">
             <Link href={`/product/${product.slug}`}>
               <button
-                className="relative flex bg-stone-200 border border-transparent  py-2 rounded-md hover:rounded-md sm:px-8 px-8 xl:px-4 items-center justify-center text-sm  font-semibold md:px-2 text-stone-700 hover:bg-stone-300"
+                className="relative flex items-center justify-center rounded-md  border border-transparent bg-stone-200 py-2 px-8 text-sm font-semibold text-stone-700 hover:rounded-md  hover:bg-stone-300 sm:px-8 md:px-2 xl:px-4"
                 type="button"
               >
                 Details
               </button>
             </Link>
             <button
-              className="relative flex bg-stone-200 border border-transparent py-2 rounded-md hover:rounded-md px-4 items-center justify-center text-sm font-bold  md:px-2  text-stone-600 hover:bg-stone-300"
+              className="relative flex items-center justify-center rounded-md border border-transparent bg-stone-200 py-2 px-4 text-sm font-bold text-stone-600  hover:rounded-md  hover:bg-stone-300 md:px-2"
               type="button"
             >
               Add to cart

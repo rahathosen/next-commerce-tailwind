@@ -62,7 +62,7 @@ export default function LoginScreen() {
             autoFocus
           />
           {errors.email && (
-            <div className="text-red-500 font-normal">
+            <div className="font-normal text-red-500">
               {errors.email.message}
             </div>
           )}
@@ -92,7 +92,7 @@ export default function LoginScreen() {
         <div className="mb-4 font-semibold">
           Don&apos;t have an account ? &nbsp;
           <Link href="register">
-            <span className="text-blue-600 hover:text-blue-800 cursor-pointer">
+            <span className="cursor-pointer text-blue-600 hover:text-blue-800">
               Register
             </span>
           </Link>
