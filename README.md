@@ -1,5 +1,4 @@
 # NextCommerce
-![GitHub deployments](https://img.shields.io/github/deployments/rahathosen/next-commerce-tailwind/preview?label=vercel&logo=vercel&logoColor=white)
 # [Live](https://nextelite.vercel.app/)
 
 ## Getting Started
