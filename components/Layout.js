@@ -88,13 +88,13 @@ export default function Layout({ title, children }) {
       <ToastContainer position="bottom-center" limit={1} />
       <div className="flex min-h-screen flex-col justify-between py-5 ">
         <header>
-          <nav className="flex h-12 items-center  px-4 justify-between shadow-md pb-5">
+          <nav className="flex h-12 items-center  justify-between px-4 pb-5 shadow-md">
             <Link href="/">
-              <div className="text-xl text-stone-600 font-bold cursor-pointer">
+              <div className="cursor-pointer text-xl font-bold text-stone-600">
                 NextElite
               </div>
             </Link>
-            <div className="text-stone-600 font-semibold">
+            <div className="font-semibold text-stone-600">
               <Link href="/cart">
                 <a className="p-2">
                   Cart
@@ -109,10 +109,10 @@ export default function Layout({ title, children }) {
                 "Loading"
               ) : session?.user ? (
                 <Menu as="div" className="relative inline-block">
-                  <Menu.Button className="text-yellow-700 font-bold">
+                  <Menu.Button className="font-bold text-yellow-700">
                     {session.user.name}
                   </Menu.Button>
-                  <Menu.Items className="z-10 absolute right-0 w-[140px] origin-top-right rounded-md text-stone-500 bg-stone-100 shadow-lg ">
+                  <Menu.Items className="absolute right-0 z-10 w-[140px] origin-top-right rounded-md bg-stone-100 text-stone-500 shadow-lg ">
                     <Menu.Item>
                       <DropdownLink className="dropdown-link " href="/profile">
                         Profile
@@ -150,8 +150,8 @@ export default function Layout({ title, children }) {
         </main>
 
         <footer className="bg-white shadow-inner">
-          <div className="h-10 mx-auto pt-8 pb-8 xl:pt-10 2x:pt-10 px-4 sm:px-6 md:flex   md:items-center md:justify-between  lg:px-8">
-            <div className="flex justify-center space-x-6 md:order-3 md:pb-0 pb-5">
+          <div className="2x:pt-10 mx-auto h-10 px-4 pt-8 pb-8 sm:px-6 md:flex md:items-center   md:justify-between lg:px-8  xl:pt-10">
+            <div className="flex justify-center space-x-6 pb-5 md:order-3 md:pb-0">
               {navigation.map((item) => (
                 <a
                   key={item.name}
@@ -186,8 +186,8 @@ export default function Layout({ title, children }) {
                 </p>
               </div>
             </div>
-            <div className="mt-5 md:mt-0 md:order-1 ">
-              <p className="text-center md:pb-0 pb-5 text-base text-gray-500">
+            <div className="mt-5 md:order-1 md:mt-0 ">
+              <p className="pb-5 text-center text-base text-gray-500 md:pb-0">
                 &copy; 2022 NextElite, Inc. All rights reserved.
               </p>
             </div>

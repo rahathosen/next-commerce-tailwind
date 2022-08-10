@@ -35,7 +35,7 @@ export default function ProductScreen() {
         <Link href="/">back to products</Link>
       </div>
       <div className="grid md:grid-cols-4 md:gap-3">
-        <div className="md:col-span-2 rounded-2xl shadow-xl">
+        <div className="rounded-2xl shadow-xl md:col-span-2">
           <Image
             className="rounded-2xl "
             src={product.image}
