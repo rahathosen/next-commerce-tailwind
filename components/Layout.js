@@ -83,8 +83,8 @@ export default function Layout({ title, children }) {
 
       {/* Banner End */}
       <Head>
-        <title>{title ? title + " | NextCommerce" : "NextCommerce"}</title>
-        <meta name="description" content="ECommerce Website" />
+        <title>{title ? title + " | NextElite" : "NextElite"}</title>
+        <meta name="description" content="NextElite Website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ToastContainer position="bottom-center" limit={1} />
