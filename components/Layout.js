@@ -11,7 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { signOut, useSession } from "next-auth/react";
 import DropdownLink from "./DropdownLink";
 import Cookies from "js-cookie";
-import { ShoppingBagIcon, ShoppingCartIcon } from "@heroicons/react/outline";
+import { ShoppingCartIcon } from "@heroicons/react/outline";
 
 const navigation = [
   {
@@ -154,7 +154,9 @@ export default function Layout({ title, children }) {
                   </Menu>
                 ) : (
                   <Link href="/login">
-                    <a className="p-2">Login</a>
+                    <a className=" font-bold text-stone-600 transition hover:text-yellow-900">
+                      Login
+                    </a>
                   </Link>
                 )}
               </div>
