@@ -53,14 +53,16 @@ export default function ShippingScreen() {
     <Layout title="Shipping Address">
       <CheckoutWizard activeStep={1} />
       <form
-        className="mx-auto max-w-screen-md"
+        className="mx-auto max-w-screen-md  xs:mx-5"
         onSubmit={handleSubmit(submitHandler)}
       >
-        <h1 className="mb-4 text-xl">Shipping Address</h1>
-        <div className="mb-4">
-          <label htmlFor="fullName">Full Name</label>
+        <h1 className="mb-4 text-2xl font-semibold text-teal-900 ">
+          Shipping Address
+        </h1>
+        <div className="mb-4 font-semibold text-stone-800">
+          <label htmlFor="fullName ">Full Name</label>
           <input
-            className="w-full"
+            className="w-full font-normal ring-teal-700"
             id="fullName"
             autoFocus
             {...register("fullName", {
@@ -71,10 +73,10 @@ export default function ShippingScreen() {
             <div className="text-red-500">{errors.fullName.message}</div>
           )}
         </div>
-        <div className="mb-4">
+        <div className="mb-4 font-semibold text-stone-700">
           <label htmlFor="address">Address</label>
           <input
-            className="w-full"
+            className="w-full font-normal ring-teal-700"
             id="address"
             {...register("address", {
               required: "Please enter address",
@@ -85,10 +87,10 @@ export default function ShippingScreen() {
             <div className="text-red-500">{errors.address.message}</div>
           )}
         </div>
-        <div className="mb-4">
+        <div className="mb-4 font-semibold text-stone-700">
           <label htmlFor="city">City</label>
           <input
-            className="w-full"
+            className="ring-teal- w-full font-normal"
             id="city"
             {...register("city", {
               required: "Please enter city",
@@ -98,10 +100,10 @@ export default function ShippingScreen() {
             <div className="text-red-500 ">{errors.city.message}</div>
           )}
         </div>
-        <div className="mb-4">
+        <div className="mb-4 font-semibold text-stone-700">
           <label htmlFor="postalCode">Postal Code</label>
           <input
-            className="w-full"
+            className="w-full font-normal ring-teal-700"
             id="postalCode"
             {...register("postalCode", {
               required: "Please enter postal code",
@@ -111,10 +113,10 @@ export default function ShippingScreen() {
             <div className="text-red-500 ">{errors.postalCode.message}</div>
           )}
         </div>
-        <div className="mb-4">
-          <label htmlFor="country">Country</label>
+        <div className="mb-4 font-semibold text-stone-700">
+          <label htmlFor="country ">Country</label>
           <input
-            className="w-full"
+            className="w-full font-normal ring-teal-700"
             id="country"
             {...register("country", {
               required: "Please enter country",
