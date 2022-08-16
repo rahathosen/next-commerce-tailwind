@@ -1,12 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@font-face {
+	font-family: 'Inter';
+	font-weight: 100 900;
+	font-display: block;
+	font-style: normal;
+	font-named-instance: 'Regular';
+	src: url('/fonts/Inter-roman.var.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Inter';
+	font-weight: 100 900;
+	font-display: block;
+	font-style: italic;
+	font-named-instance: 'Italic';
+	src: url('/fonts/Inter-italic.var.woff2') format('woff2');
+}
+
+#__next {
+	min-height: 100%;
+}
+
 html,
 body {
 	padding: 0;
 	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
-		Helvetica Neue, sans-serif;
+	/* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+		Helvetica Neue, sans-serif; */
 }
 
 a {
@@ -17,6 +41,8 @@ a {
 * {
 	box-sizing: border-box;
 }
+
+
 .card {
   @apply mb-5  block   rounded-xl border border-gray-200  shadow-2xl;
 }
@@ -28,7 +54,6 @@ a {
 	@apply rounded bg-gray-100 py-2 px-4 text-black shadow outline-none hover:bg-gray-200 active:bg-gray-300;
 }
 
-
 input,
 select,
 textarea{
@@ -36,5 +61,5 @@ textarea{
 }
 
 .dropdown-link{
-	@apply flex p-2 hover:bg-stone-300 rounded-md
+	@apply flex p-2 hover:bg-stone-300 rounded-md ;
 }
