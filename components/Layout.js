@@ -93,11 +93,11 @@ export default function Layout({ title, children }) {
       </Head>
       <ToastContainer position="bottom-center" limit={1} />
       <div className="flex min-h-screen flex-col justify-between py-5 ">
-        <header>
-          <nav className="flex h-12 items-center  justify-between px-[35px]  ">
+        <header className="sticky top-0 z-50 bg-white p-5 xs:p-1">
+          <nav className=" flex  h-12 items-center  justify-between px-[35px]  ">
             <SearchIcon className="h-6 w-6 text-stone-600"></SearchIcon>
             <Link href="/">
-              <div className="cursor-pointer text-2xl font-bold text-stone-700 xs:pl-6">
+              <div className="cursor-pointer text-2xl font-bold text-stone-700 xs:pl-6 xs:text-xl">
                 NextElite
               </div>
             </Link>
