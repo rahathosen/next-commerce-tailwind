@@ -16,7 +16,3 @@ yarn run dev
 Open [http://localhost:3005](http://localhost:3005) with your browser to see the result.
 
 
-
-## Deploy on Vercel
-
-
