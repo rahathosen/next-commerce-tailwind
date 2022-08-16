@@ -2,7 +2,7 @@ import React from "react";
 
 export default function CheckoutWizard({ activeStep = 0 }) {
   return (
-    <div className="mb-5 flex flex-wrap">
+    <div className="mx-5 mb-5 flex flex-wrap py-5 xs:mx-5">
       {["User Login", "Shipping Address", "Payment Method", "Place Order"].map(
         (step, index) => (
           <div
@@ -11,7 +11,7 @@ export default function CheckoutWizard({ activeStep = 0 }) {
           text-center 
        ${
          index <= activeStep
-           ? "border-yellow-800   text-yellow-800"
+           ? "border-teal-600   text-teal-600"
            : "border-gray-400 text-gray-400"
        }
           
