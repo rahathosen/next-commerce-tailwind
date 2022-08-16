@@ -1,6 +1,7 @@
 import Layout from "../components/Layout";
 import ProductItem from "../components/ProductItem";
 import data from "../utils/data";
+import { Reviews } from "../components/Reviews";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
           <ProductItem product={product} key={product.slug} />
         ))}
       </div>
+      <Reviews />
     </Layout>
   );
 }
