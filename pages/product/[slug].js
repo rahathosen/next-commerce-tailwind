@@ -110,7 +110,7 @@ export default function ProductScreen() {
             </div>
             <div className="pt-5">
               <button
-                className="primary-button inline-flex w-8/12 items-center justify-center gap-2"
+                className="primary-button inline-flex w-8/12 translate-x-20 items-center justify-center gap-2"
                 onClick={addToCartHandler}
               >
                 {" "}

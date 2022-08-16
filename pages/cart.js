@@ -23,7 +23,9 @@ function CartScreen() {
   };
   return (
     <Layout title="Shopping Cart">
-      <h1 className="mb-4 text-xl">Shopping Cart</h1>
+      <h1 className="mb-4 text-2xl font-semibold text-teal-900">
+        Shopping Cart
+      </h1>
       {cartItems.length === 0 ? (
         <div>
           Cart is empty. <Link href="/">Go shopping</Link>
@@ -74,7 +76,7 @@ function CartScreen() {
                     <td className="p-5 text-right">${item.price}</td>
                     <td className="p-5 text-center">
                       <button onClick={() => removeItemHandler(item)}>
-                        <XCircleIcon className="h-5 w-5" />
+                        <XCircleIcon className="h-5 w-5 text-rose-700 hover:text-rose-600" />
                       </button>
                     </td>
                   </tr>
