@@ -11,7 +11,11 @@ import "react-toastify/dist/ReactToastify.css";
 import { signOut, useSession } from "next-auth/react";
 import DropdownLink from "./DropdownLink";
 import Cookies from "js-cookie";
-import { ShoppingCartIcon } from "@heroicons/react/outline";
+import {
+  ShoppingCartIcon,
+  UserIcon,
+  SearchIcon,
+} from "@heroicons/react/outline";
 
 const navigation = [
   {
@@ -90,9 +94,10 @@ export default function Layout({ title, children }) {
       <ToastContainer position="bottom-center" limit={1} />
       <div className="flex min-h-screen flex-col justify-between py-5 ">
         <header>
-          <nav className="flex h-12 items-center  justify-between px-4 pb-5 shadow-md">
+          <nav className="flex h-12 items-center  justify-between px-[35px]  ">
+            <SearchIcon className="h-6 w-6 text-stone-600"></SearchIcon>
             <Link href="/">
-              <div className="cursor-pointer text-xl font-bold text-stone-600">
+              <div className="cursor-pointer text-2xl font-bold text-stone-700">
                 NextElite
               </div>
             </Link>
@@ -155,7 +160,7 @@ export default function Layout({ title, children }) {
                 ) : (
                   <Link href="/login">
                     <a className=" font-bold text-stone-600 transition hover:text-yellow-900">
-                      Login
+                      <UserIcon className="h-6 w-6"></UserIcon>
                     </a>
                   </Link>
                 )}
@@ -163,6 +168,12 @@ export default function Layout({ title, children }) {
             </div>
           </nav>
         </header>
+        <div className=" text-md lg flex flex-row justify-center gap-[15px] px-4 pt-3 pb-6 font-semibold text-stone-500 shadow-md sm:gap-[40px] md:gap-[50px] md:text-lg md:font-bold lg:gap-[60]">
+          <div>New Arrivals</div>
+          <div>Ware Sales</div>
+          <div>Clothing</div>
+          <div>Accessories</div>
+        </div>
         <main className="container m-auto mt-4 md:mx-8 md:pb-7 ">
           {children}
         </main>
