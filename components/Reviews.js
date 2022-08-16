@@ -97,7 +97,7 @@ function Review({ title, body, author, rating, className, ...props }) {
   return (
     <figure
       className={clsx(
-        "animate-fade-in rounded-3xl bg-white p-6 opacity-0 shadow-md shadow-gray-900/5",
+        "animate-fade-in rounded-3xl bg-white p-6  opacity-0 shadow-md shadow-gray-900/5",
         className
       )}
       style={{ animationDelay }}
@@ -224,12 +224,12 @@ export function Reviews() {
       <Container>
         <h2
           id="reviews-title"
-          className="text-3xl font-medium tracking-tight text-stone-700 sm:text-center"
+          className="text-center text-3xl font-medium tracking-tight text-stone-700 xs:text-2xl sm:text-center"
         >
           Everyone is changing their life easy with{" "}
-          <span className="font-bold"> NextElite</span>.
+          <span className="font-bold text-stone-500"> NextElite</span>.
         </h2>
-        <p className="mt-2 text-lg text-stone-600 sm:text-center">
+        <p className="mt-2 text-center text-lg text-stone-600 sm:text-center">
           Thousands of people have enjoy our products.
         </p>
         <ReviewGrid />

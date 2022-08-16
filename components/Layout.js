@@ -97,7 +97,7 @@ export default function Layout({ title, children }) {
           <nav className="flex h-12 items-center  justify-between px-[35px]  ">
             <SearchIcon className="h-6 w-6 text-stone-600"></SearchIcon>
             <Link href="/">
-              <div className="cursor-pointer text-2xl font-bold text-stone-700">
+              <div className="cursor-pointer text-2xl font-bold text-stone-700 xs:pl-6">
                 NextElite
               </div>
             </Link>
@@ -169,10 +169,10 @@ export default function Layout({ title, children }) {
           </nav>
         </header>
         <div className=" flex flex-row justify-center gap-[15px] px-4 pt-3 pb-6 font-semibold text-stone-500 shadow-md sm:gap-[40px] md:gap-[50px] md:text-lg md:font-bold lg:gap-[60]">
-          <div className="">New Arrivals</div>
-          <div className="xs:hidden">Warehouse Sales</div>
-          <div className=" ">Clothing</div>
-          <div className="">Accessories</div>
+          <div className="xs:hidden">New Arrivals</div>
+          <div className=" ">Cloth</div>
+          <div className="">Watch</div>
+          <div className="">Perfume</div>
         </div>
         <main className="container m-auto mt-4 md:mx-8 md:pb-7 ">
           {children}
