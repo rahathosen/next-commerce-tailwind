@@ -52,22 +52,24 @@ export default function ProductScreen() {
           <div>
             <ul>
               <li>
-                <h1 className="pb-10 text-5xl font-bold">{product.name}</h1>
+                <h1 className="pb-10 text-center text-5xl font-bold text-stone-700">
+                  {product.name}
+                </h1>
               </li>
-              <li className="flex items-center justify-between pr-[40px] font-semibold">
+              <li className="flex items-center justify-between px-5 font-semibold text-stone-700">
                 Category{" "}
                 <span className="info-badge text-2xl font-bold ">
                   {product.category}
                 </span>
               </li>
-              <li className="flex items-center justify-between pr-[40px] font-semibold">
+              <li className="flex items-center justify-between px-5 font-semibold text-stone-700">
                 Brand{" "}
-                <span className="text-2xl font-bold text-stone-500">
+                <span className="text-2xl font-bold text-stone-700">
                   {product.brand}
                 </span>
               </li>
               <li>
-                <div className=" ">
+                <div className="px-5 ">
                   <button className="mr-1">
                     <svg
                       className="h-auto w-5 fill-current text-teal-400"
@@ -90,13 +92,13 @@ export default function ProductScreen() {
           {/* div 2 end */}
           {/* div 3 */}
           <div>
-            <div className=" flex items-center justify-between  font-semibold text-stone-700">
+            <div className=" flex items-center justify-between px-5  font-semibold text-stone-700">
               <div>Price</div>
-              <div className="pr-5 text-3xl font-bold text-stone-700">
+              <div className="  text-3xl font-bold text-stone-700 ">
                 ${product.price}
               </div>
             </div>
-            <div className="mb-2 flex justify-between pr-5 font-semibold text-stone-700">
+            <div className="mb-2 flex justify-between  px-5 font-semibold text-stone-700">
               <div>Status</div>
               <div>
                 {product.countInStock > 0 ? (
@@ -106,14 +108,16 @@ export default function ProductScreen() {
                 )}
               </div>
             </div>
-            <button
-              className="primary-button inline-flex w-full  items-center justify-center "
-              onClick={addToCartHandler}
-            >
-              {" "}
-              <ArchiveIcon className="justify-content h-5 w-5" />
-              add to cart
-            </button>
+            <div className="pt-5">
+              <button
+                className="primary-button inline-flex w-8/12 items-center justify-center gap-2"
+                onClick={addToCartHandler}
+              >
+                {" "}
+                <ArchiveIcon className="justify-content h-5 w-5" />
+                add to cart
+              </button>
+            </div>
 
             <div className="pt-5">
               <p>Description: {product.description}</p>
