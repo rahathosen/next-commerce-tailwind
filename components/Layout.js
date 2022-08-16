@@ -93,11 +93,11 @@ export default function Layout({ title, children }) {
       </Head>
       <ToastContainer position="bottom-center" limit={1} />
       <div className="flex min-h-screen flex-col justify-between py-5 ">
-        <header>
-          <nav className="flex h-12 items-center  justify-between px-[35px]  ">
+        <header className="sticky top-0 z-50 bg-white p-5 xs:p-1">
+          <nav className=" flex  h-12 items-center  justify-between px-[35px]  ">
             <SearchIcon className="h-6 w-6 text-stone-600"></SearchIcon>
             <Link href="/">
-              <div className="cursor-pointer text-2xl font-bold text-stone-700 xs:pl-6">
+              <div className="cursor-pointer text-2xl font-bold text-stone-700 xs:pl-6 xs:text-xl">
                 NextElite
               </div>
             </Link>
@@ -111,7 +111,7 @@ export default function Layout({ title, children }) {
                       className="relative block text-center text-stone-600 transition hover:text-yellow-900 "
                     >
                       {cartItemsCount > 0 && (
-                        <span className="absolute -right-3 -top-1 flex h-5 w-5 items-center justify-center rounded-full  bg-yellow-700 text-xs text-white ">
+                        <span className="absolute -right-3 -top-1 flex h-5 w-5 items-center justify-center rounded-full  bg-teal-700 text-xs text-white ">
                           {cartItemsCount}
                         </span>
                       )}{" "}
@@ -170,8 +170,8 @@ export default function Layout({ title, children }) {
         </header>
         <div className=" flex flex-row justify-center gap-[15px] px-4 pt-3 pb-6 font-semibold text-stone-500 shadow-md sm:gap-[40px] md:gap-[50px] md:text-lg md:font-bold lg:gap-[60]">
           <div className="xs:hidden">New Arrivals</div>
-          <div className=" ">Cloth</div>
           <div className="">Watch</div>
+          <div className=" ">Cloth</div>
           <div className="">Perfume</div>
         </div>
         <main className="container m-auto mt-4 md:mx-8 md:pb-7 ">

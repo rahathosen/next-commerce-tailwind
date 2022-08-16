@@ -37,7 +37,7 @@ const data = {
       brand: "Raymond",
       rating: 4.5,
       numReviews: 10,
-      countInStock: 120,
+      countInStock: 0,
       description: "A popular shirt",
     },
     {
