@@ -127,9 +127,9 @@ export default function ProductScreen() {
           </div>
           {/* div 3 end */}
         </div>
-        <div>
+        {/* <div>
           <p>Extra Information</p>
-        </div>
+        </div> */}
       </div>
     </Layout>
   );
