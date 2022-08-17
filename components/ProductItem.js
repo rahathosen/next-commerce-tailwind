@@ -21,9 +21,9 @@ export default function ProductItem({ product }) {
   return (
     <>
       <div className="bg-white">
-        <div className="rounded-lg bg-gray-50 p-2">
+        <div>
           <div className="relative">
-            <div className="relative h-72 w-full overflow-hidden rounded-lg">
+            <div className="relative h-72 w-full overflow-hidden rounded-t-lg">
               <Image
                 src={product.image}
                 alt={product.image}
@@ -36,7 +36,19 @@ export default function ProductItem({ product }) {
                 className="h-full w-full object-cover object-center"
               />
             </div>
-            <div className="mt-1">
+
+            <div className="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-t-lg p-4 px-6">
+              <div
+                aria-hidden="true"
+                className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"
+              />
+              <p className="relative text-xl font-semibold text-white">
+                ${product.price}
+              </p>
+            </div>
+          </div>
+          <div className="rounded-b-lg bg-gray-50 p-2 drop-shadow-2xl">
+            <div className="">
               <Link href={`/product/${product.slug}`}>
                 <a
                   href={product.href}
@@ -52,23 +64,14 @@ export default function ProductItem({ product }) {
               </h3>
               <p className="mt-1 text-sm text-gray-500">{product.brand}</p>
             </div>
-            <div className="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4">
-              <div
-                aria-hidden="true"
-                className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"
-              />
-              <p className="relative text-xl font-semibold text-white">
-                ${product.price}
-              </p>
+            <div className="mt-6">
+              <a
+                href={product.href}
+                className="relative flex items-center justify-center rounded-md border border-transparent bg-gray-100 py-2 px-8 text-sm font-medium text-gray-900 hover:bg-gray-200"
+              >
+                Add to bag<span className="sr-only">, {product.name}</span>
+              </a>
             </div>
-          </div>
-          <div className="mt-6">
-            <a
-              href={product.href}
-              className="relative flex items-center justify-center rounded-md border border-transparent bg-gray-100 py-2 px-8 text-sm font-medium text-gray-900 hover:bg-gray-200"
-            >
-              Add to bag<span className="sr-only">, {product.name}</span>
-            </a>
           </div>
         </div>
       </div>
