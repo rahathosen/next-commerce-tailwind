@@ -23,7 +23,7 @@ function CartScreen() {
   };
   return (
     <Layout title="Shopping Cart">
-      <div className="mx-auto max-w-screen-md xs:mx-5 sm:mx-5">
+      <div className="mx-auto  xs:mx-5 sm:mx-5">
         <h1 className="mb-4 text-2xl font-semibold text-teal-900">
           Shopping Cart
         </h1>

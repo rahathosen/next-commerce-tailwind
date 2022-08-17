@@ -42,7 +42,7 @@ export default function PaymentScreen() {
     <Layout title="Payment Method">
       <CheckoutWizard activeStep={2} />
       <form
-        className="mx-auto max-w-screen-md xs:mx-5 sm:mx-5"
+        className="mx-auto max-w-screen-md  xs:mx-5"
         onSubmit={submitHandler}
       >
         <h1 className="mb-4 text-2xl font-semibold text-teal-900">
