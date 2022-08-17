@@ -5,7 +5,25 @@ import { useContext } from "react";
 import Layout from "../../components/Layout";
 import data from "../../utils/data";
 import { Store } from "../../utils/Store";
-import { ArchiveIcon } from "@heroicons/react/outline";
+import { StarIcon } from "@heroicons/react/solid";
+import { CurrencyDollarIcon, GlobeIcon } from "@heroicons/react/outline";
+
+const policies = [
+  {
+    name: "International delivery",
+    icon: GlobeIcon,
+    description: "Get your order in 2 years",
+  },
+  {
+    name: "Loyalty rewards",
+    icon: CurrencyDollarIcon,
+    description: "Don't look at other tees",
+  },
+];
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
 
 export default function ProductScreen() {
   const { state, dispatch } = useContext(Store);
@@ -32,99 +50,223 @@ export default function ProductScreen() {
   };
   return (
     <Layout title={product.name}>
-      <div className="mx-auto xs:mx-5 sm:mx-5">
-        <div className="py-2">
-          <Link href="/">back to products</Link>
-        </div>
-        <div className="grid md:grid-cols-3 md:gap-[40px]">
-          <div className="rounded-2xl shadow-xl md:col-span-2">
-            <Image
-              className="rounded-2xl "
-              src={product.image}
-              alt={product.name}
-              width={640}
-              height={640}
-              layout="responsive"
-            />
-          </div>
-          <div>
-            <div>
-              <ul>
-                <li>
-                  <h1 className="pb-6 text-center text-5xl font-bold text-stone-700 xs:pt-5 xs:text-3xl sm:pt-5">
+      <div className="bg-white">
+        <div className="pt-6 pb-1 sm:pb-24">
+          <nav
+            aria-label="Breadcrumb"
+            className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+          >
+            {" "}
+            <ol role="list" className="flex items-center space-x-4">
+              <li>
+                <div className="flex items-center">
+                  <Link href={"/"}>
+                    <a className="mr-4 text-sm font-medium text-gray-500 hover:text-gray-600">
+                      Home
+                    </a>
+                  </Link>
+
+                  <svg
+                    viewBox="0 0 6 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    className="h-5 w-auto text-gray-300"
+                  >
+                    <path
+                      d="M4.878 4.34H3.551L.27 16.532h1.327l3.281-12.19z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+              </li>
+              <li>
+                <div className="flex items-center">
+                  <a
+                    href="#"
+                    className="mr-4 text-sm font-medium text-gray-500 hover:text-gray-600"
+                  >
+                    Category
+                  </a>
+                  <svg
+                    viewBox="0 0 6 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    className="h-5 w-auto text-gray-300"
+                  >
+                    <path
+                      d="M4.878 4.34H3.551L.27 16.532h1.327l3.281-12.19z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+              </li>
+
+              <li className="text-sm">
+                <a
+                  href="#"
+                  aria-current="page"
+                  className="font-medium text-gray-800 hover:text-gray-700"
+                >
+                  {product.category}
+                </a>
+              </li>
+            </ol>
+          </nav>
+          <div className="mx-auto mt-8 max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+            <div className="lg:grid lg:auto-rows-min lg:grid-cols-12 lg:gap-x-8">
+              <div className="lg:col-span-5 lg:col-start-8">
+                <div className="flex justify-between">
+                  <h1 className="text-xl font-medium text-gray-900">
                     {product.name}
                   </h1>
-                  <div className="px-5 pb-5 text-center">
-                    <button className="mr-1">
-                      <svg
-                        className="h-auto w-5 fill-current text-teal-400  xs:w-4"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 576 512"
-                      >
-                        <path d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z" />
-                      </svg>
-                    </button>
-                    <span className=" font-medium text-slate-400">
-                      {product.rating} •{" "}
-                      <a href="#" className=" font-normal underline">
-                        {product.numReviews} reviews
-                      </a>
-                    </span>
-                  </div>
-                </li>
-                <li className="flex items-center justify-between px-5 font-semibold text-stone-700 xs:font-normal">
-                  Category{" "}
-                  <span className="info-badge text-2xl font-bold ">
-                    {product.category}
-                  </span>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <div className="mt-3 rounded-2xl bg-gray-100 px-5  py-2 shadow-xl">
-                <div className="flex items-center justify-between px-5 font-semibold text-stone-700 xs:font-normal md:px-1">
-                  Brand{" "}
-                  <span className="text-2xl font-bold text-stone-700 xs:text-xl">
-                    {product.brand}
-                  </span>
-                </div>
-                <div className=" flex items-center justify-between px-5 font-semibold text-stone-700 xs:font-normal md:px-1">
-                  <div>Price</div>
-                  <div className=" text-3xl font-bold text-stone-700 xs:text-xl ">
+                  <p className="text-xl font-medium text-gray-900">
                     ${product.price}
-                  </div>
+                  </p>
                 </div>
-                <div className="mb-2 flex justify-between  px-5 font-semibold text-stone-700 xs:font-normal md:px-1">
-                  <div>Status</div>
-                  <div>
-                    {product.countInStock > 0 ? (
-                      <span className="stock-success-button">in stock</span>
-                    ) : (
-                      <span className="stock-danger-button">unavailable</span>
-                    )}
+                {/* Reviews */}
+                <div className="mt-4">
+                  <h2 className="sr-only">Reviews</h2>
+                  <div className="flex items-center">
+                    <p className="text-sm text-gray-700">
+                      {product.rating}
+                      <span className="sr-only"> out of 5 stars</span>
+                    </p>
+                    <div className="ml-1 flex items-center">
+                      {[0, 1, 2, 3, 4].map((rating) => (
+                        <StarIcon
+                          key={rating}
+                          className={classNames(
+                            product.rating > rating
+                              ? "text-teal-400"
+                              : "text-gray-200",
+                            "h-5 w-5 flex-shrink-0"
+                          )}
+                          aria-hidden="true"
+                        />
+                      ))}
+                    </div>
+                    <div
+                      aria-hidden="true"
+                      className="ml-4 text-sm text-gray-300"
+                    >
+                      ·
+                    </div>
+                    <div className="ml-4 flex">
+                      <a
+                        href="#"
+                        className="text-sm font-medium text-teal-600 hover:text-teal-500"
+                      >
+                        See all {product.numReviews} reviews
+                      </a>
+                    </div>
                   </div>
-                </div>
-                <div className="pt-5 pb-5">
-                  <button
-                    className="primary-button inline-flex w-8/12 translate-x-20 items-center justify-center gap-2 xs:w-7/12 xs:translate-x-16 md:w-9/12 md:translate-x-10"
-                    onClick={addToCartHandler}
-                  >
-                    {" "}
-                    <ArchiveIcon className="justify-content h-5 w-5" />
-                    add to cart
-                  </button>
                 </div>
               </div>
-              <div className="mb-5 flex justify-between px-5  pt-5 font-semibold text-stone-700 xs:font-normal">
-                <p>Description: {product.description}</p>
+
+              {/* Image gallery */}
+              <div className="mt-8 lg:col-span-7 lg:col-start-1 lg:row-span-3 lg:row-start-1 lg:mt-0">
+                <h2 className="sr-only">Images</h2>
+
+                <div className="">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    width={640}
+                    height={640}
+                    className={classNames(
+                      product.image.primary
+                        ? "lg:col-span-2 lg:row-span-2"
+                        : "hidden lg:block",
+                      "rounded-lg"
+                    )}
+                  />
+                </div>
+              </div>
+
+              <div className="mt-8 lg:col-span-5">
+                <div>
+                  {/* Size picker */}
+                  <div className="mt-8">
+                    <div className="flex items-center justify-between">
+                      <h2 className="text-sm font-medium text-gray-900">
+                        Brand
+                      </h2>
+                      <div className="text-base font-bold text-gray-600 hover:text-gray-500">
+                        {product.brand}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mt-8">
+                    <div className="flex items-center justify-between">
+                      <h2 className="text-sm font-medium text-gray-900">
+                        Status
+                      </h2>
+                      <div className="text-sm font-medium text-teal-600 hover:text-teal-500">
+                        <div>
+                          {product.countInStock > 0 ? (
+                            <span className="text-emerald-500">in stock</span>
+                          ) : (
+                            <span className="text-rose-500">out of stock</span>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button
+                    onClick={addToCartHandler}
+                    className="mt-8 flex w-full items-center justify-center rounded-md border border-transparent bg-teal-600 py-3 px-8 text-base font-medium text-white hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                  >
+                    Add to cart
+                  </button>
+                </div>
+
+                {/* Product details */}
+                <div className="mt-10">
+                  <h2 className="text-sm font-medium text-gray-900">
+                    Description
+                  </h2>
+
+                  <div
+                    className="prose prose-sm mt-4 text-gray-500"
+                    dangerouslySetInnerHTML={{ __html: product.description }}
+                  />
+                </div>
+
+                <div className="mt-4 border-t border-gray-200 pt-4"></div>
+
+                {/* Policies */}
+                <section aria-labelledby="policies-heading" className="mt-10">
+                  <h2 id="policies-heading" className="sr-only">
+                    Our Policies
+                  </h2>
+
+                  <dl className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+                    {policies.map((policy) => (
+                      <div
+                        key={policy.name}
+                        className="rounded-lg border border-gray-200 bg-gray-50 p-6 text-center"
+                      >
+                        <dt>
+                          <policy.icon
+                            className="mx-auto h-6 w-6 flex-shrink-0 text-gray-400"
+                            aria-hidden="true"
+                          />
+                          <span className="mt-4 text-sm font-medium text-gray-900">
+                            {policy.name}
+                          </span>
+                        </dt>
+                        <dd className="mt-1 text-sm text-gray-500">
+                          {policy.description}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                </section>
               </div>
             </div>
           </div>
         </div>
-        {/* <div>
-          <p>Extra Information</p>
-        </div> */}
       </div>
     </Layout>
   );
