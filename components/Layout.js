@@ -116,7 +116,9 @@ export default function Layout({ title, children }) {
                         </span>
                       )}{" "}
                       <div className="text-2xl">
-                        <ShoppingCartIcon className="h-6 w-6"></ShoppingCartIcon>
+                        <a aria-label="Shopping cart">
+                          <ShoppingCartIcon className="h-6 w-6"></ShoppingCartIcon>
+                        </a>
                       </div>
                       <div className="text-sm font-semibold leading-3 "></div>
                     </a>
@@ -159,7 +161,10 @@ export default function Layout({ title, children }) {
                   </Menu>
                 ) : (
                   <Link href="/login">
-                    <a className=" font-bold text-stone-600 transition hover:text-yellow-900">
+                    <a
+                      className=" font-bold text-stone-600 transition hover:text-yellow-900"
+                      aria-label="login"
+                    >
                       <UserIcon className="h-6 w-6"></UserIcon>
                     </a>
                   </Link>
