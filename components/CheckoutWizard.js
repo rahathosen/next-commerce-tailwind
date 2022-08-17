@@ -1,6 +1,5 @@
 import React from "react";
 import { CheckIcon } from "@heroicons/react/solid";
-import Link from "next/link";
 const steps = [
   { id: "01", name: "User Login" },
   { id: "02", name: "Shipping Address", shipping: "/shipping" },
