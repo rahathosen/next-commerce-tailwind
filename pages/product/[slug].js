@@ -5,8 +5,8 @@ import { useContext } from "react";
 import Layout from "../../components/Layout";
 import data from "../../utils/data";
 import { Store } from "../../utils/Store";
-
 import { ArchiveIcon } from "@heroicons/react/outline";
+
 export default function ProductScreen() {
   const { state, dispatch } = useContext(Store);
   const router = useRouter();

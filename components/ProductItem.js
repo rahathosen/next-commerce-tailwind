@@ -27,8 +27,8 @@ export default function ProductItem({ product }) {
               alt={product.name}
               height="0px"
               width="0px"
-              placeholder="blur"
-              blurDataURL={rgbDataURL(237, 237, 237)}
+              // placeholder="blur"
+              // blurDataURL={rgbDataURL(237, 237, 237)}
               layout="responsive"
               className="rounded shadow hover:opacity-80"
             />
