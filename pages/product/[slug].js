@@ -6,11 +6,7 @@ import Layout from "../../components/Layout";
 import data from "../../utils/data";
 import { Store } from "../../utils/Store";
 import { StarIcon } from "@heroicons/react/solid";
-import {
-  ArchiveIcon,
-  CurrencyDollarIcon,
-  GlobeIcon,
-} from "@heroicons/react/outline";
+import { CurrencyDollarIcon, GlobeIcon } from "@heroicons/react/outline";
 
 const policies = [
   {
