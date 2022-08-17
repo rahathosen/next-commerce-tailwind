@@ -97,7 +97,7 @@ export default function Layout({ title, children }) {
           <nav className=" flex  h-12 items-center  justify-between px-[35px]  ">
             <SearchIcon className="h-6 w-6 text-stone-600"></SearchIcon>
             <Link href="/">
-              <div className="cursor-pointer text-2xl font-bold text-stone-700 xs:pl-6 xs:text-xl">
+              <div className="cursor-pointer text-3xl font-bold text-teal-800 xs:pl-6 xs:text-xl">
                 NextElite
               </div>
             </Link>
@@ -116,7 +116,9 @@ export default function Layout({ title, children }) {
                         </span>
                       )}{" "}
                       <div className="text-2xl">
-                        <ShoppingCartIcon className="h-6 w-6"></ShoppingCartIcon>
+                        <a aria-label="Shopping cart">
+                          <ShoppingCartIcon className="h-6 w-6"></ShoppingCartIcon>
+                        </a>
                       </div>
                       <div className="text-sm font-semibold leading-3 "></div>
                     </a>
@@ -159,7 +161,10 @@ export default function Layout({ title, children }) {
                   </Menu>
                 ) : (
                   <Link href="/login">
-                    <a className=" font-bold text-stone-600 transition hover:text-yellow-900">
+                    <a
+                      className=" font-bold text-stone-600 transition hover:text-yellow-900"
+                      aria-label="login"
+                    >
                       <UserIcon className="h-6 w-6"></UserIcon>
                     </a>
                   </Link>
@@ -168,11 +173,11 @@ export default function Layout({ title, children }) {
             </div>
           </nav>
         </header>
-        <div className=" flex flex-row justify-center gap-[15px] px-4 pt-3 pb-6 font-semibold text-stone-500 shadow-md sm:gap-[40px] md:gap-[50px] md:text-lg md:font-bold lg:gap-[60]">
-          <div className="xs:hidden">New Arrivals</div>
-          <div className="">Watch</div>
-          <div className=" ">Cloth</div>
-          <div className="">Perfume</div>
+        <div className=" flex flex-row justify-center gap-[15px] px-4 pt-3 pb-6 font-semibold text-teal-700   shadow-md sm:gap-[40px] md:gap-[50px] md:text-lg md:font-bold lg:gap-[60]">
+          <div className="hover:text-teal-600 xs:hidden">New Arrivals</div>
+          <div className="hover:text-teal-600">Watch</div>
+          <div className=" hover:text-teal-600">Cloth</div>
+          <div className="hover:text-teal-600">Perfume</div>
         </div>
         <main className="container m-auto mt-4 md:mx-8 md:pb-7 ">
           {children}
