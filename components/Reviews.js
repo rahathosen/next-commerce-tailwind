@@ -227,7 +227,7 @@ export function Reviews() {
           className="text-center text-3xl font-medium tracking-tight text-stone-700 xs:text-2xl sm:text-center"
         >
           Everyone is changing their life easy with{" "}
-          <span className="font-bold text-teal-500"> NextElite</span>.
+          <span className="font-bold text-teal-800"> NextElite</span>.
         </h2>
         <p className="mt-2 text-center text-lg text-stone-600 sm:text-center">
           Thousands of people have enjoy our products.
