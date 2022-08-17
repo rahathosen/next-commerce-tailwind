@@ -4,7 +4,7 @@ import React from "react";
 import { useContext } from "react";
 import Layout from "../components/Layout";
 import { Store } from "../utils/Store";
-import { XCircleIcon } from "@heroicons/react/outline";
+import { TrashIcon } from "@heroicons/react/outline";
 import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
 
@@ -24,7 +24,7 @@ function CartScreen() {
   return (
     <Layout title="Shopping Cart">
       <div className="mx-auto  xs:mx-5 sm:mx-5">
-        <h1 className="mb-4 text-2xl font-semibold text-teal-900">
+        <h1 className="mb-4 text-2xl font-semibold text-gray-700">
           Shopping Cart
         </h1>
         {cartItems.length === 0 ? (
@@ -36,7 +36,7 @@ function CartScreen() {
             <div className="overflow-x-auto md:col-span-3">
               <table className="min-w-full ">
                 <thead className="border-b">
-                  <tr>
+                  <tr className="text-gray-700">
                     <th className="p-5 text-left">Item</th>
                     <th className="p-5 text-right">Quantity</th>
                     <th className="p-5 text-right">Price</th>
@@ -74,10 +74,12 @@ function CartScreen() {
                           ))}
                         </select>
                       </td>
-                      <td className="p-5 text-right">${item.price}</td>
+                      <td className="p-5 text-right text-xl font-semibold text-gray-700">
+                        ${item.price}
+                      </td>
                       <td className="p-5 text-center">
                         <button onClick={() => removeItemHandler(item)}>
-                          <XCircleIcon className="h-5 w-5 text-rose-700 hover:text-rose-600" />
+                          <TrashIcon className="h-5 w-5 text-rose-700 hover:text-rose-600" />
                         </button>
                       </td>
                     </tr>
@@ -87,7 +89,7 @@ function CartScreen() {
             </div>
             <div className="card p-5">
               <ul>
-                <li className="pb-3 text-xl font-bold">
+                <li className="pb-3 text-center text-xl font-bold">
                   Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}) : $
                   {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}
                 </li>

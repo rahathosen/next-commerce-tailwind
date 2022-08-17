@@ -97,7 +97,7 @@ export default function Layout({ title, children }) {
           <nav className=" flex  h-12 items-center  justify-between px-[35px]  ">
             <SearchIcon className="h-6 w-6 text-stone-600"></SearchIcon>
             <Link href="/">
-              <div className="cursor-pointer text-3xl font-bold text-teal-800 xs:pl-6 xs:text-xl">
+              <div className="cursor-pointer text-3xl font-bold text-gray-700 xs:pl-6 xs:text-xl">
                 NextElite
               </div>
             </Link>
@@ -108,7 +108,7 @@ export default function Layout({ title, children }) {
                   <Link href="/cart">
                     <a
                       href="#"
-                      className="relative block text-center text-stone-600 transition hover:text-yellow-900 "
+                      className="relative block text-center text-gray-600 transition hover:text-teal-500 "
                     >
                       {cartItemsCount > 0 && (
                         <span className="absolute -right-3 -top-1 flex h-5 w-5 items-center justify-center rounded-full  bg-teal-700 text-xs text-white ">
@@ -116,9 +116,7 @@ export default function Layout({ title, children }) {
                         </span>
                       )}{" "}
                       <div className="text-2xl">
-                        <a aria-label="Shopping cart">
-                          <ShoppingCartIcon className="h-6 w-6"></ShoppingCartIcon>
-                        </a>
+                        <ShoppingCartIcon className="h-6 w-6"></ShoppingCartIcon>
                       </div>
                       <div className="text-sm font-semibold leading-3 "></div>
                     </a>
@@ -128,10 +126,10 @@ export default function Layout({ title, children }) {
                   "Loading"
                 ) : session?.user ? (
                   <Menu as="div" className="relative inline-block">
-                    <Menu.Button className="font-bold text-stone-600 transition hover:text-yellow-900">
+                    <Menu.Button className="font-bold text-gray-600 transition hover:text-teal-500">
                       {session.user.name}
                     </Menu.Button>
-                    <Menu.Items className="absolute right-0 z-10 w-[140px] origin-top-right rounded-md bg-stone-100 text-stone-500 shadow-lg ">
+                    <Menu.Items className="absolute right-0 z-10 w-[140px] origin-top-right rounded-md bg-gray-100 text-gray-500 shadow-lg ">
                       <Menu.Item>
                         <DropdownLink
                           className="dropdown-link "
@@ -162,7 +160,7 @@ export default function Layout({ title, children }) {
                 ) : (
                   <Link href="/login">
                     <a
-                      className=" font-bold text-stone-600 transition hover:text-yellow-900"
+                      className=" font-bold text-gray-600 transition hover:text-teal-500"
                       aria-label="login"
                     >
                       <UserIcon className="h-6 w-6"></UserIcon>
@@ -173,11 +171,11 @@ export default function Layout({ title, children }) {
             </div>
           </nav>
         </header>
-        <div className=" flex flex-row justify-center gap-[15px] px-4 pt-3 pb-6 font-semibold text-teal-700   shadow-md sm:gap-[40px] md:gap-[50px] md:text-lg md:font-bold lg:gap-[60]">
-          <div className="hover:text-teal-600 xs:hidden">New Arrivals</div>
-          <div className="hover:text-teal-600">Watch</div>
-          <div className=" hover:text-teal-600">Cloth</div>
-          <div className="hover:text-teal-600">Perfume</div>
+        <div className=" flex flex-row justify-center gap-[15px] px-4 pt-3 pb-6 font-semibold text-gray-700   shadow-md sm:gap-[40px] md:gap-[50px] md:text-lg md:font-bold lg:gap-[60]">
+          <div className="hover:text-gray-600 xs:hidden">New Arrivals</div>
+          <div className="hover:text-gray-600">Watch</div>
+          <div className=" hover:text-gray-600">Cloth</div>
+          <div className="hover:text-gray-600">Perfume</div>
         </div>
         <main className="container m-auto mt-4 md:mx-8 md:pb-7 ">
           {children}

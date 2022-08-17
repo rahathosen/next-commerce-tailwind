@@ -37,8 +37,7 @@ export default function ProductScreen() {
           <Link href="/">back to products</Link>
         </div>
         <div className="grid md:grid-cols-3 md:gap-[40px]">
-          {/* div 1 */}
-          <div className=" rounded-2xl shadow-xl md:col-span-2">
+          <div className="rounded-2xl shadow-xl md:col-span-2">
             <Image
               className="rounded-2xl "
               src={product.image}
@@ -48,29 +47,14 @@ export default function ProductScreen() {
               layout="responsive"
             />
           </div>
-          {/* div 1 end*/}
           <div>
             <div>
               <ul>
                 <li>
-                  <h1 className="pb-10 text-center text-5xl font-bold text-stone-700 xs:pt-5 xs:text-3xl">
+                  <h1 className="pb-6 text-center text-5xl font-bold text-stone-700 xs:pt-5 xs:text-3xl sm:pt-5">
                     {product.name}
                   </h1>
-                </li>
-                <li className="flex items-center justify-between px-5 font-semibold text-stone-700 xs:font-normal">
-                  Category{" "}
-                  <span className="info-badge text-2xl font-bold ">
-                    {product.category}
-                  </span>
-                </li>
-                <li className="flex items-center justify-between px-5 font-semibold text-stone-700 xs:font-normal">
-                  Brand{" "}
-                  <span className="text-2xl font-bold text-stone-700 xs:text-xl">
-                    {product.brand}
-                  </span>
-                </li>
-                <li>
-                  <div className="px-5 ">
+                  <div className="px-5 pb-5 text-center">
                     <button className="mr-1">
                       <svg
                         className="h-auto w-5 fill-current text-teal-400  xs:w-4"
@@ -88,44 +72,55 @@ export default function ProductScreen() {
                     </span>
                   </div>
                 </li>
+                <li className="flex items-center justify-between px-5 font-semibold text-stone-700 xs:font-normal">
+                  Category{" "}
+                  <span className="info-badge text-2xl font-bold ">
+                    {product.category}
+                  </span>
+                </li>
               </ul>
             </div>
-            {/* div 2 end */}
-            {/* div 3 */}
-            <div>
-              <div className=" flex items-center justify-between px-5  font-semibold text-stone-700 xs:font-normal">
-                <div>Price</div>
-                <div className=" text-3xl font-bold text-stone-700 xs:text-xl ">
-                  ${product.price}
-                </div>
-              </div>
-              <div className="mb-2 flex justify-between  px-5 font-semibold text-stone-700 xs:font-normal">
-                <div>Status</div>
-                <div>
-                  {product.countInStock > 0 ? (
-                    <span className="stock-success-button">in stock</span>
-                  ) : (
-                    <span className="stock-danger-button">unavailable</span>
-                  )}
-                </div>
-              </div>
-              <div className="pt-5 pb-5">
-                <button
-                  className="primary-button inline-flex w-8/12 translate-x-20 items-center justify-center gap-2 xs:w-5/12 xs:translate-x-28"
-                  onClick={addToCartHandler}
-                >
-                  {" "}
-                  <ArchiveIcon className="justify-content h-5 w-5" />
-                  add to cart
-                </button>
-              </div>
 
+            <div>
+              <div className="mt-3 rounded-2xl bg-gray-100 px-5  py-2 shadow-xl">
+                <div className="flex items-center justify-between px-5 font-semibold text-stone-700 xs:font-normal md:px-1">
+                  Brand{" "}
+                  <span className="text-2xl font-bold text-stone-700 xs:text-xl">
+                    {product.brand}
+                  </span>
+                </div>
+                <div className=" flex items-center justify-between px-5 font-semibold text-stone-700 xs:font-normal md:px-1">
+                  <div>Price</div>
+                  <div className=" text-3xl font-bold text-stone-700 xs:text-xl ">
+                    ${product.price}
+                  </div>
+                </div>
+                <div className="mb-2 flex justify-between  px-5 font-semibold text-stone-700 xs:font-normal md:px-1">
+                  <div>Status</div>
+                  <div>
+                    {product.countInStock > 0 ? (
+                      <span className="stock-success-button">in stock</span>
+                    ) : (
+                      <span className="stock-danger-button">unavailable</span>
+                    )}
+                  </div>
+                </div>
+                <div className="pt-5 pb-5">
+                  <button
+                    className="primary-button inline-flex w-8/12 translate-x-20 items-center justify-center gap-2 xs:w-7/12 xs:translate-x-16 md:w-9/12 md:translate-x-10"
+                    onClick={addToCartHandler}
+                  >
+                    {" "}
+                    <ArchiveIcon className="justify-content h-5 w-5" />
+                    add to cart
+                  </button>
+                </div>
+              </div>
               <div className="mb-5 flex justify-between px-5  pt-5 font-semibold text-stone-700 xs:font-normal">
                 <p>Description: {product.description}</p>
               </div>
             </div>
           </div>
-          {/* div 3 end */}
         </div>
         {/* <div>
           <p>Extra Information</p>

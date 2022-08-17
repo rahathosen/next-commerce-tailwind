@@ -9,7 +9,7 @@ export default function Home() {
   const router = useRouter();
   const meta = {
     title: "NextElite",
-    description: `Next Level E-commerce site`,
+    description: `a online shop`,
     // image: "./../public/images/cover/banner.webp",
     image: "https://www.nextelite.live/images/cover/banner.webp",
     type: "website",
