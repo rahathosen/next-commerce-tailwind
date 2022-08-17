@@ -19,59 +19,59 @@ import Image from "next/image";
 
 export default function ProductItem({ product }) {
   return (
-    <div className="px-4">
-      <div className=" card ">
-        <Link href={`/product/${product.slug}`}>
-          <a>
-            <Image
-              src={product.image}
-              alt={product.name}
-              height="0px"
-              width="0px"
-              // placeholder="blur"
-              // blurDataURL={rgbDataURL(237, 237, 237)}
-              layout="responsive"
-              className="rounded shadow hover:opacity-80"
-            />
-          </a>
-        </Link>
-
-        <div className="flex flex-col items-center justify-center pt-2 pb-2 ">
-          <div className="flex flex-row items-center gap-[70px] sm:gap-[70px]  md:gap-8  lg:gap-6">
-            <p className="text-4xl font-bold text-stone-500 sm:text-4xl md:text-4xl">
-              ${product.price}
-            </p>
-            <div className="flex flex-col items-center">
+    <>
+      <div className="bg-white">
+        <div className="rounded-lg bg-gray-50 p-2">
+          <div className="relative">
+            <div className="relative h-72 w-full overflow-hidden rounded-lg">
+              <Image
+                src={product.image}
+                alt={product.image}
+                layout="fill"
+                // height="0"
+                // width="0"
+                // placeholder="blur"
+                // blurDataURL={rgbDataURL(237, 237, 237)}
+                // layout="responsive"
+                className="h-full w-full object-cover object-center"
+              />
+            </div>
+            <div className="mt-1">
               <Link href={`/product/${product.slug}`}>
-                <a>
-                  <h2 className="text-xl font-bold text-stone-600 sm:text-xl md:text-lg lg:text-xl xl:text-xl">
-                    {product.name}
-                  </h2>
+                <a
+                  href={product.href}
+                  className="relative flex cursor-pointer items-center justify-center rounded-md border border-transparent bg-gray-100 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200"
+                >
+                  Details
                 </a>
               </Link>
-              <p className="xl:font-md md:font-md mb-2 font-semibold text-stone-500 sm:font-bold">
-                {product.brand}
+            </div>
+            <div className="relative mt-4">
+              <h3 className="text-sm font-medium text-gray-900">
+                {product.name}
+              </h3>
+              <p className="mt-1 text-sm text-gray-500">{product.brand}</p>
+            </div>
+            <div className="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4">
+              <div
+                aria-hidden="true"
+                className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"
+              />
+              <p className="relative text-xl font-semibold text-white">
+                ${product.price}
               </p>
             </div>
           </div>
-          <div className="flex  items-center justify-around gap-8 pt-2 pb-3 sm:gap-8 md:gap-7 md:px-0 xl:gap-8">
-            <Link href={`/product/${product.slug}`}>
-              <button
-                className="relative flex items-center justify-center rounded-md  border border-transparent bg-stone-200 py-2 px-8 text-sm font-semibold text-stone-700 hover:rounded-md  hover:bg-stone-300 sm:px-8 md:px-2 xl:px-4"
-                type="button"
-              >
-                Details
-              </button>
-            </Link>
-            <button
-              className="relative flex items-center justify-center rounded-md border border-transparent bg-stone-200 py-2 px-4 text-sm font-bold text-stone-600  hover:rounded-md  hover:bg-stone-300 md:px-2"
-              type="button"
+          <div className="mt-6">
+            <a
+              href={product.href}
+              className="relative flex items-center justify-center rounded-md border border-transparent bg-gray-100 py-2 px-8 text-sm font-medium text-gray-900 hover:bg-gray-200"
             >
-              Add to cart
-            </button>
+              Add to bag<span className="sr-only">, {product.name}</span>
+            </a>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
