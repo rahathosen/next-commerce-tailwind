@@ -191,7 +191,7 @@ export default function ProductScreen() {
                       <h2 className="text-sm font-medium text-gray-900">
                         Brand
                       </h2>
-                      <div className="text-sm font-medium text-teal-600 hover:text-teal-500">
+                      <div className="text-base font-bold text-gray-600 hover:text-gray-500">
                         {product.brand}
                       </div>
                     </div>
