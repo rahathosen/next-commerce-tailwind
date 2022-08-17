@@ -97,7 +97,7 @@ export default function Layout({ title, children }) {
           <nav className=" flex  h-12 items-center  justify-between px-[35px]  ">
             <SearchIcon className="h-6 w-6 text-stone-600"></SearchIcon>
             <Link href="/">
-              <div className="cursor-pointer text-3xl font-bold text-teal-500 xs:pl-6 xs:text-xl">
+              <div className="cursor-pointer text-3xl font-bold text-teal-800 xs:pl-6 xs:text-xl">
                 NextElite
               </div>
             </Link>
