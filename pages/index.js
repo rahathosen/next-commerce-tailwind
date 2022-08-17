@@ -13,6 +13,7 @@ export default function Home() {
     image: "./../public/images/cover/www.nextelite.live.webp",
     type: "website",
   };
+
   return (
     <Layout title="Home">
       <Head>
