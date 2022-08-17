@@ -4,7 +4,7 @@ import React from "react";
 import { useContext } from "react";
 import Layout from "../components/Layout";
 import { Store } from "../utils/Store";
-import { XCircleIcon } from "@heroicons/react/outline";
+import { TrashIcon } from "@heroicons/react/outline";
 import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
 
@@ -77,7 +77,7 @@ function CartScreen() {
                       <td className="p-5 text-right">${item.price}</td>
                       <td className="p-5 text-center">
                         <button onClick={() => removeItemHandler(item)}>
-                          <XCircleIcon className="h-5 w-5 text-rose-700 hover:text-rose-600" />
+                          <TrashIcon className="h-5 w-5 text-rose-700 hover:text-rose-600" />
                         </button>
                       </td>
                     </tr>
