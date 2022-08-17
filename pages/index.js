@@ -8,9 +8,10 @@ import { useRouter } from "next/router";
 export default function Home() {
   const router = useRouter();
   const meta = {
-    title: "NextElite.",
+    title: "NextElite",
     description: `Next Level E-commerce site`,
-    image: "./../public/images/cover/www.nextelite.live.webp",
+    // image: "./../public/images/cover/banner.webp",
+    image: "https://www.nextelite.live/images/cover/banner.webp",
     type: "website",
   };
 
