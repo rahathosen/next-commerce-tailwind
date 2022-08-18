@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-
+// import { InformationCircleIcon } from "@heroicons/react/outline";
 //  For Blur placeholder down V
 // const keyStr =
 //   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
@@ -46,6 +46,15 @@ export default function ProductItem({ product }) {
                 ${product.price}
               </p>
             </div>
+            {/* <div className="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-t-lg pb-[250px] pr-[250px]">
+              <div
+                aria-hidden="true"
+                className=" inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"
+              />
+              <Link href={`/product/${product.slug}`}>
+                <InformationCircleIcon className="h-6 w-6 cursor-pointer text-gray-600 hover:text-gray-800" />
+              </Link>
+            </div> */}
           </div>
           <div className="rounded-b-lg bg-gray-50 p-2 drop-shadow-2xl">
             <div className="">
