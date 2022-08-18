@@ -28,8 +28,8 @@ function CartScreen() {
     <Layout title="Shopping Cart">
       <div className="mx-auto  xs:mx-5 sm:mx-5">
         <div className="bg-white">
-          <div className="mx-auto max-w-2xl px-4 pt-16 pb-24 sm:px-6 lg:max-w-7xl lg:px-8">
-            <h1 className="text-3xl font-extrabold tracking-tight text-gray-700 sm:text-4xl">
+          <div className="mx-auto max-w-2xl px-4 pt-8 pb-24 sm:px-6 lg:max-w-7xl lg:px-8">
+            <h1 className="text-3xl font-extrabold tracking-tight text-gray-700 sm:text-3xl">
               Shopping Cart
             </h1>
             {cartItems.length === 0 ? (
