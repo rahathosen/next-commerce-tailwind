@@ -112,7 +112,7 @@ export default function ProductScreen() {
               </li>
             </ol>
           </nav>
-          <div className="mx-auto mt-8 max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+          <div className="mx-auto mt-8 max-w-2xl px-4  sm:px-6 lg:max-w-7xl lg:px-8">
             <div className="lg:grid lg:auto-rows-min lg:grid-cols-12 lg:gap-x-8">
               <div className="lg:col-span-5 lg:col-start-8">
                 <div className="flex justify-between">
@@ -204,9 +204,13 @@ export default function ProductScreen() {
                       <div className="text-sm font-medium text-teal-600 hover:text-teal-500">
                         <div>
                           {product.countInStock > 0 ? (
-                            <span className="text-emerald-500">in stock</span>
+                            <span className="stock-success-button ">
+                              in stock
+                            </span>
                           ) : (
-                            <span className="text-rose-500">out of stock</span>
+                            <span className="stock-danger-button">
+                              out of stock
+                            </span>
                           )}
                         </div>
                       </div>

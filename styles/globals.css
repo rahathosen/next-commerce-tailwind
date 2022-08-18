@@ -54,10 +54,11 @@ a {
 	@apply px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm font-medium rounded-full;
 }
 .stock-success-button {
-	@apply px-2   bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-normal rounded-full;
+@apply	m-2 px-2 py-1 bg-emerald-200 hover:bg-emerald-300 rounded-full text-sm font-semibold text-emerald-600;
+
 }
 .stock-danger-button {
-	@apply px-2  bg-rose-500 hover:bg-rose-600 text-white text-sm font-normal rounded-full;
+	@apply m-2 px-2 py-1 bg-rose-200 hover:bg-rose-300 rounded-full text-sm font-semibold text-rose-600;
 }
 
 .info-badge {
