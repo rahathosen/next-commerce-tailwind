@@ -39,7 +39,7 @@ export default function Home() {
         <meta name="description" content="Online Shop" />
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
-      <div className="relative mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
+      <div className="relative mt-8 grid grid-cols-1 gap-y-12 xs:px-10 sm:grid-cols-2 sm:gap-x-6 sm:px-10 lg:grid-cols-4 xl:gap-x-8">
         {data.products.map((product) => (
           <ProductItem product={product} key={product.slug} />
         ))}
