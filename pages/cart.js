@@ -4,7 +4,6 @@ import React from "react";
 import { useContext } from "react";
 import Layout from "../components/Layout";
 import { Store } from "../utils/Store";
-import { TrashIcon } from "@heroicons/react/outline";
 import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
 import { QuestionMarkCircleIcon, XIcon } from "@heroicons/react/solid";
