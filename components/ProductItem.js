@@ -61,7 +61,7 @@ export default function ProductItem({ product }) {
               <Link href={`/product/${product.slug}`}>
                 <a
                   href={product.href}
-                  className="relative flex cursor-pointer items-center justify-center rounded-md border border-transparent  py-1 text-sm font-medium text-gray-900 hover:bg-gray-200"
+                  className="relative flex cursor-pointer items-center justify-center rounded-md border border-transparent  bg-gray-100 py-1 text-sm font-medium text-gray-600 hover:bg-gray-200"
                 >
                   Details
                 </a>
