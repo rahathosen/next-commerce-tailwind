@@ -11,7 +11,6 @@ import "react-toastify/dist/ReactToastify.css";
 import { signOut, useSession } from "next-auth/react";
 import DropdownLink from "./DropdownLink";
 import Footer from "./Footer";
-import Incentives from './Incentives'
 import Cookies from "js-cookie";
 import {
   ShoppingCartIcon,
@@ -128,7 +127,7 @@ export default function Layout({ title, children }) {
         <main className="container m-auto mt-4 md:mx-8 md:pb-7 ">
           {children}
         </main>
-        <Incentives/>
+
         <Footer />
       </div>
     </div>
