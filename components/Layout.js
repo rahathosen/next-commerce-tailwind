@@ -124,6 +124,7 @@ export default function Layout({ title, children }) {
           <div className=" hover:text-gray-600">Cloth</div>
           <div className="hover:text-gray-600">Perfume</div>
         </div>
+
         <main className="container m-auto mt-4 md:mx-8 md:pb-7 ">
           {children}
         </main>
