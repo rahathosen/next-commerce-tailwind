@@ -98,7 +98,7 @@ function CartScreen() {
                               </label>
                               {/* extra ! */}
                               <select
-                                className="max-w-full rounded-md border border-gray-300 py-1.5 text-left text-base font-medium leading-5 text-gray-700 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500 sm:text-sm"
+                                className="max-w-full rounded-md border border-gray-300 py-1.5 px-[25px] text-left text-base font-medium leading-5 text-gray-700 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500 sm:text-sm"
                                 value={item.quantity}
                                 onChange={(e) =>
                                   updateCartHandler(item, e.target.value)
