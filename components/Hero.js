@@ -12,7 +12,7 @@ export default function Hero() {
       </p>
       <a
         href="#"
-        className="mt-8 inline-block rounded-md border border-transparent bg-gray-900 py-3 px-8 text-base font-medium text-gray-200 hover:bg-gray-300"
+        className="mt-8 inline-block rounded-md border border-transparent bg-gray-900 py-3 px-8 text-base font-medium text-gray-100 hover:bg-black"
       >
         Shop New Arrivals
       </a>
