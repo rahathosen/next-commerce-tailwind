@@ -42,12 +42,12 @@ export default function PaymentScreen() {
     <Layout title="Payment Method">
       <CheckoutWizard activeStep={2} />
       <form
-        className="mx-auto max-w-screen-md  xs:mx-5"
+        className=" mx-auto mb-5  max-w-screen-md xs:mx-5"
         onSubmit={submitHandler}
       >
-        <h1 className="mb-4 text-2xl font-semibold text-teal-900">
-          Payment Method
-        </h1>
+        <h2 className=" mt-10 pb-4 text-lg font-medium text-gray-900 ">
+          Payment method
+        </h2>
         {["PayPal", "Stripe", "BKash", "CashOnDelivery"].map((payment) => (
           <div key={payment} className="mb-4">
             <input
@@ -64,17 +64,21 @@ export default function PaymentScreen() {
             </label>
           </div>
         ))}
-        <div className="mb-4 flex justify-between">
+        <div className="mb-4 flex justify-between pt-6">
           <button
             onClick={() => router.push("/shipping")}
             type="button"
-            className="default-button"
+            className="rounded-md border border-transparent bg-gray-300 py-2 px-4 text-sm font-medium text-black shadow-sm hover:bg-gray-600 hover:text-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-50"
           >
             Back
           </button>
-          <button className="primary-button">Next</button>
+          <button className="rounded-md border border-transparent bg-black py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-50">
+            Next
+          </button>
         </div>
       </form>
+
+      {/* </div> */}
     </Layout>
   );
 }

@@ -137,7 +137,7 @@ export default function ProductScreen() {
                           key={rating}
                           className={classNames(
                             product.rating > rating
-                              ? "text-teal-400"
+                              ? "text-yellow-500"
                               : "text-gray-200",
                             "h-5 w-5 flex-shrink-0"
                           )}
@@ -154,7 +154,7 @@ export default function ProductScreen() {
                     <div className="ml-4 flex">
                       <a
                         href="#"
-                        className="text-sm font-medium text-teal-600 hover:text-teal-500"
+                        className="text-sm font-medium text-gray-600 hover:text-gray-500"
                       >
                         See all {product.numReviews} reviews
                       </a>
@@ -219,7 +219,7 @@ export default function ProductScreen() {
 
                   <button
                     onClick={addToCartHandler}
-                    className="mt-8 flex w-full items-center justify-center rounded-md border border-transparent bg-teal-600 py-3 px-8 text-base font-medium text-white hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+                    className="mt-8 flex w-full items-center justify-center rounded-md border border-transparent bg-black py-3 px-8 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
                   >
                     Add to bag
                   </button>
