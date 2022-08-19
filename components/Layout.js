@@ -58,7 +58,7 @@ export default function Layout({ title, children }) {
                       className="relative block text-center text-gray-800 transition hover:text-gray-500 "
                     >
                       {cartItemsCount > 0 && (
-                        <span className="absolute -right-3 -top-1 flex h-5 w-5 items-center justify-center rounded-full  bg-amber-700 text-xs text-white ">
+                        <span className="absolute -right-3 -top-1 flex h-5 w-5 items-center justify-center rounded-full  bg-rose-600 text-xs text-white ">
                           {cartItemsCount}
                         </span>
                       )}{" "}
