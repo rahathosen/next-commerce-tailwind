@@ -36,7 +36,7 @@ export default function Custom404() {
                 spelled something wrong. I&apos;m guessing you spelled something
                 wrong. Can you double check that URL?
               </p>
-              <div className="mx-[100px] flex flex-row xs:mx-[50px]">
+              <div className="sm:mx[0px] mx-[100px] flex flex-row xs:mx-[0px] ">
                 <Link href="/contact">
                   <a className="mx-auto w-[125px] rounded-md bg-gray-200 p-1 text-center font-bold text-black hover:bg-gray-300  sm:p-4 md:w-40">
                     Contact Us
