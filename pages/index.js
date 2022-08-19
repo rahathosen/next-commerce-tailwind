@@ -3,6 +3,7 @@ import Layout from "../components/Layout";
 import ProductItem from "../components/ProductItem";
 import data from "../utils/data";
 import { Reviews } from "../components/Reviews";
+import Incentives from "../components/Incentives";
 import { useRouter } from "next/router";
 
 export default function Home() {
@@ -45,6 +46,7 @@ export default function Home() {
         ))}
       </div>
       <Reviews />
+      <Incentives />
     </Layout>
   );
 }
