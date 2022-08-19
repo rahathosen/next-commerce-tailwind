@@ -48,7 +48,7 @@ export default function LoginScreen() {
         <p className="mt-2 text-center text-sm text-gray-600">
           Or{" "}
           <Link href="register">
-            <a className="font-medium text-indigo-600 hover:text-indigo-500">
+            <a className="font-medium text-sky-600 hover:text-sky-500">
               create a new account
             </a>
           </Link>
@@ -82,10 +82,13 @@ export default function LoginScreen() {
                   type="email"
                   autoComplete="email"
                   required
-                  className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                  className="peer block w-full rounded-md border border-slate-300 bg-white px-3  py-2 placeholder-slate-400 shadow-sm invalid:border-pink-500 invalid:text-pink-600 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:invalid:border-pink-500 focus:invalid:ring-pink-500 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none sm:text-sm"
                 />
+                <p className="invisible text-sm text-pink-600 peer-invalid:visible">
+                  Please provide a valid email address.
+                </p>
                 {errors.email && (
-                  <div className="text-sm text-red-500">
+                  <div className="text-sm text-pink-500">
                     {errors.email.message}
                   </div>
                 )}
@@ -113,10 +116,10 @@ export default function LoginScreen() {
                   type="password"
                   autoComplete="current-password"
                   required
-                  className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                  className="peer block w-full rounded-md border border-slate-300 bg-white px-3  py-2 placeholder-slate-400 shadow-sm invalid:border-pink-500 invalid:text-pink-600 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:invalid:border-pink-500 focus:invalid:ring-pink-500 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none sm:text-sm"
                 />
                 {errors.password && (
-                  <div className="text-sm text-red-500">
+                  <div className="text-sm text-pink-500">
                     {errors.password.message}
                   </div>
                 )}
@@ -129,7 +132,7 @@ export default function LoginScreen() {
                   id="remember-me"
                   name="remember-me"
                   type="checkbox"
-                  className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                  className="h-4 w-4 rounded border-gray-300 text-sky-600 focus:ring-sky-500"
                 />
                 <label
                   htmlFor="remember-me"
@@ -142,7 +145,7 @@ export default function LoginScreen() {
               <div className="text-sm">
                 <a
                   href="#"
-                  className="font-medium text-indigo-600 hover:text-indigo-500"
+                  className="font-medium text-sky-600 hover:text-sky-500"
                 >
                   Forgot your password?
                 </a>
@@ -150,7 +153,7 @@ export default function LoginScreen() {
             </div>
 
             <div>
-              <button className="flex w-full justify-center rounded-md border border-transparent bg-black py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
+              <button className="flex w-full justify-center rounded-md border border-transparent bg-black py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-0">
                 Sign in
               </button>
             </div>
