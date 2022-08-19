@@ -140,7 +140,7 @@ function CartScreen() {
                               </label>
                               {/* extra ! */}
                               <select
-                                className="max-w-full rounded-md border border-gray-300 py-1.5 px-[25px] text-left text-base font-medium leading-5 text-gray-700 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500 sm:text-sm"
+                                className="max-w-full rounded-md border border-gray-300 py-1.5 px-[25px] text-left text-base font-medium leading-5 text-gray-700 shadow-sm focus:border-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-500 sm:text-sm"
                                 value={item.quantity}
                                 onChange={(e) =>
                                   updateCartHandler(item, e.target.value)
@@ -253,7 +253,7 @@ function CartScreen() {
                       onClick={() => {
                         router.push("login?redirect=/shipping");
                       }}
-                      className="w-full rounded-md border border-transparent bg-teal-600 py-3 px-4 text-base font-medium text-white shadow-sm hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+                      className="w-full rounded-md border border-transparent bg-black py-3 px-4 text-base font-medium text-white shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-50"
                     >
                       Checkout
                     </button>

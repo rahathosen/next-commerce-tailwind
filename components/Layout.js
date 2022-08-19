@@ -55,10 +55,10 @@ export default function Layout({ title, children }) {
                   <Link href="/cart">
                     <a
                       href="#"
-                      className="relative block text-center text-gray-600 transition hover:text-teal-500 "
+                      className="relative block text-center text-gray-800 transition hover:text-gray-500 "
                     >
                       {cartItemsCount > 0 && (
-                        <span className="absolute -right-3 -top-1 flex h-5 w-5 items-center justify-center rounded-full  bg-teal-700 text-xs text-white ">
+                        <span className="absolute -right-3 -top-1 flex h-5 w-5 items-center justify-center rounded-full  bg-amber-700 text-xs text-white ">
                           {cartItemsCount}
                         </span>
                       )}{" "}
@@ -73,7 +73,7 @@ export default function Layout({ title, children }) {
                   "Loading"
                 ) : session?.user ? (
                   <Menu as="div" className="relative inline-block">
-                    <Menu.Button className="font-bold text-gray-600 transition hover:text-teal-500">
+                    <Menu.Button className="font-bold text-gray-600 transition hover:text-gray-500">
                       {session.user.name}
                     </Menu.Button>
                     <Menu.Items className="absolute right-0 z-10 w-[140px] origin-top-right rounded-md bg-gray-100 text-gray-500 shadow-lg ">
