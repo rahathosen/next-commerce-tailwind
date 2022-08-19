@@ -5,6 +5,7 @@ import data from "../utils/data";
 import { Reviews } from "../components/Reviews";
 import Incentives from "../components/Incentives";
 import { useRouter } from "next/router";
+import Hero from "../components/Hero";
 
 export default function Home() {
   const router = useRouter();
@@ -40,11 +41,13 @@ export default function Home() {
         <meta name="description" content="Online Shop" />
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
+      <Hero />
       <div className="relative mt-8 grid grid-cols-1 gap-y-12 xs:px-6 sm:grid-cols-2 sm:gap-x-6 sm:px-10 lg:grid-cols-4 xl:gap-x-8">
         {data.products.map((product) => (
           <ProductItem product={product} key={product.slug} />
         ))}
       </div>
+
       <Reviews />
       <Incentives />
     </Layout>
