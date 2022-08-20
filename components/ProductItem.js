@@ -17,7 +17,7 @@ import Image from "next/image";
 
 // For Blur placeholder up  /\
 
-export default function ProductItem({ product }) {
+export default function ProductItem({ product, addToCartHandler }) {
   return (
     <>
       <div className="bg-white">
@@ -83,14 +83,15 @@ export default function ProductItem({ product }) {
                 </a>
               </Link>
             </div>
-            {/* <div className="mt-6">
+            <div className="mt-6">
               <a
+                onClick={() => addToCartHandler(product)}
                 href={product.href}
                 className="relative flex items-center justify-center rounded-md border border-transparent bg-gray-100 py-2 px-8 text-sm font-medium text-gray-900 hover:bg-gray-200"
               >
                 Add to bag<span className="sr-only">, {product.name}</span>
               </a>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>
