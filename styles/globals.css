@@ -65,6 +65,15 @@ a {
 	@apply  px-2 py-1 bg-blue-200 hover:bg-blue-300 rounded-full text-sm font-semibold text-blue-600;
 }
 
+
+.alert-error {
+	@apply my-3 rounded-lg bg-red-100 p-3 text-red-700;
+}
+
+.alert-success {
+	@apply my-3 rounded-lg bg-green-100 p-3 text-green-700;
+}
+
 input,
 select,
 textarea{
