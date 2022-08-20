@@ -57,7 +57,7 @@ export default function ProductItem({ product }) {
             </div> */}
           </div>
           <div className="rounded-b-lg bg-gray-50 p-2 drop-shadow-2xl">
-            <div className="">
+            {/* <div className="">
               <Link href={`/product/${product.slug}`}>
                 <a
                   href={product.href}
@@ -66,21 +66,31 @@ export default function ProductItem({ product }) {
                   Details
                 </a>
               </Link>
-            </div>
+            </div> */}
             <div className="relative mt-4">
               <h3 className="text-sm font-medium text-gray-900">
                 {product.name}
               </h3>
               <p className="mt-1 text-sm text-gray-500">{product.brand}</p>
             </div>
-            <div className="mt-6">
+            <div className="">
+              <Link href={`/product/${product.slug}`}>
+                <a
+                  href={product.href}
+                  className="relative flex cursor-pointer items-center justify-center rounded-md border border-transparent bg-gray-100 py-2 px-8 text-sm font-medium text-gray-900 hover:bg-gray-200"
+                >
+                  Details
+                </a>
+              </Link>
+            </div>
+            {/* <div className="mt-6">
               <a
                 href={product.href}
                 className="relative flex items-center justify-center rounded-md border border-transparent bg-gray-100 py-2 px-8 text-sm font-medium text-gray-900 hover:bg-gray-200"
               >
                 Add to bag<span className="sr-only">, {product.name}</span>
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
