@@ -58,7 +58,7 @@ export default function Home({ products }) {
 
           // Default options for specific types
           success: {
-            duration: 900,
+            duration: 100,
             // theme: {
             //   primary: "green",
             //   secondary: "black",
