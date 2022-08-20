@@ -47,7 +47,7 @@ export default function LoginScreen() {
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
           Or{" "}
-          <Link href="register">
+          <Link href={`/register?redirect=${redirect || "/"}`}>
             <a className="font-medium text-sky-600 hover:text-sky-500">
               create a new account
             </a>
@@ -84,9 +84,9 @@ export default function LoginScreen() {
                   required
                   className="peer block w-full rounded-md border border-slate-300 bg-white px-3  py-2 placeholder-slate-400 shadow-sm invalid:border-pink-500 invalid:text-pink-600 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:invalid:border-pink-500 focus:invalid:ring-pink-500 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none sm:text-sm"
                 />
-                <p className="invisible text-sm text-pink-600 peer-invalid:visible">
+                {/* <p className="invisible text-sm text-pink-600 peer-invalid:visible">
                   Please provide a valid email address.
-                </p>
+                </p> */}
                 {errors.email && (
                   <div className="text-sm text-pink-500">
                     {errors.email.message}
