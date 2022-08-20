@@ -62,6 +62,7 @@ function CartScreen() {
     cart: { cartItems },
   } = state;
   const router = useRouter();
+
   const removeItemHandler = (item) => {
     dispatch({ type: "CART_REMOVE_ITEM", payload: item });
   };
