@@ -9,7 +9,8 @@ import { StarIcon } from "@heroicons/react/solid";
 import { CurrencyDollarIcon, GlobeIcon } from "@heroicons/react/outline";
 import Product from "../../models/Product";
 import db from "../../utils/db";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
+import toast, { Toaster } from "react-hot-toast";
 
 const policies = [
   {
@@ -51,6 +52,7 @@ export default function ProductScreen(props) {
   };
   return (
     <Layout title={product.name}>
+      <Toaster />
       <div className="bg-white">
         <div className="pt-6 pb-1 sm:pb-24">
           <nav

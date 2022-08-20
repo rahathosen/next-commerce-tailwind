@@ -6,7 +6,8 @@ import Incentives from "../components/Incentives";
 import { useRouter } from "next/router";
 import Hero from "../components/Hero";
 import axios from "axios";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
+import toast, { Toaster } from "react-hot-toast";
 import db from "../utils/db";
 import Product from "../models/Product";
 import { useContext } from "react";
@@ -40,6 +41,31 @@ export default function Home({ products }) {
 
   return (
     <Layout title="Home">
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+        gutter={8}
+        containerClassName=""
+        containerStyle={{}}
+        toastOptions={{
+          // Define default options
+          className: "",
+          duration: 1000,
+          // style: {
+          //   background: "#363636",
+          //   color: "#fff",
+          // },
+
+          // Default options for specific types
+          success: {
+            duration: 900,
+            // theme: {
+            //   primary: "green",
+            //   secondary: "black",
+            // },
+          },
+        }}
+      />
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />

@@ -87,7 +87,7 @@ export default function ProductItem({ product, addToCartHandler }) {
               <a
                 onClick={() => addToCartHandler(product)}
                 href={product.href}
-                className="relative flex items-center justify-center rounded-md border border-transparent bg-gray-100 py-2 px-8 text-sm font-medium text-gray-900 hover:bg-gray-200"
+                className="relative flex cursor-pointer items-center justify-center rounded-md border border-transparent bg-gray-100 py-2 px-8 text-sm font-medium text-gray-900 hover:bg-gray-200"
               >
                 Add to bag<span className="sr-only">, {product.name}</span>
               </a>

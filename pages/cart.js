@@ -8,7 +8,8 @@ import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
 import { QuestionMarkCircleIcon, XIcon } from "@heroicons/react/solid";
 import axios from "axios";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
+import toast, { Toaster } from "react-hot-toast";
 
 const tax = 5;
 const shipping = 8.43;
@@ -76,6 +77,7 @@ function CartScreen() {
   };
   return (
     <Layout title="Shopping Cart">
+      <Toaster />
       <div className="mx-auto  mb-[60px] xs:mx-5 sm:mx-5">
         <div className="bg-white">
           <div className="mx-auto max-w-2xl px-4 pt-8 pb-24 sm:px-6 lg:max-w-7xl lg:px-8">
