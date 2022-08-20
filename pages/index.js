@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import Hero from "../components/Hero";
 import axios from "axios";
 // import { toast } from "react-toastify";
-import toast, { Toaster, ToastBar } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import db from "../utils/db";
 import Product from "../models/Product";
 import { useContext } from "react";
