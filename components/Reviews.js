@@ -219,7 +219,7 @@ export function Reviews() {
     <section
       id="reviews"
       aria-labelledby="reviews-title"
-      className="pt-20 pb-16 sm:pt-32 sm:pb-24"
+      className="pt-20  sm:pt-32 "
     >
       <Container>
         <h2

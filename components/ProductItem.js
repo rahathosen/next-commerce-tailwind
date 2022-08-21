@@ -46,43 +46,22 @@ export default function ProductItem({ product, addToCartHandler }) {
                 ${product.price}
               </p>
             </div>
-            {/* <div className="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-t-lg pb-[250px] pr-[250px]">
-              <div
-                aria-hidden="true"
-                className=" inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"
-              />
-              <Link href={`/product/${product.slug}`}>
-                <InformationCircleIcon className="h-6 w-6 cursor-pointer text-gray-600 hover:text-gray-800" />
-              </Link>
-            </div> */}
           </div>
-          <div className="rounded-b-lg bg-gray-50 p-2 drop-shadow-2xl">
-            {/* <div className="">
-              <Link href={`/product/${product.slug}`}>
-                <a
-                  href={product.href}
-                  className="relative flex cursor-pointer items-center justify-center rounded-md border border-transparent  bg-gray-100 py-1 text-sm font-medium text-gray-600 hover:bg-gray-200"
-                >
-                  Details
-                </a>
-              </Link>
-            </div> */}
-            <div className="relative mt-4">
-              <h3 className="text-sm font-medium text-gray-900">
-                {product.name}
-              </h3>
-              <p className="mt-1 text-sm text-gray-500">{product.brand}</p>
+          <div className="  p-2 hover:drop-shadow-md">
+            <div className="flex flex-row items-center justify-between">
+              <div className="relative mt-4">
+                <h3 className="text-sm font-medium text-gray-900">
+                  {product.name}
+                </h3>
+                <p className="mt-1 text-sm text-gray-500">{product.brand}</p>
+              </div>
+              <div className="cursor-pointer underline">
+                <Link href={`/product/${product.slug}`}>
+                  <a href={product.href}>Details</a>
+                </Link>
+              </div>
             </div>
-            <div className="">
-              <Link href={`/product/${product.slug}`}>
-                <a
-                  href={product.href}
-                  className="relative flex cursor-pointer items-center justify-center rounded-md border border-transparent bg-gray-100 py-2 px-8 text-sm font-medium text-gray-900 hover:bg-gray-200"
-                >
-                  Details
-                </a>
-              </Link>
-            </div>
+
             <div className="mt-6">
               <a
                 onClick={() => addToCartHandler(product)}

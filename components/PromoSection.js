@@ -4,7 +4,7 @@ export default function PromoSection() {
   return (
     <>
       <div className="bg-white">
-        <div className="overflow-hidden pt-32 sm:pt-14">
+        <div className="overflow-hidden pt-[160px] xs:pt-40 sm:pt-24">
           <div className="bg-gray-800">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="relative pt-48 pb-16 sm:pb-24">
