@@ -44,7 +44,7 @@ a {
 
 
 .card {
-  @apply mb-5  block   rounded-xl border border-gray-200  shadow-2xl;
+  @apply mb-5  block   rounded-xl border border-gray-200  ;
 }
 
 .primary-button {
