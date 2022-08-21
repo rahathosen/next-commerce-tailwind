@@ -11,6 +11,8 @@ import Product from "../../models/Product";
 import db from "../../utils/db";
 // import { toast } from "react-toastify";
 import toast, { Toaster } from "react-hot-toast";
+import ProdcutReviews from "../../components/ProductReviews";
+import Recommendation from "../../components/Recommendation";
 
 const policies = [
   {
@@ -53,6 +55,7 @@ export default function ProductScreen(props) {
   return (
     <Layout title={product.name}>
       <Toaster />
+
       <div className="bg-white">
         <div className="pt-6 pb-1 sm:pb-24">
           <nav
@@ -282,6 +285,10 @@ export default function ProductScreen(props) {
                 />
               </div> */}
             </div>
+          </div>
+          <ProdcutReviews />
+          <div className="xs:mx-5 sm:mx-5">
+            <Recommendation />
           </div>
         </div>
       </div>
