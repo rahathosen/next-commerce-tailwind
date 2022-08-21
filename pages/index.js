@@ -5,6 +5,7 @@ import { Reviews } from "../components/Reviews";
 import Incentives from "../components/Incentives";
 import { useRouter } from "next/router";
 import Hero from "../components/Hero";
+import HeroModel from "../components/HeroModel";
 import axios from "axios";
 // import { toast } from "react-toastify";
 import toast, { Toaster } from "react-hot-toast";
@@ -89,19 +90,38 @@ export default function Home({ products }) {
         <meta name="description" content="Online Shop" />
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
+      <HeroModel />
       <Hero />
-      <PromoSection />
-      <div className="relative mt-8 grid grid-cols-1 gap-y-12 xs:px-6 sm:grid-cols-2 sm:gap-x-6 sm:px-10 lg:grid-cols-4 xl:gap-x-8">
-        {products.map((product) => (
-          <ProductItem
-            addToCartHandler={addToCartHandler}
-            product={product}
-            key={product.slug}
-          />
-        ))}
+
+      <div>
+        <div className="xs:px-6 sm:px-10  md:flex md:items-center md:justify-between">
+          <h2
+            id="favorites-heading"
+            className="text-2xl font-extrabold tracking-tight text-gray-500"
+          >
+            Trending Products
+          </h2>
+          <a
+            href="#"
+            className="hidden text-sm font-medium text-sky-600 hover:text-sky-500 md:block"
+          >
+            Shop the collection<span aria-hidden="true"> &rarr;</span>
+          </a>
+        </div>
+        <div className="relative mt-8 grid grid-cols-1 gap-y-12 xs:px-6 sm:grid-cols-2 sm:gap-x-6 sm:px-10 lg:grid-cols-4 xl:gap-x-8">
+          {products.map((product) => (
+            <ProductItem
+              addToCartHandler={addToCartHandler}
+              product={product}
+              key={product.slug}
+            />
+          ))}
+        </div>
       </div>
 
+      <PromoSection />
       <Reviews />
+
       <Incentives />
     </Layout>
   );
