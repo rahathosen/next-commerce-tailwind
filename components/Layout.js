@@ -42,7 +42,7 @@ export default function Layout({ title, children }) {
       <div className="flex min-h-screen flex-col justify-between py-5 ">
         <header className="sticky top-0 z-50 bg-white p-5 xs:p-1">
           <nav className=" flex  h-12 items-center  justify-between px-[35px]  ">
-            <SearchIcon className="h-6 w-6 text-stone-600"></SearchIcon>
+            <SearchIcon className="h-6 w-6 text-gray-600"></SearchIcon>
             <Link href="/">
               <div className="cursor-pointer text-3xl font-bold text-gray-700 xs:pl-6 xs:text-xl">
                 NextElite
@@ -76,7 +76,7 @@ export default function Layout({ title, children }) {
                     <Menu.Button className="font-bold text-gray-600 transition hover:text-gray-500">
                       {session.user.name}
                     </Menu.Button>
-                    <Menu.Items className="absolute right-0 z-10 w-[140px] origin-top-right rounded-md bg-gray-100 text-gray-500 shadow-lg ">
+                    <Menu.Items className="absolute right-0 z-10 w-[140px] origin-top-right rounded-md bg-white text-gray-700 shadow-lg ">
                       <Menu.Item>
                         <DropdownLink
                           className="dropdown-link "
