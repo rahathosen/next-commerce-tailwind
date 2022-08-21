@@ -7,6 +7,7 @@ import Layout from "../../components/Layout";
 import { getError } from "../../utils/error";
 import { toast } from "react-toastify";
 import { PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
+import { ExclamationIcon, CheckCircleIcon } from "@heroicons/react/solid";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -123,7 +124,12 @@ function OrderScreen() {
 
   return (
     <Layout title={`Order ${orderId}`}>
-      <h1 className="mb-4 text-xl">{`Order ID: ${orderId}`}</h1>
+      <div className="my-5 border-t border-b border-gray-200 bg-white py-5 pl-5  sm:rounded-lg sm:border">
+        <div>
+          Order ID:{" "}
+          <span className="font-semibold text-gray-700">{orderId}</span>
+        </div>
+      </div>
       {loading ? (
         <div>Loading...</div>
       ) : error ? (
@@ -133,26 +139,101 @@ function OrderScreen() {
           <div className="overflow-x-auto md:col-span-3">
             <div className="card  p-5">
               <h2 className="mb-2 text-lg">Shipping Address</h2>
-              <div>
-                {shippingAddress.fullName}, {shippingAddress.address},{" "}
-                {shippingAddress.city}, {shippingAddress.postalCode},{" "}
-                {shippingAddress.country}
+              <div className="border-t border-gray-200">
+                <dl>
+                  <div className="bg-gray-50 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt className="text-sm font-medium text-gray-500">
+                      Full name
+                    </dt>
+                    <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                      {shippingAddress.fullName}
+                    </dd>
+                  </div>
+                  <div className="bg-white px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt className="text-sm font-medium text-gray-500">City</dt>
+                    <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                      {shippingAddress.city}
+                    </dd>
+                  </div>
+                  <div className="bg-gray-50 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt className="text-sm font-medium text-gray-500">
+                      Address
+                    </dt>
+                    <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                      {shippingAddress.address}
+                    </dd>
+                  </div>
+                  <div className="bg-white px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt className="text-sm font-medium text-gray-500">
+                      Country
+                    </dt>
+                    <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                      {shippingAddress.country}
+                    </dd>
+                  </div>
+                  <div className="bg-white px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt className="text-sm font-medium text-gray-500">
+                      PostalCode
+                    </dt>
+                    <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                      {shippingAddress.postalCode}
+                    </dd>
+                  </div>
+                </dl>
               </div>
-              {isDelivered ? (
-                <div className="alert-success">Delivered at {deliveredAt}</div>
-              ) : (
-                <div className="alert-error">Not delivered</div>
-              )}
+              <div className="flex justify-end">
+                {isDelivered ? (
+                  <div className="flex items-center pt-2">
+                    <CheckCircleIcon
+                      className="h-6 w-6  text-green-500"
+                      aria-hidden="true"
+                    />
+                    <p className="ml-2  font-medium text-gray-700">
+                      Delivered at {deliveredAt}
+                    </p>
+                  </div>
+                ) : (
+                  <div className="flex items-center pt-4 pl-5">
+                    <ExclamationIcon
+                      className="h-6 w-6  text-yellow-500"
+                      aria-hidden="true"
+                    />
+                    <p className="ml-2  font-medium text-gray-700">
+                      Not delivered yet
+                    </p>
+                  </div>
+                )}
+              </div>
             </div>
 
-            <div className="card p-5">
-              <h2 className="mb-2 text-lg">Payment Method</h2>
-              <div>{paymentMethod}</div>
-              {isPaid ? (
-                <div className="alert-success">Paid at {paidAt}</div>
-              ) : (
-                <div className="alert-error">Not paid</div>
-              )}
+            <div className="card p-5 ">
+              <h2 className="mb-2 text-lg ">Payment Method</h2>
+              <div className="border-t border-gray-200 py-1">
+                <div>{paymentMethod}</div>
+                <div className="flex justify-end">
+                  {isPaid ? (
+                    <div className="flex items-center pt-2">
+                      <CheckCircleIcon
+                        className="h-6 w-6  text-green-500"
+                        aria-hidden="true"
+                      />
+                      <p className="ml-2  font-medium text-gray-700">
+                        Paid at {paidAt}
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="flex items-center pt-4 pl-5">
+                      <ExclamationIcon
+                        className="h-6 w-6  text-yellow-500"
+                        aria-hidden="true"
+                      />
+                      <p className="ml-2  font-medium text-gray-700">
+                        Not Paid yet
+                      </p>
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
 
             <div className="card overflow-x-auto p-5">
@@ -197,6 +278,7 @@ function OrderScreen() {
           <div>
             <div className="card  p-5">
               <h2 className="mb-2 text-lg">Order Summary</h2>
+              <div className="border-t border-gray-200 py-1"></div>
               <ul>
                 <li>
                   <div className="mb-2 flex justify-between">
