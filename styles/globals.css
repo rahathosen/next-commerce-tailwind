@@ -83,3 +83,6 @@ textarea{
 .dropdown-link{
 	@apply flex p-2 hover:bg-gray-200 rounded-md ;
 }
+.sidebar-link{
+	@apply flex  hover:text-gray-600 text-base font-semibold text-gray-800 ;
+}
