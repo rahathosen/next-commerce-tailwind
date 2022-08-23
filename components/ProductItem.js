@@ -20,7 +20,7 @@ import Image from "next/image";
 export default function ProductItem({ product, addToCartHandler }) {
   return (
     <>
-      <div className="bg-white">
+      <div className="rounded-md bg-white hover:drop-shadow-2xl">
         <div>
           <div className="relative">
             <div className="relative h-72 w-full overflow-hidden rounded-t-lg">
@@ -47,7 +47,7 @@ export default function ProductItem({ product, addToCartHandler }) {
               </p>
             </div>
           </div>
-          <div className="  p-2 hover:drop-shadow-md">
+          <div className="  p-2 ">
             <div className="flex flex-row items-center justify-between">
               <div className="relative mt-4">
                 <h3 className="text-sm font-medium text-gray-900">
@@ -55,7 +55,7 @@ export default function ProductItem({ product, addToCartHandler }) {
                 </h3>
                 <p className="mt-1 text-sm text-gray-500">{product.brand}</p>
               </div>
-              <div className="cursor-pointer underline">
+              <div className="cursor-pointer text-xs font-semibold text-gray-500 underline">
                 <Link href={`/product/${product.slug}`}>
                   <a href={product.href}>Details</a>
                 </Link>
