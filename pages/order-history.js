@@ -103,7 +103,7 @@ function OrderHistoryScreen() {
                       {orders.map((order) => (
                         <tr key={order._id}>
                           <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
-                            {order._id.substring(20, 24)}
+                            {order._id.substring(20, 15)}
                           </td>
                           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                             {order.createdAt.substring(0, 10)}
@@ -112,9 +112,15 @@ function OrderHistoryScreen() {
                             ${order.totalPrice}
                           </td>
                           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                            {order.isPaid
-                              ? `${order.paidAt.substring(0, 10)}`
-                              : "not paid"}
+                            {order.isPaid ? (
+                              <span className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800 ">
+                                {order.paidAt.substring(0, 10)}
+                              </span>
+                            ) : (
+                              <span className="inline-flex rounded-full bg-yellow-100 px-2 text-xs font-semibold leading-5 text-yellow-800 ">
+                                not paid
+                              </span>
+                            )}
                           </td>
                           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                             {order.isDelivered
