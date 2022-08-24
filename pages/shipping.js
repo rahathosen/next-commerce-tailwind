@@ -185,7 +185,7 @@ export default function ShippingScreen() {
                   className={({ checked, active }) =>
                     classNames(
                       checked ? "border-transparent" : "border-gray-300",
-                      active ? "ring-2 ring-amber-500" : "",
+                      active ? "ring-2 ring-cyan-500" : "",
                       "relative flex cursor-pointer rounded-lg border bg-white p-4 shadow-sm focus:outline-none"
                     )
                   }
@@ -216,14 +216,14 @@ export default function ShippingScreen() {
                       </div>
                       {checked ? (
                         <CheckCircleIcon
-                          className="h-5 w-5 text-amber-700"
+                          className="h-5 w-5 text-cyan-700"
                           aria-hidden="true"
                         />
                       ) : null}
                       <div
                         className={classNames(
                           active ? "border" : "border-2",
-                          checked ? "border-amber-600" : "border-transparent",
+                          checked ? "border-cyan-600" : "border-transparent",
                           "pointer-events-none absolute -inset-px rounded-lg"
                         )}
                         aria-hidden="true"
