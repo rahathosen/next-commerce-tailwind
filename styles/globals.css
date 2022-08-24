@@ -65,14 +65,13 @@ a {
 }
 
 /* paid and unpaid button */
-.paid-success-button {
+/* .paid-success-button {
 	@apply px-1 bg-emerald-100 hover:bg-emerald-300 rounded-xl   text-emerald-600;
 
 }
 .unpaid-success-button {
 	@apply px-1  bg-yellow-100 hover:bg-yellow-300 rounded-xl  text-yellow-600;
-
-}
+} */
 /* Info badge */
 .info-badge {
 	@apply  px-2 py-1 bg-blue-200 hover:bg-blue-300 rounded-full text-sm font-semibold text-blue-600;
