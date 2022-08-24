@@ -29,7 +29,7 @@ const data = {
       description: "A popular shirt",
     },
     {
-      name: "white T Shirt",
+      name: "White T Shirt",
       slug: "white-t-shirt",
       category: "Shirts",
       image: "/images/t_shart.jpg",
