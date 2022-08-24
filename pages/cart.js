@@ -6,10 +6,15 @@ import Layout from "../components/Layout";
 import { Store } from "../utils/Store";
 import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
-import { QuestionMarkCircleIcon, XIcon } from "@heroicons/react/solid";
+import {
+  QuestionMarkCircleIcon,
+  XIcon,
+  UserCircleIcon,
+} from "@heroicons/react/solid";
 import axios from "axios";
 // import { toast } from "react-toastify";
 import toast, { Toaster } from "react-hot-toast";
+import { useSession } from "next-auth/react";
 
 const tax = 5;
 const shipping = 8.43;
@@ -57,6 +62,7 @@ const relatedProducts = [
 ];
 
 function CartScreen() {
+  const { status, data: session } = useSession();
   const { state, dispatch } = useContext(Store);
   const {
     cart: { cartItems },
@@ -262,7 +268,15 @@ function CartScreen() {
                   <div className="mt-6">
                     <button
                       onClick={() => {
-                        router.push("login?redirect=/shipping");
+                        {
+                          status === "loading" ? (
+                            <UserCircleIcon className="h-6 w-6"></UserCircleIcon>
+                          ) : session?.user ? (
+                            router.push("shipping")
+                          ) : (
+                            router.push("login?redirect=/shipping")
+                          );
+                        }
                       }}
                       className="w-full rounded-md border border-transparent bg-black py-3 px-4 text-base font-medium text-white shadow-sm hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-50"
                     >
