@@ -279,7 +279,7 @@ export default function Nav() {
                         <UserCircleIcon className="h-6 w-6"></UserCircleIcon>
                       ) : session?.user ? (
                         <Menu as="div" className="relative inline-block">
-                          <Menu.Button className="font-bold text-gray-600 transition hover:text-gray-500">
+                          <Menu.Button className="text-sm font-medium text-black transition hover:text-gray-600">
                             {session.user.name}
                           </Menu.Button>
                           <Menu.Items className="absolute right-0 z-10 w-[140px] origin-top-right rounded-md bg-white text-gray-700 shadow-lg ">
@@ -330,7 +330,7 @@ export default function Nav() {
                       )}
 
                       <div className="flex lg:ml-6">
-                        <a className="p-2 text-gray-400 hover:text-gray-500">
+                        <a className="p-2 text-gray-800 hover:text-gray-600">
                           <span className="sr-only">Search</span>
                           <SearchIcon className="h-6 w-6" aria-hidden="true" />
                         </a>
