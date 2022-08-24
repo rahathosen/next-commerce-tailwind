@@ -201,7 +201,7 @@ export default function Nav() {
       {/* Top navigation end */}
 
       {/* Header */}
-      <header className="sticky top-0 z-10">
+      <header className="sticky top-0 z-10 shadow-md">
         <nav aria-label="Top">
           {/* Secondary navigation */}
           <div className="bg-white bg-opacity-70 backdrop-blur-md backdrop-filter">

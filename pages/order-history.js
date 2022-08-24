@@ -129,7 +129,7 @@ function OrderHistoryScreen() {
                           </td>
                           <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-center text-sm font-medium sm:pr-6">
                             <Link href={`/order/${order._id}`} passHref>
-                              <a className="text-sky-600 hover:text-sky-900">
+                              <a className="text-cyan-600 hover:text-cyan-900">
                                 View details
                               </a>
                             </Link>
