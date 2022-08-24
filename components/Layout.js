@@ -15,9 +15,7 @@ export default function Layout({ title, children }) {
       <Nav />
       <ToastContainer position="bottom-center" limit={1} />
       <div className="flex min-h-screen flex-col justify-between py-5 ">
-        <main className="container m-auto mt-4 md:mx-8 md:pb-7 ">
-          {children}
-        </main>
+        <main className="container m-auto  ">{children}</main>
         {/* <main className="  md:pb-7 ">{children}</main> */}
         <Footer />
       </div>
