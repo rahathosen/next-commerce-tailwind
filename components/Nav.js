@@ -9,6 +9,9 @@ import DropdownLink from "./DropdownLink";
 import Cookies from "js-cookie";
 import { Fragment, useState } from "react";
 import { Dialog, Popover, Transition } from "@headlessui/react";
+
+// import Men from "../pages/men";
+
 import {
   MenuIcon,
   SearchIcon,
@@ -18,10 +21,10 @@ import {
 } from "@heroicons/react/outline";
 const navigation = {
   pages: [
-    { name: "Men", href: "#" },
-    { name: "Watch", href: "#" },
-    { name: "Cloth", href: "#" },
-    { name: "Perfume", href: "#" },
+    { name: "Men", href: "/men" },
+    { name: "Watch", href: "/watch" },
+    { name: "Cloth", href: "/cloth" },
+    { name: "Perfume", href: "/men" },
   ],
 };
 const currencies = ["BN", "US"];
@@ -86,12 +89,11 @@ export default function Nav() {
               <div className="space-y-6 border-t border-gray-200 py-6 px-4">
                 {navigation.pages.map((page) => (
                   <div key={page.name} className="flow-root">
-                    <a
-                      href={page.href}
-                      className="-m-2 block p-2 font-medium text-gray-900"
-                    >
-                      {page.name}
-                    </a>
+                    <Link href={page.href}>
+                      <a className="-m-2 block p-2 font-medium text-gray-900">
+                        {page.name}
+                      </a>
+                    </Link>
                   </div>
                 ))}
               </div>
@@ -230,13 +232,11 @@ export default function Nav() {
                     <Popover.Group className="inset-x-0 bottom-0 px-4">
                       <div className="flex h-full justify-center space-x-8">
                         {navigation.pages.map((page) => (
-                          <a
-                            key={page.name}
-                            href={page.href}
-                            className="flex items-center text-sm font-medium text-black"
-                          >
-                            {page.name}
-                          </a>
+                          <Link href={page.href} key={page.name}>
+                            <a className="flex items-center text-sm font-medium text-black">
+                              {page.name}
+                            </a>
+                          </Link>
                         ))}
                       </div>
                     </Popover.Group>
@@ -269,7 +269,9 @@ export default function Nav() {
                       className="h-8 w-auto"
                     /> */}
                     <Link href="/">
-                      <h4 className="text-xl font-bold">NextElite</h4>
+                      <h4 className="cursor-pointer text-xl font-bold">
+                        NextElite
+                      </h4>
                     </Link>
                   </a>
 
