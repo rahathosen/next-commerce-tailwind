@@ -213,14 +213,14 @@ export default function ProfileScreen() {
               </div>
             </div>
           </div>
-        </div>
-        <div className="py-5">
-          <button
-            type="submit"
-            className="flex w-full items-center justify-center rounded-md border border-transparent bg-black py-2 px-4 text-base font-medium text-white hover:bg-gray-700 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
-          >
-            update
-          </button>
+          <div className="py-5">
+            <button
+              type="submit"
+              className="flex w-full items-center justify-center rounded-md border border-transparent bg-black py-2 px-4 text-base font-medium text-white hover:bg-gray-700 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+            >
+              update
+            </button>
+          </div>
         </div>
         {/*  */}
       </form>
