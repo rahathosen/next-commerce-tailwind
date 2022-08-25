@@ -1,4 +1,4 @@
-import axios from "axios";
+// import axios from "axios";
 import Link from "next/link";
 // import { Bar } from "react-chartjs-2";
 
@@ -11,9 +11,9 @@ import Link from "next/link";
 //   Tooltip,
 //   Legend,
 // } from "chart.js";
-import React, { useEffect, useReducer } from "react";
+// import React, { useEffect, useReducer } from "react";
 import Layout from "../../components/Layout";
-import { getError } from "../../utils/error";
+// import { getError } from "../../utils/error";
 
 function AdminDashboardScreen() {
   return (
