@@ -100,48 +100,51 @@ function OrderHistoryScreen() {
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-200 bg-white">
-                      {orders.map((order) => (
-                        <tr key={order._id}>
-                          <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
-                            {order._id.substring(20, 15)}
-                          </td>
-                          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                            {order.createdAt.substring(0, 10)}
-                          </td>
-                          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                            ${order.totalPrice}
-                          </td>
-                          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                            {order.isPaid ? (
-                              <span className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800 ">
-                                {order.paidAt.substring(0, 10)}
-                              </span>
-                            ) : (
-                              <span className="inline-flex rounded-full bg-yellow-100 px-2 text-xs font-semibold leading-5 text-yellow-800 ">
-                                not paid
-                              </span>
-                            )}
-                          </td>
-                          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                            {order.isDelivered ? (
-                              <span className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800 ">
-                                {order.deliveredAt.substring(0, 10)}
-                              </span>
-                            ) : (
-                              <span className="inline-flex rounded-full bg-yellow-100 px-2 text-xs font-semibold leading-5 text-yellow-800 ">
-                                not Delivered
-                              </span>
-                            )}
-                          </td>
-                          <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-center text-sm font-medium sm:pr-6">
-                            <Link href={`/order/${order._id}`} passHref>
-                              <a className="text-cyan-600 hover:text-cyan-900">
-                                View details
-                              </a>
-                            </Link>
-                          </td>
-                        </tr>
-                      ))}
+                      {orders
+                        .slice(0)
+                        .reverse()
+                        .map((order) => (
+                          <tr key={order._id}>
+                            <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
+                              {order._id.substring(20, 15)}
+                            </td>
+                            <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                              {order.createdAt.substring(0, 10)}
+                            </td>
+                            <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                              ${order.totalPrice}
+                            </td>
+                            <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                              {order.isPaid ? (
+                                <span className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800 ">
+                                  {order.paidAt.substring(0, 10)}
+                                </span>
+                              ) : (
+                                <span className="inline-flex rounded-full bg-yellow-100 px-2 text-xs font-semibold leading-5 text-yellow-800 ">
+                                  not paid
+                                </span>
+                              )}
+                            </td>
+                            <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                              {order.isDelivered ? (
+                                <span className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800 ">
+                                  {order.deliveredAt.substring(0, 10)}
+                                </span>
+                              ) : (
+                                <span className="inline-flex rounded-full bg-yellow-100 px-2 text-xs font-semibold leading-5 text-yellow-800 ">
+                                  not Delivered
+                                </span>
+                              )}
+                            </td>
+                            <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-center text-sm font-medium sm:pr-6">
+                              <Link href={`/order/${order._id}`} passHref>
+                                <a className="text-cyan-600 hover:text-cyan-900">
+                                  View details
+                                </a>
+                              </Link>
+                            </td>
+                          </tr>
+                        ))}
                     </tbody>
                   </table>
                 </div>

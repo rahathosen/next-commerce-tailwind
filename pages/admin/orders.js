@@ -80,33 +80,36 @@ export default function AdminOrderScreen() {
                   </tr>
                 </thead>
                 <tbody>
-                  {orders.map((order) => (
-                    <tr key={order._id} className="border-b">
-                      <td className="p-5">{order._id.substring(20, 24)}</td>
-                      <td className="p-5">
-                        {order.user ? order.user.name : "DELETED USER"}
-                      </td>
-                      <td className="p-5">
-                        {order.createdAt.substring(0, 10)}
-                      </td>
-                      <td className="p-5">${order.totalPrice}</td>
-                      <td className="p-5">
-                        {order.isPaid
-                          ? `${order.paidAt.substring(0, 10)}`
-                          : "not paid"}
-                      </td>
-                      <td className="p-5">
-                        {order.isDelivered
-                          ? `${order.deliveredAt.substring(0, 10)}`
-                          : "not delivered"}
-                      </td>
-                      <td className="p-5">
-                        <Link href={`/order/${order._id}`} passHref>
-                          <a>Details</a>
-                        </Link>
-                      </td>
-                    </tr>
-                  ))}
+                  {orders
+                    .slice(0)
+                    .reverse()
+                    .map((order) => (
+                      <tr key={order._id} className="border-b">
+                        <td className="p-5">{order._id.substring(20, 24)}</td>
+                        <td className="p-5">
+                          {order.user ? order.user.name : "DELETED USER"}
+                        </td>
+                        <td className="p-5">
+                          {order.createdAt.substring(0, 10)}
+                        </td>
+                        <td className="p-5">${order.totalPrice}</td>
+                        <td className="p-5">
+                          {order.isPaid
+                            ? `${order.paidAt.substring(0, 10)}`
+                            : "not paid"}
+                        </td>
+                        <td className="p-5">
+                          {order.isDelivered
+                            ? `${order.deliveredAt.substring(0, 10)}`
+                            : "not delivered"}
+                        </td>
+                        <td className="p-5">
+                          <Link href={`/order/${order._id}`} passHref>
+                            <a>Details</a>
+                          </Link>
+                        </td>
+                      </tr>
+                    ))}
                 </tbody>
               </table>
             </div>
