@@ -24,7 +24,7 @@ const navigation = {
     { name: "Men", href: "/men" },
     { name: "Watch", href: "/watch" },
     { name: "Cloth", href: "/cloth" },
-    { name: "Perfume", href: "/men" },
+    { name: "Perfume", href: "/perfume" },
   ],
 };
 const currencies = ["BN", "US"];
