@@ -43,9 +43,9 @@ function OrderHistoryScreen() {
       ) : error ? (
         <div className="alert-error">{error}</div>
       ) : (
-        <div className="px-4 sm:px-6 lg:px-8">
+        <div className="px-4 pb-[50px] sm:px-6 lg:px-8">
           <div className="sm:flex sm:items-center">
-            <div className="sm:flex-auto">
+            <div className="pb-4 sm:flex-auto">
               <h1 className="text-xl font-semibold text-gray-900">
                 Order History
               </h1>
