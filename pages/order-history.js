@@ -123,9 +123,15 @@ function OrderHistoryScreen() {
                             )}
                           </td>
                           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                            {order.isDelivered
-                              ? `${order.deliveredAt.substring(0, 10)}`
-                              : "not delivered"}
+                            {order.isDelivered ? (
+                              <span className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800 ">
+                                {order.deliveredAt.substring(0, 10)}
+                              </span>
+                            ) : (
+                              <span className="inline-flex rounded-full bg-yellow-100 px-2 text-xs font-semibold leading-5 text-yellow-800 ">
+                                not Delivered
+                              </span>
+                            )}
                           </td>
                           <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-center text-sm font-medium sm:pr-6">
                             <Link href={`/order/${order._id}`} passHref>
