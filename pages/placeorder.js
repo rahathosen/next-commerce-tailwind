@@ -227,7 +227,7 @@ export default function PlaceOrderScreen() {
                                 ${item.quantity * item.price}
                               </td>
                               <td className="whitespace-nowrap py-6 text-right font-medium">
-                                <a href={item.href} className="text-indigo-600">
+                                <a className="text-cyan-600">
                                   <Link href={`/product/${item.slug}`}>
                                     View
                                     {/* <span className="hidden lg:inline">

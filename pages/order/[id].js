@@ -1,6 +1,6 @@
 import axios from "axios";
-import Image from "next/image";
-import Link from "next/link";
+// import Image from "next/image";
+// import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useReducer } from "react";
 import Layout from "../../components/Layout";
@@ -285,18 +285,46 @@ function OrderScreen() {
             </div>
 
             <div className="card overflow-x-auto p-5">
-              <h2 className="mb-2 text-lg">Order Items</h2>
+              <h2 className="mb-2 text-lg text-gray-500">Order Items</h2>
               <table className="min-w-full">
-                <thead className="border-b">
+                <thead className="border-b text-sm text-gray-500">
                   <tr>
                     <th className="px-5 text-left">Item</th>
                     <th className="    p-5 text-right">Quantity</th>
-                    <th className="  p-5 text-right">Price</th>
+                    <th className="p-5  text-right">Price</th>
                     <th className="p-5 text-right">Subtotal</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody className="divide-y divide-gray-200 border-b border-gray-200 text-sm sm:border-t">
                   {orderItems.map((item) => (
+                    <tr key={item._id}>
+                      <td className="py-6 pr-8">
+                        <div className="flex items-center">
+                          <img
+                            src={item.image}
+                            alt={item.name}
+                            className="mr-6 h-16 w-16 rounded object-cover object-center"
+                          />
+                          <div>
+                            <div className="font-medium text-gray-900">
+                              {item.name}
+                            </div>
+                            {/* <div className="mt-1 sm:hidden">${item.price}</div> */}
+                          </div>
+                        </div>
+                      </td>
+                      <td className=" py-6 pr-8 text-right xs:text-center sm:table-cell">
+                        {item.quantity}
+                      </td>
+                      <td className=" py-6 pr-8 text-right xs:text-center sm:table-cell">
+                        ${item.price}
+                      </td>
+                      <td className=" py-6 pr-8 text-right xs:text-center sm:table-cell">
+                        ${item.quantity * item.price}
+                      </td>
+                    </tr>
+                  ))}
+                  {/* {orderItems.map((item) => (
                     <tr key={item._id} className="border-b">
                       <td>
                         <Link href={`/product/${item.slug}`}>
@@ -318,7 +346,7 @@ function OrderScreen() {
                         ${item.quantity * item.price}
                       </td>
                     </tr>
-                  ))}
+                  ))} */}
                 </tbody>
               </table>
             </div>
