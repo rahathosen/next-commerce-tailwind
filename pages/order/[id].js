@@ -1,6 +1,6 @@
 import axios from "axios";
-import Image from "next/image";
-import Link from "next/link";
+// import Image from "next/image";
+// import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useReducer } from "react";
 import Layout from "../../components/Layout";
