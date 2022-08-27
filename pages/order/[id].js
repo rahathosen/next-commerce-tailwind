@@ -89,6 +89,9 @@ function OrderScreen() {
       if (successPay) {
         dispatch({ type: "PAY_RESET" });
       }
+      if (successDeliver) {
+        dispatch({ type: "DELIVER_RESET" });
+      }
     } else {
       const loadPaypalScript = async () => {
         const { data: clientId } = await axios.get("/api/keys/paypal");
