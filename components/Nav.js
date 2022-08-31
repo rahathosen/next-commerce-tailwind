@@ -10,8 +10,6 @@ import Cookies from "js-cookie";
 import { Fragment, useState } from "react";
 import { Dialog, Popover, Transition } from "@headlessui/react";
 
-// import Men from "../pages/men";
-
 import {
   MenuIcon,
   SearchIcon,
