@@ -258,7 +258,7 @@ export default function Nav() {
                           type="text"
                           name="search"
                           placeholder="search"
-                          className="w-[85px] rounded-lg border border-t-0 border-r-0  border-l-0 border-b-0 bg-white px-4 py-2  text-gray-800 drop-shadow-md duration-500  focus:w-full focus:border-t-0 focus:border-r-0 focus:border-l-0 focus:border-gray-600 
+                          className="w-[85px] rounded-lg border border-t-0 border-r-0  border-l-0 border-b-0 bg-white px-4 py-2  text-gray-800 drop-shadow-sm duration-500  focus:w-full focus:border-t-0 focus:border-r-0 focus:border-l-0 focus:border-gray-600 
             focus:outline-none focus:outline-0 focus:ring-transparent"
                         />
                       </form>
