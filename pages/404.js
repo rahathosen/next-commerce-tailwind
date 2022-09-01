@@ -37,14 +37,14 @@ export default function Custom404() {
                 wrong. Can you double check that URL?
               </p>
               <div className="sm:mx[0px] mx-[100px] flex flex-row xs:mx-[0px] ">
-                <Link href="/contact">
-                  <a className="mx-auto w-[125px] rounded-md bg-gray-200 p-1 text-center font-bold text-black hover:bg-gray-300  sm:p-4 md:w-40">
-                    Contact Us
-                  </a>
-                </Link>
                 <Link href="/">
                   <a className="mx-auto w-[125px] rounded-md bg-gray-200 p-1 text-center font-bold text-black hover:bg-gray-300  sm:p-4 md:w-40">
-                    Return Home
+                    return home
+                  </a>
+                </Link>
+                <Link href="/contact">
+                  <a className="mx-auto w-[125px] rounded-md bg-gray-200 p-1 text-center font-bold text-black hover:bg-gray-300  sm:p-4 md:w-40">
+                    contact us
                   </a>
                 </Link>
               </div>
