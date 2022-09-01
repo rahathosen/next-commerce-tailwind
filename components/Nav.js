@@ -253,13 +253,22 @@ export default function Nav() {
 
                     {/* Search */}
                     <div className="">
-                      <form action="" className="relative mx-auto w-max">
+                      <form>
+                        <input
+                          type="text"
+                          name="search"
+                          placeholder="search"
+                          className="w-[85px] border border-t-0 border-r-0 border-l-0 bg-white px-5  py-3 text-gray-800 duration-500  focus:w-full focus:border-t-0 focus:border-r-0 focus:border-l-0 focus:border-gray-600 
+            focus:outline-none focus:outline-0 focus:ring-transparent"
+                        />
+                      </form>
+                      {/* <form action="" className="relative  z-10 mx-auto w-max">
                         <input
                           type="search"
-                          className="peer relative z-10 h-6 w-6 cursor-pointer rounded-2xl border border-gray-50 bg-transparent pl-12 outline-none focus:mr-1 focus:w-min focus:cursor-text focus:border-gray-300 focus:pl-8"
+                          className="peer relative z-10 h-6 w-6 cursor-pointer rounded-2xl border border-transparent bg-transparent pl-12 outline-none focus:mr-1 focus:w-min focus:cursor-text focus:border-gray-300 focus:pl-8"
                         />
                         <SearchIcon className="absolute inset-y-0 my-auto  h-10 w-12 border-r border-transparent stroke-gray-700 pl-[12px] pr-[12px]" />
-                      </form>
+                      </form> */}
                     </div>
 
                     {/* <a href="#" className="ml-2 p-2 text-gray-800">
