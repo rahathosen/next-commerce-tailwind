@@ -252,10 +252,20 @@ export default function Nav() {
                     </button>
 
                     {/* Search */}
-                    <a href="#" className="ml-2 p-2 text-gray-800">
+                    <div className="">
+                      <form action="" className="relative mx-auto w-max">
+                        <input
+                          type="search"
+                          className="peer relative z-10 h-6 w-6 cursor-pointer rounded-2xl border border-gray-50 bg-transparent pl-12 outline-none focus:mr-1 focus:w-min focus:cursor-text focus:border-gray-300 focus:pl-8"
+                        />
+                        <SearchIcon className="absolute inset-y-0 my-auto  h-10 w-12 border-r border-transparent stroke-gray-700 pl-[12px] pr-[12px]" />
+                      </form>
+                    </div>
+
+                    {/* <a href="#" className="ml-2 p-2 text-gray-800">
                       <span className="sr-only">Search</span>
                       <SearchIcon className="h-6 w-6" aria-hidden="true" />
-                    </a>
+                    </a> */}
                   </div>
 
                   {/* Logo (lg-) */}
@@ -275,6 +285,16 @@ export default function Nav() {
 
                   <div className="flex flex-1 items-center justify-end">
                     <div className="lg:flex-2 hidden lg:flex lg:items-center lg:justify-end lg:space-x-6">
+                      {/* Search box */}
+
+                      <div className="flex lg:ml-6">
+                        <a className="p-2 text-gray-800 hover:text-gray-600">
+                          <span className="sr-only">Search</span>
+                          <SearchIcon className="h-6 w-6" aria-hidden="true" />
+                        </a>
+                      </div>
+
+                      {/* Search box end */}
                       {status === "loading" ? (
                         <span className="inline-block h-8 w-8 overflow-hidden rounded-full bg-gray-100">
                           <svg
@@ -350,13 +370,6 @@ export default function Nav() {
                           </Link>
                         </div>
                       )}
-
-                      <div className="flex lg:ml-6">
-                        <a className="p-2 text-gray-800 hover:text-gray-600">
-                          <span className="sr-only">Search</span>
-                          <SearchIcon className="h-6 w-6" aria-hidden="true" />
-                        </a>
-                      </div>
                     </div>
 
                     <div className="flex items-center lg:ml-0">
