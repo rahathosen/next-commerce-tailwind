@@ -14,6 +14,24 @@ import toast, { Toaster } from "react-hot-toast";
 import ProdcutReviews from "../../components/ProductReviews";
 import Recommendation from "../../components/Recommendation";
 
+// image blur
+// Pixel GIF code adapted from https://stackoverflow.com/a/33919020/266535
+const keyStr =
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+
+const triplet = (e1, e2, e3) =>
+  keyStr.charAt(e1 >> 2) +
+  keyStr.charAt(((e1 & 3) << 4) | (e2 >> 4)) +
+  keyStr.charAt(((e2 & 15) << 2) | (e3 >> 6)) +
+  keyStr.charAt(e3 & 63);
+
+const rgbDataURL = (r, g, b) =>
+  `data:image/gif;base64,R0lGODlhAQABAPAA${
+    triplet(0, r, g) + triplet(b, 255, 255)
+  }/iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM8Xg8AAhMBSIC+ZFkAAAAASUVORK5CYII=`;
+
+// image blur
+
 const policies = [
   {
     name: "International delivery",
@@ -177,6 +195,8 @@ export default function ProductScreen(props) {
                   <Image
                     src={product.image}
                     alt={product.name}
+                    placeholder="blur"
+                    blurDataURL={rgbDataURL(2, 129, 210)}
                     width={640}
                     height={640}
                     className={classNames(
