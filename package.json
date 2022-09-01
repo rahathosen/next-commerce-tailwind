@@ -15,6 +15,7 @@
     "axios": "^0.27.2",
     "bcryptjs": "^2.4.3",
     "chart.js": "^3.9.1",
+    "cloudinary": "^1.31.0",
     "clsx": "^1.1.1",
     "focus-visible": "^5.2.0",
     "framer-motion": "^6.5.1",
