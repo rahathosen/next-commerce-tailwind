@@ -105,12 +105,12 @@ export default function Nav() {
                     className="space-y-6 border-t border-gray-200 py-6 px-4"
                   >
                     <Menu.Button className="font-bold text-gray-600 transition hover:text-gray-500">
-                      {session.user.name}
+                      {session.user.name.split(" ")}
                     </Menu.Button>
                     <Menu.Items className=" space-y-6 border-t border-gray-200 py-3 px-4 ">
                       <Menu.Item>
                         <DropdownLink className="sidebar-link " href="/profile">
-                          Profile
+                          account
                         </DropdownLink>
                       </Menu.Item>
                       <Menu.Item>
@@ -118,7 +118,7 @@ export default function Nav() {
                           className="sidebar-link"
                           href="/order-history"
                         >
-                          Order History
+                          order history
                         </DropdownLink>
                       </Menu.Item>
                       <Menu.Item>
@@ -127,7 +127,7 @@ export default function Nav() {
                           href="#"
                           onClick={logoutClickHandler}
                         >
-                          Logout
+                          logout
                         </a>
                       </Menu.Item>
                     </Menu.Items>
@@ -276,19 +276,31 @@ export default function Nav() {
                   <div className="flex flex-1 items-center justify-end">
                     <div className="lg:flex-2 hidden lg:flex lg:items-center lg:justify-end lg:space-x-6">
                       {status === "loading" ? (
-                        <UserCircleIcon className="h-6 w-6"></UserCircleIcon>
+                        <span className="inline-block h-8 w-8 overflow-hidden rounded-full bg-gray-100">
+                          <svg
+                            className="h-full w-full text-gray-300"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+                          </svg>
+                        </span>
                       ) : session?.user ? (
                         <Menu as="div" className="relative inline-block">
                           <Menu.Button className="text-sm font-medium text-black transition hover:text-gray-600">
-                            {session.user.name}
+                            <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-gray-500">
+                              <span className="text-sm font-medium leading-none text-white">
+                                {session.user.name.slice(0, 2)}
+                              </span>
+                            </span>
                           </Menu.Button>
-                          <Menu.Items className="absolute right-0 z-10 w-[140px] origin-top-right rounded-md bg-white text-gray-700 shadow-lg ">
+                          <Menu.Items className="absolute right-0 z-10 w-[140px] origin-top-right rounded-md bg-white text-gray-700 drop-shadow-2xl ">
                             <Menu.Item>
                               <DropdownLink
                                 className="dropdown-link "
                                 href="/profile"
                               >
-                                Profile
+                                account
                               </DropdownLink>
                             </Menu.Item>
                             <Menu.Item>
@@ -296,7 +308,7 @@ export default function Nav() {
                                 className="dropdown-link"
                                 href="/order-history"
                               >
-                                Order History
+                                order history
                               </DropdownLink>
                             </Menu.Item>
                             {session.user.isAdmin && (
@@ -305,7 +317,7 @@ export default function Nav() {
                                   className="dropdown-link"
                                   href="/admin/dashboard"
                                 >
-                                  Admin Dashboard
+                                  admin dashboard
                                 </DropdownLink>
                               </Menu.Item>
                             )}
@@ -315,7 +327,7 @@ export default function Nav() {
                                 href="#"
                                 onClick={logoutClickHandler}
                               >
-                                Logout
+                                logout
                               </a>
                             </Menu.Item>
                           </Menu.Items>
