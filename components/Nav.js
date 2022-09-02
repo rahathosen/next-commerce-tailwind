@@ -85,6 +85,15 @@ export default function Nav() {
               {/* Links */}
 
               <div className="space-y-6 border-t border-gray-200 py-6 px-4">
+                <form>
+                  <input
+                    type="text"
+                    name="search"
+                    placeholder="search"
+                    className="w-[85px] rounded-lg border border-gray-500 bg-white px-4 py-2  text-gray-800 drop-shadow-sm duration-500  focus:w-full  focus:border-gray-600 
+            focus:ring-transparent"
+                  />
+                </form>
                 {navigation.pages.map((page) => (
                   <div key={page.name} className="flow-root">
                     <Link href={page.href}>
@@ -253,15 +262,6 @@ export default function Nav() {
 
                     {/* Search */}
                     <div className="">
-                      <form>
-                        <input
-                          type="text"
-                          name="search"
-                          placeholder="search"
-                          className="w-[85px] rounded-lg border border-t-0 border-r-0  border-l-0 border-b-0 bg-white px-4 py-2  text-gray-800 drop-shadow-sm duration-500  focus:w-full focus:border-t-0 focus:border-r-0 focus:border-l-0 focus:border-gray-600 
-            focus:outline-none focus:outline-0 focus:ring-transparent"
-                        />
-                      </form>
                       {/* <form action="" className="relative  z-10 mx-auto w-max">
                         <input
                           type="search"
