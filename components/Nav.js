@@ -105,18 +105,15 @@ export default function Nav() {
                 ))}
               </div>
               {/* sign in */}
-              <div className="space-y-6  py-6 px-4">
+              <div className="space-y-6 border-t border-gray-200 py-6 px-4">
                 {status === "loading" ? (
                   <UserCircleIcon className="h-6 w-6"></UserCircleIcon>
                 ) : session?.user ? (
-                  <Menu
-                    as="div"
-                    className="space-y-6 border-t border-gray-200 py-6 px-4"
-                  >
+                  <Menu as="div" className="">
                     <Menu.Button className="font-bold text-gray-600 transition hover:text-gray-500">
                       {session.user.name.split(" ")}
                     </Menu.Button>
-                    <Menu.Items className=" space-y-6 border-t border-gray-200 py-3 px-4 ">
+                    <Menu.Items className=" space-y-6  py-3 px-4 ">
                       <Menu.Item>
                         <DropdownLink className="sidebar-link " href="/profile">
                           account
@@ -130,19 +127,10 @@ export default function Nav() {
                           order history
                         </DropdownLink>
                       </Menu.Item>
-                      <Menu.Item>
-                        <a
-                          className="sidebar-link"
-                          href="#"
-                          onClick={logoutClickHandler}
-                        >
-                          logout
-                        </a>
-                      </Menu.Item>
                     </Menu.Items>
                   </Menu>
                 ) : (
-                  <div className="space-y-6 border-t border-gray-200 py-6 px-4">
+                  <div className="space-y-6 ">
                     <div className="flow-root">
                       <Link href="/register">
                         <a className="-m-2 block p-2 font-medium text-gray-900">
@@ -162,42 +150,20 @@ export default function Nav() {
               </div>
               {/* sign in */}
               <div className="space-y-6 border-t border-gray-200 py-6 px-4">
-                {/* Currency selector */}
-                <form>
-                  <div className="inline-block">
-                    <label htmlFor="mobile-currency" className="sr-only">
-                      Currency
-                    </label>
-                    <div className="group relative -ml-2 rounded-md border-transparent focus-within:ring-2 focus-within:ring-white">
-                      <select
-                        id="mobile-currency"
-                        name="currency"
-                        className="flex items-center rounded-md border-transparent bg-none py-0.5 pl-2 pr-5 text-sm font-medium text-gray-700 focus:border-transparent focus:outline-none focus:ring-0 group-hover:text-gray-800"
-                      >
-                        {currencies.map((currency) => (
-                          <option key={currency}>{currency}</option>
-                        ))}
-                      </select>
-                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center">
-                        <svg
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 20 20"
-                          className="h-5 w-5 text-gray-500"
-                        >
-                          <path
-                            stroke="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="1.5"
-                            d="M6 8l4 4 4-4"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </form>
+                {/* logout  */}
+                {status === "loading" ? (
+                  <UserCircleIcon className="h-6 w-6"></UserCircleIcon>
+                ) : session?.user ? (
+                  <a
+                    className="sidebar-link"
+                    href="#"
+                    onClick={logoutClickHandler}
+                  >
+                    logout
+                  </a>
+                ) : (
+                  <div></div>
+                )}
               </div>
             </div>
           </Transition.Child>
