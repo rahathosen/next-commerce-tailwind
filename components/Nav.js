@@ -110,7 +110,7 @@ export default function Nav() {
                 ) : session?.user ? (
                   <Menu as="div" className="">
                     <Menu.Button className="font-bold text-gray-900 transition hover:text-gray-700">
-                      {session.user.name.split(" ")} &#770;
+                      {session.user.name.split(" ")}
                     </Menu.Button>
                     <Menu.Items className=" space-y-6  py-3 px-4 ">
                       <Menu.Item>
