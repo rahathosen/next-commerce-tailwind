@@ -58,6 +58,11 @@ export default function AdminProdcutsScreen() {
         </div>
         <div className="overflow-x-auto md:col-span-3">
           <h1 className="mb-4 text-xl">Products</h1>
+          {/* <Link href={`/admin/create-product/`}>
+            <a type="button" className="default-button">
+              Create new Product
+            </a>
+          </Link> */}
           {loading ? (
             <div>Loading...</div>
           ) : error ? (
