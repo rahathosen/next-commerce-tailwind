@@ -109,8 +109,8 @@ export default function Nav() {
                   <UserCircleIcon className="h-6 w-6"></UserCircleIcon>
                 ) : session?.user ? (
                   <Menu as="div" className="">
-                    <Menu.Button className="font-bold text-gray-600 transition hover:text-gray-500">
-                      {session.user.name.split(" ")}
+                    <Menu.Button className="font-bold text-gray-900 transition hover:text-gray-700">
+                      {session.user.name.split(" ")} &#770;
                     </Menu.Button>
                     <Menu.Items className=" space-y-6  py-3 px-4 ">
                       <Menu.Item>
@@ -126,6 +126,16 @@ export default function Nav() {
                           order history
                         </DropdownLink>
                       </Menu.Item>
+                      {session.user.isAdmin && (
+                        <Menu.Item>
+                          <DropdownLink
+                            className="dropdown-link "
+                            href="/admin/dashboard"
+                          >
+                            admin dashboard
+                          </DropdownLink>
+                        </Menu.Item>
+                      )}
                     </Menu.Items>
                   </Menu>
                 ) : (
@@ -153,11 +163,7 @@ export default function Nav() {
                 {status === "loading" ? (
                   <UserCircleIcon className="h-6 w-6"></UserCircleIcon>
                 ) : session?.user ? (
-                  <a
-                    className="sidebar-link"
-                    href="#"
-                    onClick={logoutClickHandler}
-                  >
+                  <a className="sidebar-link" onClick={logoutClickHandler}>
                     logout
                   </a>
                 ) : (
