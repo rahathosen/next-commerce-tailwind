@@ -25,7 +25,6 @@ const navigation = {
     { name: "Perfume", href: "/perfume" },
   ],
 };
-const currencies = ["BN", "US"];
 export default function Nav() {
   const { status, data: session } = useSession();
   const { state, dispatch } = useContext(Store);
