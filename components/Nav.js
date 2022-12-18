@@ -12,7 +12,6 @@ import { Dialog, Popover, Transition } from "@headlessui/react";
 
 import {
   MenuIcon,
-  SearchIcon,
   UserCircleIcon,
   ShoppingBagIcon,
   XIcon,
@@ -267,12 +266,12 @@ export default function Nav() {
                     <div className="lg:flex-2 hidden lg:flex lg:items-center lg:justify-end lg:space-x-6">
                       {/* Search box */}
 
-                      <div className="flex lg:ml-6">
+                      {/* <div className="flex lg:ml-6">
                         <a className="p-2 text-gray-800 hover:text-gray-600">
                           <span className="sr-only">Search</span>
                           <SearchIcon className="h-6 w-6" aria-hidden="true" />
                         </a>
-                      </div>
+                      </div> */}
 
                       {/* Search box end */}
                       {status === "loading" ? (
