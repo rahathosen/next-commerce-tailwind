@@ -1,10 +1,4 @@
-import {
-  MenuIcon,
-  SearchIcon,
-  UserCircleIcon,
-  ShoppingBagIcon,
-  XIcon,
-} from "@heroicons/react/outline";
+import { SearchIcon } from "@heroicons/react/outline";
 
 const collections = [
   {

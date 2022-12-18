@@ -2,7 +2,7 @@ import Head from "next/head";
 import Layout from "../components/Layout";
 import ProductItem from "../components/ProductItem";
 import { Reviews } from "../components/Reviews";
-import Incentives from "../components/Incentives";
+// import Incentives from "../components/Incentives";
 import { useRouter } from "next/router";
 import Hero from "../components/Hero";
 import HeroModel from "../components/HeroModel";

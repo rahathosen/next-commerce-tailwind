@@ -12,7 +12,6 @@ import { Dialog, Popover, Transition } from "@headlessui/react";
 
 import {
   MenuIcon,
-  SearchIcon,
   UserCircleIcon,
   ShoppingBagIcon,
   XIcon,
