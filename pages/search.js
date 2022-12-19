@@ -103,12 +103,12 @@ export default function Search(props) {
   };
   return (
     <Layout title="search">
-      <div className="grid md:grid-cols-4 md:gap-5">
-        <div>
+      <div className="grid px-2 text-sm md:grid-cols-4 md:gap-5 md:px-0">
+        <div className="">
           <div className="my-3">
-            <h2>Categories</h2>
+            <h2 className="font-semibold">Categories</h2>
             <select
-              className="w-full"
+              className="w-full  rounded-md border-gray-300 py-2 pl-3 pr-10 text-base text-neutral-800 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
               value={category}
               onChange={categoryHandler}
             >
@@ -122,8 +122,12 @@ export default function Search(props) {
             </select>
           </div>
           <div className="mb-3">
-            <h2>Brands</h2>
-            <select className="w-full" value={brand} onChange={brandHandler}>
+            <h2 className="font-semibold">Brands</h2>
+            <select
+              className="w-full  rounded-md border-gray-300 py-2 pl-3 pr-10 text-base text-neutral-800 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
+              value={brand}
+              onChange={brandHandler}
+            >
               <option value="all">All</option>
               {brands &&
                 brands.map((brand) => (
@@ -134,8 +138,12 @@ export default function Search(props) {
             </select>
           </div>
           <div className="mb-3">
-            <h2>Prices</h2>
-            <select className="w-full" value={price} onChange={priceHandler}>
+            <h2 className="font-semibold">Prices</h2>
+            <select
+              className="w-full  rounded-md border-gray-300 py-2 pl-3 pr-10 text-base text-neutral-800 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
+              value={price}
+              onChange={priceHandler}
+            >
               <option value="all">All</option>
               {prices &&
                 prices.map((price) => (
@@ -146,8 +154,12 @@ export default function Search(props) {
             </select>
           </div>
           <div className="mb-3">
-            <h2>Ratings</h2>
-            <select className="w-full" value={rating} onChange={ratingHandler}>
+            <h2 className="font-semibold">Ratings</h2>
+            <select
+              className="w-full  rounded-md border-gray-300 py-2 pl-3 pr-10 text-base text-neutral-800 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
+              value={rating}
+              onChange={ratingHandler}
+            >
               <option value="all">All</option>
               {ratings &&
                 ratings.map((rating) => (
@@ -158,9 +170,9 @@ export default function Search(props) {
             </select>
           </div>
         </div>
-        <div className="md:col-span-3">
-          <div className="mb-2 flex items-center justify-between border-b-2 pb-2">
-            <div className="flex items-center">
+        <div className="pt-4 md:col-span-3 md:py-0">
+          <div className="mb-2 flex items-center justify-between border-b-2 pb-2 ">
+            <div className="flex items-center font-medium ">
               {products.length === 0 ? "No" : countProducts} Results
               {query !== "all" && query !== "" && " : " + query}
               {category !== "all" && " : " + category}
@@ -174,13 +186,19 @@ export default function Search(props) {
               rating !== "all" ||
               price !== "all" ? (
                 <button onClick={() => router.push("/search")}>
-                  <XCircleIcon className="h-5 w-5" />
+                  <XCircleIcon className="h-5 w-5 text-neutral-500" />
                 </button>
               ) : null}
             </div>
-            <div>
-              Sort by{" "}
-              <select value={sort} onChange={sortHandler}>
+
+            <div className="text-sm">
+              <span className="font-semibold">Sort by </span>
+              <select
+                className=" rounded-md border-gray-300 py-2 pl-3 pr-10 text-base text-neutral-800 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
+                value={sort}
+                onChange={sortHandler}
+                defaultValue="Featured"
+              >
                 <option value="featured">Featured</option>
                 <option value="lowest">Price: Low to High</option>
                 <option value="highest">Price: High to Low</option>
@@ -190,7 +208,7 @@ export default function Search(props) {
             </div>
           </div>
           <div>
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-3  ">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-3 ">
               {products.map((product) => (
                 <ProductItem
                   key={product._id}
@@ -199,7 +217,7 @@ export default function Search(props) {
                 />
               ))}
             </div>
-            <ul className="flex">
+            <ul className="flex py-4">
               {products.length > 0 &&
                 [...Array(pages).keys()].map((pageNumber) => (
                   <li key={pageNumber}>
