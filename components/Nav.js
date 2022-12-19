@@ -9,6 +9,7 @@ import DropdownLink from "./DropdownLink";
 import Cookies from "js-cookie";
 import { Fragment, useState } from "react";
 import { Dialog, Popover, Transition } from "@headlessui/react";
+import { useRouter } from "next/router";
 
 import {
   MenuIcon,
@@ -38,6 +39,14 @@ export default function Nav() {
     signOut({ callbackUrl: "/login" });
   };
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const [query, setQuery] = useState("");
+  const router = useRouter();
+  const submitHandler = (e) => {
+    e.preventDefault();
+    router.push(`/search?query=${query}`);
+  };
+
   return (
     <>
       {/* Mobile navigation */}
@@ -83,8 +92,9 @@ export default function Nav() {
               {/* Links */}
 
               <div className="space-y-6 border-t border-gray-200 py-6 px-4">
-                <form>
+                <form onSubmit={submitHandler}>
                   <input
+                    onChange={(e) => setQuery(e.target.value)}
                     type="text"
                     name="search"
                     placeholder="search"
