@@ -32,6 +32,7 @@ const data = {
       rating: 4.5,
       numReviews: 10,
       countInStock: 12,
+      isFeatured: true,
       description: "A popular shirt",
     },
     {
@@ -44,6 +45,7 @@ const data = {
       rating: 4.5,
       numReviews: 10,
       countInStock: 0,
+      isFeatured: true,
       description: "A popular white shirt",
     },
     {
@@ -56,6 +58,7 @@ const data = {
       rating: 4.5,
       numReviews: 10,
       countInStock: 20,
+      isFeatured: false,
       description: "A Black T shirt",
     },
     {
