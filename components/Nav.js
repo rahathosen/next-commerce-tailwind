@@ -19,7 +19,6 @@ import {
 } from "@heroicons/react/outline";
 const navigation = {
   pages: [
-    { name: "Men", href: "/men" },
     { name: "Watch", href: "/watch" },
     { name: "Cloth", href: "/cloth" },
     { name: "Perfume", href: "/perfume" },
