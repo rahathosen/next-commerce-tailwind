@@ -8,7 +8,7 @@ import db from "../utils/db";
 import Product from "../models/Product";
 import { useContext } from "react";
 import { Store } from "../utils/Store";
-// PerfumeScreen;
+
 export default function WatchScreen({ products }) {
   const { state, dispatch } = useContext(Store);
   const { cart } = state;
