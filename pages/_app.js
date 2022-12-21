@@ -38,6 +38,12 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
       <script async src="https://cdn.splitbee.io/sb.js"></script>
+      <script
+        async
+        defer
+        src="https://analytics.umami.is/script.js"
+        data-website-id="500162cb-c0d4-4919-af92-042eac1074bc"
+      ></script>
       <SessionProvider session={session}>
         <StoreProvider>
           <PayPalScriptProvider deferLoading={true}>
