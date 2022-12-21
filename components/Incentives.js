@@ -8,11 +8,11 @@ const incentives = [
       "It's not actually free we just price it into the products. Someone's paying for it, and it's not us.",
   },
   {
-    name: "10-year warranty",
+    name: "warranty",
     imageSrc:
       "https://tailwindui.com/img/ecommerce/icons/icon-warranty-simple.svg",
     description:
-      "If it breaks in the first 10 years we'll replace it. After that you're on your own though.",
+      "If it not what you we'll buy, we'll replace it. After that you're on your own though.",
   },
   {
     name: "Exchanges",
