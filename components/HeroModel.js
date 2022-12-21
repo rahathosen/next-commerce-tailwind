@@ -1,29 +1,29 @@
 import { SearchIcon } from "@heroicons/react/outline";
 import { useRouter } from "next/router";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const collections = [
   {
-    name: "Men's",
-    href: "#",
+    name: "Men's Cloth",
+    href: "cloth",
     imageSrc:
       "https://images.unsplash.com/photo-1602810317536-5d5e8a552d15?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
-    imageAlt: "Woman wearing a comfortable cotton t-shirt.",
+    imageAlt: "men's comfortable and casual cotton t-shirt .",
   },
   {
     name: "Watch",
-    href: "#",
+    href: "watch",
     imageSrc:
       "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=394&q=80",
-    imageAlt: "Man wearing a comfortable and casual cotton t-shirt.",
+    imageAlt: "Man wearing a watch.",
   },
   {
     name: "Perfume",
-    href: "#",
+    href: "perfume",
     imageSrc:
       "https://images.unsplash.com/photo-1619994403073-2cec844b8e63?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
-    imageAlt:
-      "Person sitting at a wooden desk with paper note organizer, pencil and tablet.",
+    imageAlt: "best perfume.",
   },
 ];
 
@@ -153,10 +153,12 @@ export default function HeroModel() {
                         Shop the collection
                       </p>
                       <h3 className="mt-1 font-semibold text-white">
-                        <a href={collection.href}>
-                          <span className="absolute inset-0" />
-                          {collection.name}
-                        </a>
+                        <Link href={collection.href}>
+                          <a>
+                            <span className="absolute inset-0" />
+                            {collection.name}
+                          </a>
+                        </Link>
                       </h3>
                     </div>
                   </div>

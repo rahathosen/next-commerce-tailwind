@@ -4,8 +4,8 @@ export default function PromoSection() {
   return (
     <>
       <div className="bg-white">
-        <div className="overflow-hidden pt-[160px] xs:pt-40 sm:pt-24">
-          <div className="bg-gray-800">
+        <div className="overflow-hidden pt-40 xs:pt-40 sm:pt-24">
+          <div className="rounded-xl bg-gray-800">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="relative pt-48 pb-16 sm:pb-24">
                 <div>
@@ -17,11 +17,11 @@ export default function PromoSection() {
                     <br />
                     Up to 50% off.
                   </h2>
-                  <div className="mt-6 text-base">
+                  {/* <div className="mt-6 text-base">
                     <a href="#" className="font-semibold text-white">
                       Shop the sale<span aria-hidden="true"> &rarr;</span>
                     </a>
-                  </div>
+                  </div> */}
                 </div>
 
                 <div className="absolute -top-32 left-1/2 -translate-x-1/2 transform sm:top-6 sm:translate-x-0">

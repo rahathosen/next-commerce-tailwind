@@ -2,7 +2,7 @@ import Head from "next/head";
 import Layout from "../components/Layout";
 import ProductItem from "../components/ProductItem";
 import { Reviews } from "../components/Reviews";
-// import Incentives from "../components/Incentives";
+import Incentives from "../components/Incentives";
 import { useRouter } from "next/router";
 import Hero from "../components/Hero";
 import HeroModel from "../components/HeroModel";
@@ -101,12 +101,12 @@ export default function Home({ products }) {
           >
             Trending Products
           </h2>
-          <a
+          {/* <a
             href="#"
             className="hidden text-sm font-medium text-sky-600 hover:text-sky-500 md:block"
           >
             Shop the collection<span aria-hidden="true"> &rarr;</span>
-          </a>
+          </a> */}
         </div>
         <div className="relative mt-8 grid grid-cols-1 gap-y-12 xs:px-6 sm:grid-cols-2 sm:gap-x-6 sm:px-10 lg:grid-cols-4 xl:gap-x-8">
           {products.map((product) => (
@@ -122,7 +122,7 @@ export default function Home({ products }) {
       <PromoSection />
       <Reviews />
 
-      {/* <Incentives /> */}
+      <Incentives />
     </Layout>
   );
 }
