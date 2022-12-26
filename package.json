@@ -24,6 +24,7 @@
     "next": "12.1.6",
     "next-auth": "^4.10.2",
     "next-seo": "^5.15.0",
+    "node-html-parser": "^6.1.4",
     "postcss-focus-visible": "^6.0.4",
     "react": "18.2.0",
     "react-chartjs-2": "^4.3.1",

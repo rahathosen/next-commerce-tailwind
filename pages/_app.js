@@ -3,41 +3,21 @@ import { StoreProvider } from "../utils/Store";
 import { SessionProvider, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
-import { NextSeo } from "next-seo";
-import Head from "next/head";
+import { seo } from "./../lib/seo";
+import { DefaultSeo } from "next-seo";
+// import Head from "next/head";
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
-  const router = useRouter();
-  const meta = {
-    title: "NextElite",
-    description: `a online shop`,
-    image: "https://www.nextelite.live/images/cover/banner.webp",
-    type: "website",
-  };
+  // const router = useRouter();
+  // const meta = {
+  //   title: "NextElite",
+  //   description: `a online shop`,
+  //   image: "https://www.nextelite.live/images/cover/banner.webp",
+  //   type: "website",
+  // };
 
   return (
     <>
-      <NextSeo
-        title={meta.title}
-        titleTemplate="NextElite"
-        defaultTitle="NextElite"
-        description="A online shop"
-        canonical="https://www.nextelite.live/"
-        // openGraph={{
-        //   url: "https://www.nextelite.live/",
-        //   title: "NextElite",
-        //   description: "A online Shop",
-        //   images: [
-        //     {
-        //       url: "/og-image.png",
-        //       width: 800,
-        //       height: 420,
-        //       alt: "NextElite",
-        //     },
-        //   ],
-        // }}
-      />
-
-      <Head>
+      {/* <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
         <meta content={meta.description} name="description" />
@@ -52,13 +32,11 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
         <meta name="twitter:card" content="summary_large_image" />
-        {/* <meta name="twitter:site" content="@rahathosen_" /> */}
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
         <meta name="description" content="Online Shop" />
-        {/* <link rel="icon" href="/favicon.ico" /> */}
-      </Head>
+      </Head> */}
 
       <script async src="https://cdn.splitbee.io/sb.js"></script>
       <script
@@ -67,9 +45,11 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
         src="https://analytics.umami.is/script.js"
         data-website-id="500162cb-c0d4-4919-af92-042eac1074bc"
       ></script>
+
       <SessionProvider session={session}>
         <StoreProvider>
           <PayPalScriptProvider deferLoading={true}>
+            <DefaultSeo {...seo} />
             {Component.auth ? (
               <Auth adminOnly={Component.auth.adminOnly}>
                 <Component {...pageProps} />
