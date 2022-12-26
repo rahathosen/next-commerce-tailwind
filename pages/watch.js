@@ -8,6 +8,7 @@ import db from "../utils/db";
 import Product from "../models/Product";
 import { useContext } from "react";
 import { Store } from "../utils/Store";
+import { NextSeo } from "next-seo";
 
 export default function WatchScreen({ products }) {
   const { state, dispatch } = useContext(Store);
@@ -27,7 +28,8 @@ export default function WatchScreen({ products }) {
   };
 
   return (
-    <Layout title="Watch">
+    <Layout>
+      <NextSeo title="Watch | NextElite" />
       <Toaster
         position="top-center"
         reverseOrder={false}

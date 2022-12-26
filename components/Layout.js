@@ -1,16 +1,19 @@
 import React from "react";
-import Head from "next/head";
+// import Head from "next/head";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "./Footer";
 import Nav from "./Nav";
+import Head from "next/head";
+// import { seo } from "./../lib/seo";
+// import { DefaultSeo } from "next-seo";
+// import { NextSeo } from "next-seo";
+
 export default function Layout({ title, children }) {
   return (
-    <div>
+    <>
       <Head>
         <title>{title ? title + " | NextElite" : "NextElite"}</title>
-        <meta name="A Online Shop" content="NextElite E-commerce Website" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Nav />
       <ToastContainer position="bottom-center" limit={1} />
@@ -19,6 +22,6 @@ export default function Layout({ title, children }) {
         {/* <main className="  md:pb-7 ">{children}</main> */}
         <Footer />
       </div>
-    </div>
+    </>
   );
 }
