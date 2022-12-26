@@ -3,6 +3,7 @@ import { StoreProvider } from "../utils/Store";
 import { SessionProvider, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
+import { NextSeo } from "next-seo";
 import Head from "next/head";
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   const router = useRouter();
@@ -15,6 +16,27 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
 
   return (
     <>
+      <NextSeo
+        title={meta.title}
+        titleTemplate="NextElite"
+        defaultTitle="NextElite"
+        description="A online shop"
+        canonical="https://www.nextelite.live/"
+        openGraph={{
+          url: "https://www.nextelite.live/",
+          title: "NextElite",
+          description: "A online Shop",
+          images: [
+            {
+              url: "https://www.nextelite.live/images/cover/banner.webp",
+              width: 800,
+              height: 420,
+              alt: "NextElite",
+            },
+          ],
+        }}
+      />
+
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
@@ -37,6 +59,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
         <meta name="description" content="Online Shop" />
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
+
       <script async src="https://cdn.splitbee.io/sb.js"></script>
       <script
         async

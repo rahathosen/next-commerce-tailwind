@@ -14,6 +14,7 @@ import Product from "../models/Product";
 import { useContext } from "react";
 import { Store } from "../utils/Store";
 import PromoSection from "../components/PromoSection";
+import { NextSeo } from "next-seo";
 
 export default function Home({ products }) {
   const { state, dispatch } = useContext(Store);
@@ -69,7 +70,7 @@ export default function Home({ products }) {
         }}
       />
       <Head>
-        <title>{meta.title}</title>
+        <NextSeo title="NextElite - A online shop" />
         <meta name="robots" content="follow, index" />
         <meta content={meta.description} name="description" />
         <meta

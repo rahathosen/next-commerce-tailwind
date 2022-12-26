@@ -9,7 +9,7 @@ export default function Layout({ title, children }) {
     <div>
       <Head>
         <title>{title ? title + " | NextElite" : "NextElite"}</title>
-        <meta name="description" content="NextElite Website" />
+        <meta name="A Online Shop" content="NextElite E-commerce Website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Nav />

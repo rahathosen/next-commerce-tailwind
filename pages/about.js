@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 
 export default function AboutScreen() {
   return (
-    <Layout>
+    <Layout title="About">
       <div>AboutScreen</div>
     </Layout>
   );
