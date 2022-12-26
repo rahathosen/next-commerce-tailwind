@@ -22,19 +22,19 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
         defaultTitle="NextElite"
         description="A online shop"
         canonical="https://www.nextelite.live/"
-        openGraph={{
-          url: "https://www.nextelite.live/",
-          title: "NextElite",
-          description: "A online Shop",
-          images: [
-            {
-              url: "/og-image.png",
-              width: 800,
-              height: 420,
-              alt: "NextElite",
-            },
-          ],
-        }}
+        // openGraph={{
+        //   url: "https://www.nextelite.live/",
+        //   title: "NextElite",
+        //   description: "A online Shop",
+        //   images: [
+        //     {
+        //       url: "/og-image.png",
+        //       width: 800,
+        //       height: 420,
+        //       alt: "NextElite",
+        //     },
+        //   ],
+        // }}
       />
 
       <Head>
