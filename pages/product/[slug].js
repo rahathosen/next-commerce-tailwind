@@ -9,6 +9,7 @@ import { StarIcon } from "@heroicons/react/solid";
 import { CurrencyDollarIcon, GlobeIcon } from "@heroicons/react/outline";
 import Product from "../../models/Product";
 import db from "../../utils/db";
+import { NextSeo } from "next-seo";
 // import { toast } from "react-toastify";
 import toast, { Toaster } from "react-hot-toast";
 import ProdcutReviews from "../../components/ProductReviews";
@@ -71,7 +72,8 @@ export default function ProductScreen(props) {
     router.push("/cart");
   };
   return (
-    <Layout title={product.name}>
+    <Layout>
+      <NextSeo title={product.name} />
       <Toaster />
 
       <div className="bg-white">
