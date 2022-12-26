@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
           description: "A online Shop",
           images: [
             {
-              url: "/images/cover/banner.webp",
+              url: "/og-image.png",
               width: 800,
               height: 420,
               alt: "NextElite",
