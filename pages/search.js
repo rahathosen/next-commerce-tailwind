@@ -9,7 +9,7 @@ import ProductItem from "../components/ProductItem";
 import Product from "../models/Product";
 import db from "../utils/db";
 
-import SearchBar from "../components/SearchBar";
+// import SearchBar from "../components/SearchBar";
 
 const PAGE_SIZE = 4;
 
@@ -105,7 +105,7 @@ export default function Search(props) {
   };
   return (
     <Layout title="All Products">
-      <SearchBar />
+      {/* <SearchBar /> */}
       <div className="grid px-2 text-sm md:grid-cols-4 md:gap-5 md:px-0">
         <div className="">
           <div className="my-3">

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import SearchBar from "./SearchBar";
+// import SearchBar from "./SearchBar";
 
 const collections = [
   {
@@ -66,10 +66,10 @@ export default function HeroModel() {
             </div>
             <div className="h-48 w-full bg-white" />
           </div>
-          <div className="relative py-10 md:py-32">
+          <div className="md:py-22 relative py-10">
             {/* <h1 className=" text-4xl font-extrabold tracking-tight text-white xsl:hidden sm:text-5xl md:text-5xl"> */}
 
-            <SearchBar />
+            {/* <SearchBar /> */}
 
             {/* </h1> */}
             {/* <div className="mt-4 sm:mt-6">

@@ -10,6 +10,7 @@ import Cookies from "js-cookie";
 import { Fragment, useState } from "react";
 import { Dialog, Popover, Transition } from "@headlessui/react";
 import { useRouter } from "next/router";
+import SearchBar from "./SearchBar";
 
 import {
   MenuIcon,
@@ -182,11 +183,6 @@ export default function Nav() {
           </Transition.Child>
         </Dialog>
       </Transition.Root>
-      {/* Mobile navigation */}
-
-      {/* Top navigation */}
-
-      {/* Top navigation end */}
 
       {/* Header */}
       <header className="sticky top-0 z-10 shadow-md">
@@ -217,13 +213,14 @@ export default function Nav() {
                     {/* Flyout menus */}
                     <Popover.Group className="inset-x-0 bottom-0 px-4">
                       <div className="flex h-full justify-center space-x-8">
-                        {navigation.pages.map((page) => (
+                        {/* {navigation.pages.map((page) => (
                           <Link href={page.href} key={page.name}>
                             <a className="flex items-center text-sm font-medium text-black">
                               {page.name}
                             </a>
                           </Link>
-                        ))}
+                        ))} */}
+                        <SearchBar></SearchBar>
                       </div>
                     </Popover.Group>
                   </div>
