@@ -48,7 +48,7 @@ export default function PaymentScreen() {
         <h2 className=" mt-10 pb-4 text-lg font-medium text-gray-900 ">
           Payment method
         </h2>
-        {["PayPal", "BKash", "CashOnDelivery"].map((payment) => (
+        {["PayPal", "CashOnDelivery"].map((payment) => (
           <div key={payment} className="mb-4">
             <input
               name="paymentMethod"
