@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function Hero() {
@@ -10,12 +11,11 @@ export default function Hero() {
         The new arrivals have, well, newly arrived. Check out the latest options
         from our summer small-batch release while theyre still in stock.
       </p>
-      <a
-        href="#"
-        className="mt-8 inline-block rounded-md border border-transparent bg-gray-900 py-3 px-8 text-base font-medium text-gray-100 hover:bg-black"
-      >
-        Shop New Arrivals
-      </a>
+      <Link href="search?sort=newest">
+        <a className="mt-8 inline-block rounded-md border border-transparent bg-gray-900 py-3 px-8 text-base font-medium text-gray-100 hover:bg-black">
+          Shop New Arrivals
+        </a>
+      </Link>
     </div>
   );
 }
