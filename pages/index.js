@@ -84,17 +84,10 @@ export default function Home({ products }) {
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
-        {/* <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@rahathosen_" />
-        <meta name="twitter:title" content={meta.title} />
-        <meta name="twitter:description" content={meta.description} />
-        <meta name="twitter:image" content={meta.image} /> */}
         <meta name="description" content="Online Shop" />
-        {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
       <HeroModel />
       <Hero />
-
       <div>
         <div className="xs:px-6 sm:px-10  md:flex md:items-center md:justify-between">
           <h2
@@ -119,10 +112,8 @@ export default function Home({ products }) {
           ))}
         </div>
       </div>
-
       <PromoSection />
       <Reviews />
-
       <Incentives />
     </Layout>
   );

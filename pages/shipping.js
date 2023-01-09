@@ -1,29 +1,29 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Cookies from "js-cookie";
 import CheckoutWizard from "../components/CheckoutWizard";
 import Layout from "../components/Layout";
 import { Store } from "../utils/Store";
 import { useRouter } from "next/router";
-import { RadioGroup } from "@headlessui/react";
-import { CheckCircleIcon } from "@heroicons/react/solid";
-const deliveryMethods = [
-  {
-    id: 1,
-    title: "Standard",
-    turnaround: "4–10 business days",
-    price: "$5.00",
-  },
-  { id: 2, title: "Express", turnaround: "2–5 business days", price: "$16.00" },
-];
+// import { RadioGroup } from "@headlessui/react";
+// import { CheckCircleIcon } from "@heroicons/react/solid";
+// const deliveryMethods = [
+//   {
+//     id: 1,
+//     title: "Standard",
+//     turnaround: "4–10 business days",
+//     price: "$5.00",
+//   },
+//   { id: 2, title: "Express", turnaround: "2–5 business days", price: "$16.00" },
+// ];
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
+// function classNames(...classes) {
+//   return classes.filter(Boolean).join(" ");
+// }
 export default function ShippingScreen() {
-  const [selectedDeliveryMethod, setSelectedDeliveryMethod] = useState(
-    deliveryMethods[0]
-  );
+  // const [selectedDeliveryMethod, setSelectedDeliveryMethod] = useState(
+  //   deliveryMethods[0]
+  // );
   const {
     handleSubmit,
     register,
@@ -168,7 +168,7 @@ export default function ShippingScreen() {
             <div className="text-red-500 ">{errors.country.message}</div>
           )}
         </div>
-        <div className="mt-10 border-t border-gray-200 pt-10">
+        {/* <div className="mt-10 border-t border-gray-200 pt-10">
           <RadioGroup
             value={selectedDeliveryMethod}
             onChange={setSelectedDeliveryMethod}
@@ -234,9 +234,9 @@ export default function ShippingScreen() {
               ))}
             </div>
           </RadioGroup>
-        </div>
+        </div> */}
 
-        <div className="mt-10 flex justify-end border-t border-gray-200 pt-6">
+        <div className="mt-10 flex justify-end pt-6">
           <button className="rounded-md border border-transparent bg-black py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-50">
             Next step
           </button>
