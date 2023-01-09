@@ -132,7 +132,6 @@ function AdminUsersScreen() {
         </aside>
 
         <div className="space-y-6 sm:px-6 lg:col-span-9 lg:px-0">
-          <h1 className="mb-4 text-xl">Users</h1>
           {loadingDelete && <div>Deleting...</div>}
           {loading ? (
             <div>Loading...</div>

@@ -102,8 +102,6 @@ export default function AdminOrderScreen() {
         </aside>
 
         <div className="space-y-6 sm:px-6 lg:col-span-9 lg:px-0">
-          <h1 className="mb-4 text-xl">Admin Orders</h1>
-
           {loading ? (
             <div>Loading...</div>
           ) : error ? (

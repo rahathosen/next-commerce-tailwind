@@ -147,9 +147,6 @@ function AdminDashboardScreen() {
             <div className="alert-error px-6 sm:px-6 lg:px-0">{error}</div>
           ) : (
             <div>
-              <h3 className="px-6  text-lg font-medium leading-6 text-gray-900 sm:px-6 lg:px-0">
-                Admin Dashboard
-              </h3>
               <div className="grid grid-cols-1 md:grid-cols-4">
                 <div className="card m-5 p-5">
                   <p className="text-3xl">${summary.ordersPrice} </p>
