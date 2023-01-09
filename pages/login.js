@@ -127,7 +127,7 @@ export default function LoginScreen() {
             </div>
 
             <div className="flex items-center justify-between">
-              <div className="flex items-center">
+              {/* <div className="flex items-center">
                 <input
                   id="remember-me"
                   name="remember-me"
@@ -145,11 +145,11 @@ export default function LoginScreen() {
               <div className="text-sm">
                 <a
                   href="#"
-                  className="font-medium text-sky-600 hover:text-sky-500"
+                  className="font-medium text-sky-600 opacity-60 hover:text-sky-500"
                 >
                   Forgot your password?
                 </a>
-              </div>
+              </div> */}
             </div>
 
             <div>
@@ -159,7 +159,8 @@ export default function LoginScreen() {
             </div>
           </div>
 
-          <div className="mt-6">
+          {/*  */}
+          {/* <div className="mt-6">
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
                 <div className="w-full border-t border-gray-300" />
@@ -231,7 +232,7 @@ export default function LoginScreen() {
                 </a>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </form>
     </Layout>
