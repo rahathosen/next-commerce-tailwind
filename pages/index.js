@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import Layout from "../components/Layout";
 import ProductItem from "../components/ProductItem";
 import { Reviews } from "../components/Reviews";
@@ -102,12 +103,11 @@ export default function Home({ products }) {
           >
             Trending Products
           </h2>
-          {/* <a
-            href="#"
-            className="hidden text-sm font-medium text-sky-600 hover:text-sky-500 md:block"
-          >
-            Shop the collection<span aria-hidden="true"> &rarr;</span>
-          </a> */}
+          <Link href="search">
+            <a className="hidden text-sm font-medium text-sky-600 hover:text-sky-500 md:block">
+              All the collection<span aria-hidden="true"> &rarr;</span>
+            </a>
+          </Link>
         </div>
         <div className="relative mt-8 grid grid-cols-1 gap-y-12 xs:px-6 sm:grid-cols-2 sm:gap-x-6 sm:px-10 lg:grid-cols-4 xl:gap-x-8">
           {products.map((product) => (

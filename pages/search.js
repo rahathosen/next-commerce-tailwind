@@ -11,7 +11,7 @@ import db from "../utils/db";
 
 import SearchBar from "../components/SearchBar";
 
-const PAGE_SIZE = 2;
+const PAGE_SIZE = 4;
 
 const prices = [
   {
@@ -104,7 +104,7 @@ export default function Search(props) {
     router.push("/cart");
   };
   return (
-    <Layout title="search">
+    <Layout title="All Products">
       <SearchBar />
       <div className="grid px-2 text-sm md:grid-cols-4 md:gap-5 md:px-0">
         <div className="">
