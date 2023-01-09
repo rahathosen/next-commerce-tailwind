@@ -69,11 +69,15 @@ function AdminUsersScreen() {
 
   return (
     <Layout title="Users">
-      <div className="grid md:grid-cols-4 md:gap-5">
+      <div className="grid text-sm font-semibold  md:grid-cols-4 md:gap-5">
         <div>
           <ul>
             <li>
-              <Link href="/admin/dashboard">Dashboard</Link>
+              <Link href="/admin/dashboard">
+                <a className="font-bold">
+                  <span className="text-lg">Dashboard</span>
+                </a>
+              </Link>
             </li>
             <li>
               <Link href="/admin/orders">Orders</Link>
@@ -157,7 +161,7 @@ function AdminUsersScreen() {
                         &nbsp;
                         <button
                           type="button"
-                          className="default-button"
+                          className="delete-button"
                           onClick={() => deleteHandler(user._id)}
                         >
                           Delete

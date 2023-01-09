@@ -94,11 +94,15 @@ export default function AdminProdcutsScreen() {
   };
   return (
     <Layout title="Admin Products">
-      <div className="grid md:grid-cols-4 md:gap-5">
+      <div className="grid text-sm font-semibold md:grid-cols-4 md:gap-5">
         <div>
           <ul>
             <li>
-              <Link href="/admin/dashboard">Dashboard</Link>
+              <Link href="/admin/dashboard">
+                <a className="font-bold">
+                  <span className="text-lg">Dashboard</span>
+                </a>
+              </Link>
             </li>
             <li>
               <Link href="/admin/orders">Orders</Link>
@@ -208,7 +212,7 @@ export default function AdminProdcutsScreen() {
                         &nbsp;
                         <button
                           onClick={() => deleteHandler(product._id)}
-                          className="default-button"
+                          className="delete-button"
                           type="button"
                         >
                           Delete
