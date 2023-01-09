@@ -97,24 +97,58 @@ function AdminUsersScreen() {
             <div className="alert-error">{error}</div>
           ) : (
             <div className="overflow-x-auto">
-              <table className="min-w-full">
-                <thead className="border-b">
+              <table className="min-w-full divide-y divide-gray-300">
+                <thead className="bg-gray-50">
                   <tr>
-                    <th className="px-5 text-left">ID</th>
-                    <th className="p-5 text-left">NAME</th>
-                    <th className="p-5 text-left">EMAIL</th>
-                    <th className="p-5 text-left">ADMIN</th>
-                    <th className="p-5 text-left">ACTIONS</th>
+                    <th
+                      scope="col"
+                      className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
+                    >
+                      Id
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                    >
+                      Name
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                    >
+                      Email
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                    >
+                      Admin
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                    >
+                      Action
+                    </th>
                   </tr>
                 </thead>
+
                 <tbody>
                   {users.map((user) => (
                     <tr key={user._id} className="border-b">
-                      <td className=" p-5 ">{user._id.substring(20, 24)}</td>
-                      <td className=" p-5 ">{user.name}</td>
-                      <td className=" p-5 ">{user.email}</td>
-                      <td className=" p-5 ">{user.isAdmin ? "YES" : "NO"}</td>
-                      <td className=" p-5 ">
+                      <td className=" whitespace-nowrap px-3 py-4 text-sm text-gray-500 ">
+                        {user._id.substring(20, 24)}
+                      </td>
+                      <td className=" whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 ">
+                        {user.name}
+                      </td>
+                      <td className=" whitespace-nowrap px-3 py-4 text-sm text-gray-600 ">
+                        {user.email}
+                      </td>
+                      <td className=" whitespace-nowrap px-3 py-4 text-sm font-medium text-gray-600 ">
+                        {user.isAdmin ? "YES" : "NO"}
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-600 ">
                         <Link href={`/admin/user/${user._id}`} passHref>
                           <a type="button" className="default-button">
                             Edit

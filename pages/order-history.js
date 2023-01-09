@@ -91,12 +91,6 @@ function OrderHistoryScreen() {
                         >
                           Delivered
                         </th>
-                        {/* <th
-                          scope="col"
-                          className="relative py-3.5 pl-3 pr-4 text-center sm:pr-6"
-                        >
-                          <span className="sr-only">Edit</span>
-                        </th> */}
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-200 bg-white">
