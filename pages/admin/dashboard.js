@@ -15,7 +15,7 @@ import Layout from "../../components/Layout";
 import { getError } from "../../utils/error";
 import {
   CreditCardIcon,
-  UserCircleIcon,
+  HomeIcon,
   UserGroupIcon,
   PaperAirplaneIcon,
 } from "@heroicons/react/outline";
@@ -24,7 +24,7 @@ const navigation = [
   {
     name: "Dashboard",
     href: "/admin/dashboard",
-    icon: UserCircleIcon,
+    icon: HomeIcon,
     current: true,
   },
   {
