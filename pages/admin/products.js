@@ -124,9 +124,9 @@ export default function AdminProdcutsScreen() {
             <button
               disabled={loadingCreate}
               onClick={createHandler}
-              className="default-button"
+              className="default-button my-2"
             >
-              {loadingCreate ? "Loading" : "Create"}
+              {loadingCreate ? "Loading" : "Add product"}
             </button>
           </div>
           {loading ? (
@@ -166,7 +166,7 @@ export default function AdminProdcutsScreen() {
                       scope="col"
                       className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
                     >
-                      Count
+                      Stock
                     </th>
                     <th
                       scope="col"
@@ -197,9 +197,17 @@ export default function AdminProdcutsScreen() {
                       <td className=" whitespace-nowrap px-3 py-4 text-sm text-gray-600">
                         {product.category}
                       </td>
-                      <td className=" whitespace-nowrap px-3 py-4 text-sm text-gray-600">
-                        {product.countInStock}
+
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                        {product.countInStock === 0 ? (
+                          <span className="inline-flex rounded-lg bg-rose-400 px-2 text-xs font-semibold leading-5 text-white ">
+                            {product.countInStock}
+                          </span>
+                        ) : (
+                          <span className="">{product.countInStock}</span>
+                        )}
                       </td>
+
                       <td className=" whitespace-nowrap px-3 py-4 text-sm text-gray-600 ">
                         {product.rating}
                       </td>
