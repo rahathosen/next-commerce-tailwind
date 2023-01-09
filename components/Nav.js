@@ -295,14 +295,18 @@ export default function Nav() {
                         </span>
                       ) : session?.user ? (
                         <Menu as="div" className="relative inline-block">
-                          <Menu.Button className="text-sm font-medium text-black transition hover:text-gray-600">
-                            <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-gray-500">
+                          <Menu.Button className="text-xs font-medium text-black transition hover:text-gray-600">
+                            <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-neutral-900">
                               <span className="text-sm font-medium leading-none text-white">
-                                {session.user.name.slice(0, 2)}
+                                {session.user.name.slice(0, 1)}
                               </span>
                             </span>
                           </Menu.Button>
-                          <Menu.Items className="absolute right-0 z-10 w-[140px] origin-top-right rounded-md bg-white text-gray-700 drop-shadow-2xl ">
+                          <Menu.Items
+                            className="absolute right-0 z-10 w-36 origin-top-right rounded-md border-2
+                             border-neutral-200 bg-white text-sm
+                           font-medium text-black drop-shadow-2xl "
+                          >
                             <Menu.Item>
                               <DropdownLink
                                 className="dropdown-link "
