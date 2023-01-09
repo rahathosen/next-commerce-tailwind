@@ -66,13 +66,18 @@ export default function ClothScreen({ products }) {
           </h2>
         </div>
         <div className="relative mt-8 grid grid-cols-1 gap-y-12 xs:px-6 sm:grid-cols-2 sm:gap-x-6 sm:px-10 lg:grid-cols-4 xl:gap-x-8">
-          {products.map((product) => (
-            <ProductItem
-              addToCartHandler={addToCartHandler}
-              product={product}
-              key={product.slug}
-            />
-          ))}
+          {products
+            .filter(
+              (product) =>
+                product.category === "Shirts" || product.category === "pants"
+            )
+            .map((product) => (
+              <ProductItem
+                addToCartHandler={addToCartHandler}
+                product={product}
+                key={product.slug}
+              />
+            ))}
         </div>
       </div>
     </Layout>
