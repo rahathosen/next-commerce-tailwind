@@ -9,7 +9,7 @@ import ProductItem from "../components/ProductItem";
 import Product from "../models/Product";
 import db from "../utils/db";
 
-import SearchBar from "../components/SearchBar";
+// import SearchBar from "../components/SearchBar";
 
 const PAGE_SIZE = 4;
 
