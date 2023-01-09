@@ -129,7 +129,13 @@ export default function AdminOrderScreen() {
                           {order._id.substring(20, 24)}
                         </td>
                         <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
-                          {order.user ? order.user.name : "DELETED USER"}
+                          {order.user ? (
+                            order.user.name
+                          ) : (
+                            <span className="text-sm text-gray-500">
+                              deleted user
+                            </span>
+                          )}
                         </td>
                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                           {order.createdAt.substring(0, 10)}
