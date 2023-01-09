@@ -5,6 +5,38 @@ import React, { useEffect, useReducer } from "react";
 import { toast } from "react-toastify";
 import Layout from "../../components/Layout";
 import { getError } from "../../utils/error";
+import {
+  CreditCardIcon,
+  UserCircleIcon,
+  UserGroupIcon,
+  PaperAirplaneIcon,
+} from "@heroicons/react/outline";
+
+const navigation = [
+  {
+    name: "Dashboard",
+    href: "/admin/dashboard",
+    icon: UserCircleIcon,
+    current: false,
+  },
+  {
+    name: "Orders",
+    href: "/admin/orders",
+    icon: PaperAirplaneIcon,
+    current: false,
+  },
+  {
+    name: "Products",
+    href: "/admin/products",
+    icon: CreditCardIcon,
+    current: true,
+  },
+  { name: "Users", href: "/admin/users", icon: UserGroupIcon, current: false },
+];
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
 
 function reducer(state, action) {
   switch (action.type) {
@@ -94,30 +126,37 @@ export default function AdminProdcutsScreen() {
   };
   return (
     <Layout title="Admin Products">
-      <div className="grid text-sm font-semibold md:grid-cols-4 md:gap-5">
-        <div>
-          <ul>
-            <li>
-              <Link href="/admin/dashboard">
-                <a className="font-bold">
-                  <span className="text-lg">Dashboard</span>
+      <div className="lg:grid lg:grid-cols-12 lg:gap-x-5">
+        <aside className="py-6 px-2 sm:px-6 lg:col-span-3 lg:py-0 lg:px-0">
+          <nav className="space-y-1">
+            {navigation.map((item) => (
+              <Link key={item.name} href={item.href}>
+                <a
+                  className={classNames(
+                    item.current
+                      ? "bg-gray-50 text-cyan-700 hover:bg-white hover:text-cyan-700"
+                      : "text-gray-900 hover:bg-gray-50 hover:text-gray-900",
+                    "group flex items-center rounded-md px-3 py-2 text-sm font-medium"
+                  )}
+                  aria-current={item.current ? "page" : undefined}
+                >
+                  <item.icon
+                    className={classNames(
+                      item.current
+                        ? "text-cyan-500 group-hover:text-cyan-500"
+                        : "text-gray-400 group-hover:text-gray-500",
+                      "-ml-1 mr-3 h-6 w-6 flex-shrink-0"
+                    )}
+                    aria-hidden="true"
+                  />
+                  <span className="truncate">{item.name}</span>
                 </a>
               </Link>
-            </li>
-            <li>
-              <Link href="/admin/orders">Orders</Link>
-            </li>
-            <li>
-              <Link href="/admin/products">
-                <a className="font-bold">Products</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/admin/users">Users</Link>
-            </li>
-          </ul>
-        </div>
-        <div className="overflow-x-auto md:col-span-3">
+            ))}
+          </nav>
+        </aside>
+
+        <div className="space-y-6 sm:px-6 lg:col-span-9 lg:px-0">
           <div className="flex justify-between">
             <h1 className="mb-4 text-xl">Products</h1>
             {loadingDelete && <div>Deleting item...</div>}

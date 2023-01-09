@@ -312,7 +312,7 @@ export default function Nav() {
                                 className="dropdown-link "
                                 href="/profile"
                               >
-                                account
+                                {session.user.name}
                               </DropdownLink>
                             </Menu.Item>
                             <Menu.Item>

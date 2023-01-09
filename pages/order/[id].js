@@ -400,7 +400,7 @@ function OrderScreen() {
                   <li>
                     {loadingDeliver && <div>Loading...</div>}
                     <button
-                      className="primary-button w-full"
+                      className="default-button w-full"
                       onClick={deliverOrderHandler}
                     >
                       Deliver Order
