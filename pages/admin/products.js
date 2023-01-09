@@ -157,16 +157,15 @@ export default function AdminProdcutsScreen() {
         </aside>
 
         <div className="space-y-6 sm:px-6 lg:col-span-9 lg:px-0">
-          <div className="flex justify-between">
-            <h1 className="mb-4 text-xl">Products</h1>
-            {loadingDelete && <div>Deleting item...</div>}
+          <div className="flex justify-between px-4 sm:px-6 lg:px-0">
             <button
               disabled={loadingCreate}
               onClick={createHandler}
-              className="default-button my-2"
+              className="default-button "
             >
               {loadingCreate ? "Loading" : "Add product"}
             </button>
+            {loadingDelete && <div>Deleting item...</div>}
           </div>
           {loading ? (
             <div>Loading...</div>
