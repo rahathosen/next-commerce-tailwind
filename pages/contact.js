@@ -3,6 +3,7 @@ import Layout from "../components/Layout";
 import { useState } from "react";
 import { Switch } from "@headlessui/react";
 import Link from "next/link";
+import { NextSeo } from "next-seo";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -12,7 +13,8 @@ export default function ContactScreen() {
   const [agreed, setAgreed] = useState(false);
   return (
     <Layout>
-      <div className="overflow-hidden bg-white py-16 px-4 sm:px-6 lg:px-8 lg:py-24">
+      <NextSeo title="Contact Us | NextElite" />
+      <div className="overflow-hidden bg-white py-4 px-4 sm:px-6 lg:px-8 lg:py-6">
         <div className="relative mx-auto max-w-xl">
           <svg
             className="absolute left-full translate-x-1/2 transform"
@@ -81,7 +83,7 @@ export default function ContactScreen() {
             />
           </svg>
           <div className="text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">
               Contact US
             </h2>
             <p className="mt-4 text-lg leading-6 text-gray-500">
