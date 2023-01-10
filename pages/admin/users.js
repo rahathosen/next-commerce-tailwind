@@ -7,7 +7,7 @@ import { getError } from "../../utils/error";
 import {
   CreditCardIcon,
   HomeIcon,
-  UserGroupIcon,
+  UsersIcon,
   PaperAirplaneIcon,
 } from "@heroicons/react/outline";
 
@@ -30,7 +30,7 @@ const navigation = [
     icon: CreditCardIcon,
     current: false,
   },
-  { name: "Users", href: "/admin/users", icon: UserGroupIcon, current: true },
+  { name: "Users", href: "/admin/users", icon: UsersIcon, current: true },
 ];
 
 function classNames(...classes) {
@@ -109,16 +109,16 @@ function AdminUsersScreen() {
                 <a
                   className={classNames(
                     item.current
-                      ? "bg-gray-50 text-cyan-700 hover:bg-white hover:text-cyan-700"
-                      : "text-gray-900 hover:bg-gray-50 hover:text-gray-900",
-                    "group flex items-center rounded-md px-3 py-2 text-sm font-medium"
+                      ? "border-black bg-zinc-100 text-black"
+                      : "border-transparent text-gray-600 hover:bg-gray-50 hover:text-gray-900",
+                    "group flex items-center border-l-4 px-3 py-2 text-sm font-medium"
                   )}
                   aria-current={item.current ? "page" : undefined}
                 >
                   <item.icon
                     className={classNames(
                       item.current
-                        ? "text-cyan-500 group-hover:text-cyan-500"
+                        ? "text-black group-hover:text-neutral-500"
                         : "text-gray-400 group-hover:text-gray-500",
                       "-ml-1 mr-3 h-6 w-6 flex-shrink-0"
                     )}

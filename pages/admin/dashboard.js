@@ -16,8 +16,9 @@ import { getError } from "../../utils/error";
 import {
   CreditCardIcon,
   HomeIcon,
-  UserGroupIcon,
   PaperAirplaneIcon,
+  UsersIcon,
+  CurrencyDollarIcon,
 } from "@heroicons/react/outline";
 
 const navigation = [
@@ -39,7 +40,7 @@ const navigation = [
     icon: CreditCardIcon,
     current: false,
   },
-  { name: "Users", href: "/admin/users", icon: UserGroupIcon, current: false },
+  { name: "Users", href: "/admin/users", icon: UsersIcon, current: false },
 ];
 
 function classNames(...classes) {
@@ -102,7 +103,7 @@ function AdminDashboardScreen() {
     datasets: [
       {
         label: "Sales",
-        backgroundColor: "rgba(21, 186, 215, 1)",
+        backgroundColor: "rgba(0, 0, 0, 0.8)",
         data: summary.salesData.map((x) => x.totalSales),
       },
     ],
@@ -118,16 +119,16 @@ function AdminDashboardScreen() {
                 <a
                   className={classNames(
                     item.current
-                      ? "bg-gray-50 text-cyan-700 hover:bg-white hover:text-cyan-700"
-                      : "text-gray-900 hover:bg-gray-50 hover:text-gray-900",
-                    "group flex items-center rounded-md px-3 py-2 text-sm font-medium"
+                      ? "border-black bg-zinc-100 text-black"
+                      : "border-transparent text-gray-600 hover:bg-gray-50 hover:text-gray-900",
+                    "group flex items-center border-l-4 px-3 py-2 text-sm font-medium"
                   )}
                   aria-current={item.current ? "page" : undefined}
                 >
                   <item.icon
                     className={classNames(
                       item.current
-                        ? "text-cyan-500 group-hover:text-cyan-500"
+                        ? "text-black group-hover:text-neutral-500"
                         : "text-gray-400 group-hover:text-gray-500",
                       "-ml-1 mr-3 h-6 w-6 flex-shrink-0"
                     )}
@@ -147,29 +148,137 @@ function AdminDashboardScreen() {
             <div className="alert-error px-6 sm:px-6 lg:px-0">{error}</div>
           ) : (
             <div>
-              <div className="grid grid-cols-1 md:grid-cols-4">
-                <div className="card m-5 p-5">
-                  <p className="text-3xl">${summary.ordersPrice} </p>
-                  <p>Sales</p>
-                  <Link href="/admin/orders">View sales</Link>
-                </div>
-                <div className="card m-5 p-5">
-                  <p className="text-3xl">{summary.ordersCount} </p>
-                  <p>Orders</p>
-                  <Link href="/admin/orders">View orders</Link>
-                </div>
-                <div className="card m-5 p-5">
-                  <p className="text-3xl">{summary.productsCount} </p>
-                  <p>Products</p>
-                  <Link href="/admin/products">View products</Link>
-                </div>
-                <div className="card m-5 p-5">
-                  <p className="text-3xl">{summary.usersCount} </p>
-                  <p>Users</p>
-                  <Link href="/admin/users">View users</Link>
-                </div>
+              {/* Dashboard State */}
+              <div>
+                <dl className="mt-5 grid grid-cols-1 gap-5 pb-4 sm:grid-cols-2 md:pb-8 lg:grid-cols-4">
+                  {/* 1 */}
+                  <div className="relative overflow-hidden rounded-lg bg-white px-4 pt-5 pb-12 shadow sm:px-6 sm:pt-6">
+                    <dt>
+                      <div className="absolute rounded-md bg-black p-3">
+                        <CurrencyDollarIcon
+                          className="h-6 w-6 text-white"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <p className="ml-16 truncate text-sm font-medium text-gray-500">
+                        Total Sales
+                      </p>
+                    </dt>
+                    <dd className="ml-16 flex items-baseline pb-6 sm:pb-7">
+                      <p className="text-2xl font-semibold text-gray-900">
+                        ${summary.ordersPrice}
+                      </p>
+
+                      <div className="absolute inset-x-0 bottom-0 bg-gray-50 px-4 py-4 sm:px-6">
+                        <div className="text-sm">
+                          <Link href="/admin/orders">
+                            <a className="font-medium text-black hover:text-neutral-800">
+                              {" "}
+                              View all
+                              <span className="sr-only"> stats</span>
+                            </a>
+                          </Link>
+                        </div>
+                      </div>
+                    </dd>
+                  </div>
+                  {/* 2 */}
+                  <div className="relative overflow-hidden rounded-lg bg-white px-4 pt-5 pb-12 shadow sm:px-6 sm:pt-6">
+                    <dt>
+                      <div className="absolute rounded-md bg-black p-3">
+                        <PaperAirplaneIcon
+                          className="h-6 w-6 text-white"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <p className="ml-16 truncate text-sm font-medium text-gray-500">
+                        Orders
+                      </p>
+                    </dt>
+                    <dd className="ml-16 flex items-baseline pb-6 sm:pb-7">
+                      <p className="text-2xl font-semibold text-gray-900">
+                        {summary.ordersCount}
+                      </p>
+
+                      <div className="absolute inset-x-0 bottom-0 bg-gray-50 px-4 py-4 sm:px-6">
+                        <div className="text-sm">
+                          <Link href="/admin/orders">
+                            <a className="font-medium text-black hover:text-neutral-800">
+                              {" "}
+                              View all
+                              <span className="sr-only"> stats</span>
+                            </a>
+                          </Link>
+                        </div>
+                      </div>
+                    </dd>
+                  </div>
+                  {/* 3 */}
+                  <div className="relative overflow-hidden rounded-lg bg-white px-4 pt-5 pb-12 shadow sm:px-6 sm:pt-6">
+                    <dt>
+                      <div className="absolute rounded-md bg-black p-3">
+                        <CreditCardIcon
+                          className="h-6 w-6 text-white"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <p className="ml-16 truncate text-sm font-medium text-gray-500">
+                        Products
+                      </p>
+                    </dt>
+                    <dd className="ml-16 flex items-baseline pb-6 sm:pb-7">
+                      <p className="text-2xl font-semibold text-gray-900">
+                        {summary.productsCount}
+                      </p>
+
+                      <div className="absolute inset-x-0 bottom-0 bg-gray-50 px-4 py-4 sm:px-6">
+                        <div className="text-sm">
+                          <Link href="/admin/products">
+                            <a className="font-medium text-black hover:text-neutral-800">
+                              {" "}
+                              View all
+                              <span className="sr-only"> stats</span>
+                            </a>
+                          </Link>
+                        </div>
+                      </div>
+                    </dd>
+                  </div>
+                  {/* 4 */}
+                  <div className="relative overflow-hidden rounded-lg bg-white px-4 pt-5 pb-12 shadow sm:px-6 sm:pt-6">
+                    <dt>
+                      <div className="absolute rounded-md bg-black p-3">
+                        <UsersIcon
+                          className="h-6 w-6 text-white"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <p className="ml-16 truncate text-sm font-medium text-gray-500">
+                        Users
+                      </p>
+                    </dt>
+                    <dd className="ml-16 flex items-baseline pb-6 sm:pb-7">
+                      <p className="text-2xl font-semibold text-gray-900">
+                        {summary.usersCount}
+                      </p>
+
+                      <div className="absolute inset-x-0 bottom-0 bg-gray-50 px-4 py-4 sm:px-6">
+                        <div className="text-sm">
+                          <Link href="/admin/users">
+                            <a className="font-medium text-black hover:text-neutral-800">
+                              {" "}
+                              View all
+                              <span className="sr-only"> stats</span>
+                            </a>
+                          </Link>
+                        </div>
+                      </div>
+                    </dd>
+                  </div>
+                </dl>
               </div>
-              <h2 className="text-xl">Sales Report</h2>
+              {/* Dashboard State */}
+
               <Bar
                 options={{
                   legend: { display: true, position: "right" },
