@@ -1,14 +1,14 @@
-import { Head, Html, Main, NextScript } from "next/document";
+import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
-    <Html className="h-full bg-gray-50 antialiased" lang="en">
+    <Html>
       <Head>
         <link rel="manifest" href="/manifest.json" />
-        <link rel="nextelite-icon" href="/icon.png"></link>
+        <link rel="apple-touch-icon" href="/icon.png"></link>
         <meta name="theme-color" content="#fff" />
       </Head>
-      <body className="flex h-full flex-col">
+      <body>
         <Main />
         <NextScript />
       </body>
