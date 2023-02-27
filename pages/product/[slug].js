@@ -13,7 +13,7 @@ import { NextSeo } from "next-seo";
 // import { toast } from "react-toastify";
 import toast, { Toaster } from "react-hot-toast";
 import ProdcutReviews from "../../components/ProductReviews";
-import Recommendation from "../../components/Recommendation";
+// import Recommendation from "../../components/Recommendation";
 
 // image blur
 // Pixel GIF code adapted from https://stackoverflow.com/a/33919020/266535
@@ -309,9 +309,9 @@ export default function ProductScreen(props) {
             </div>
           </div>
           <ProdcutReviews />
-          <div className="xs:mx-5 sm:mx-5">
+          {/* <div className="xs:mx-5 sm:mx-5">
             <Recommendation />
-          </div>
+          </div> */}
         </div>
       </div>
     </Layout>
