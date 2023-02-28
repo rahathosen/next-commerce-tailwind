@@ -35,7 +35,7 @@ const navigation = [
     current: false,
   },
   {
-    name: "Products",
+    name: "All Products",
     href: "/admin/products",
     icon: CreditCardIcon,
     current: false,

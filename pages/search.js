@@ -37,18 +37,20 @@ export default function Search(props) {
     query = "all",
     category = "all",
     brand = "all",
+    size="all",
     price = "all",
     rating = "all",
     sort = "featured",
     page = 1,
   } = router.query;
 
-  const { products, countProducts, categories, brands, pages } = props;
+  const { products, countProducts, categories, brands,sizes, pages } = props;
 
   const filterSearch = ({
     page,
     category,
     brand,
+    size,
     sort,
     min,
     max,
@@ -62,6 +64,7 @@ export default function Search(props) {
     if (sort) query.sort = sort;
     if (category) query.category = category;
     if (brand) query.brand = brand;
+    if (size) query.size = size;
     if (price) query.price = price;
     if (rating) query.rating = rating;
     if (min) query.min ? query.min : query.min === 0 ? 0 : min;
@@ -80,6 +83,9 @@ export default function Search(props) {
   };
   const brandHandler = (e) => {
     filterSearch({ brand: e.target.value });
+  };
+  const sizeHandler = (e) => {
+    filterSearch({ size: e.target.value });
   };
   const sortHandler = (e) => {
     filterSearch({ sort: e.target.value });
@@ -120,6 +126,22 @@ export default function Search(props) {
                 categories.map((category) => (
                   <option key={category} value={category}>
                     {category}
+                  </option>
+                ))}
+            </select>
+          </div>
+          <div className="mb-3">
+            <h2 className="font-semibold">Sizes</h2>
+            <select
+              className="w-full  rounded-md border-gray-300 py-2 pl-3 pr-10 text-base text-neutral-800 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
+              value={size}
+              onChange={sizeHandler}
+            >
+              <option value="all">All</option>
+              {sizes &&
+                sizes.map((size) => (
+                  <option key={size} value={size}>
+                    {size}
                   </option>
                 ))}
             </select>
@@ -179,12 +201,14 @@ export default function Search(props) {
               {products.length === 0 ? "No" : countProducts} Results
               {query !== "all" && query !== "" && " : " + query}
               {category !== "all" && " : " + category}
+              {size !== "all" && " : " + size}
               {brand !== "all" && " : " + brand}
               {price !== "all" && " : Price " + price}
               {rating !== "all" && " : Rating " + rating + " & up"}
               &nbsp;
               {(query !== "all" && query !== "") ||
               category !== "all" ||
+              size !== "all" ||
               brand !== "all" ||
               rating !== "all" ||
               price !== "all" ? (
@@ -246,6 +270,7 @@ export async function getServerSideProps({ query }) {
   const pageSize = query.pageSize || PAGE_SIZE;
   const page = query.page || 1;
   const category = query.category || "";
+  const size = query.size || "";
   const brand = query.brand || "";
   const price = query.price || "";
   const rating = query.rating || "";
@@ -262,6 +287,7 @@ export async function getServerSideProps({ query }) {
         }
       : {};
   const categoryFilter = category && category !== "all" ? { category } : {};
+  const sizeFilter = size && size !== "all" ? { size } : {};
   const brandFilter = brand && brand !== "all" ? { brand } : {};
   const ratingFilter =
     rating && rating !== "all"
@@ -296,12 +322,14 @@ export async function getServerSideProps({ query }) {
 
   await db.connect();
   const categories = await Product.find().distinct("category");
+  const sizes = await Product.find().distinct("size");
   const brands = await Product.find().distinct("brand");
   const productDocs = await Product.find(
     {
       ...queryFilter,
       ...categoryFilter,
       ...priceFilter,
+      ...sizeFilter,
       ...brandFilter,
       ...ratingFilter,
     },
@@ -316,6 +344,7 @@ export async function getServerSideProps({ query }) {
     ...queryFilter,
     ...categoryFilter,
     ...priceFilter,
+    ...sizeFilter,
     ...brandFilter,
     ...ratingFilter,
   });
@@ -330,6 +359,7 @@ export async function getServerSideProps({ query }) {
       page,
       pages: Math.ceil(countProducts / pageSize),
       categories,
+      sizes,
       brands,
     },
   };
