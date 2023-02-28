@@ -24,6 +24,7 @@ const postHandler = async (req, res) => {
     image: "/images/shirt1.jpg",
     price: 0,
     category: "sample category",
+    size: "sample size",
     brand: "sample brand",
     countInStock: 0,
     description: "sample description",
