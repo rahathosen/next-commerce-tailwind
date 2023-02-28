@@ -217,6 +217,16 @@ export default function ProductScreen(props) {
                   <div className="mt-8">
                     <div className="flex items-center justify-between">
                       <h2 className="text-sm font-medium text-gray-900">
+                        Size
+                      </h2>
+                      <div className="text-base font-bold text-gray-600 hover:text-gray-500">
+                        {product.size}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mt-8">
+                    <div className="flex items-center justify-between">
+                      <h2 className="text-sm font-medium text-gray-900">
                         Brand
                       </h2>
                       <div className="text-base font-bold text-gray-600 hover:text-gray-500">

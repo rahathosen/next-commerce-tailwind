@@ -95,6 +95,7 @@ export default function AdminProductEditScreen() {
         setValue("price", data.price);
         setValue("image", data.image);
         setValue("category", data.category);
+        setValue("size", data.size);
         setValue("brand", data.brand);
         setValue("countInStock", data.countInStock);
         setValue("description", data.description);
@@ -139,6 +140,7 @@ export default function AdminProductEditScreen() {
     category,
     image,
     brand,
+    size,
     countInStock,
     description,
   }) => {
@@ -151,6 +153,7 @@ export default function AdminProductEditScreen() {
         category,
         image,
         brand,
+        size,
         countInStock,
         description,
       });
