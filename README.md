@@ -1,14 +1,14 @@
 ![image](https://rahat.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fhttps-www-rahathosen-tech%2Fimage%2Fupload%2Fc_pad%2Cb_auto%3Apredominant%2Cfl_preserve_transparency%2Fv1664635549%2Frahathosen_project_images%2Fnextelite_dewb4g.jpg&w=1920&q=100)
 
 <p align="center">
-  <a href="http://www.nextelite.live/">
+  <a href="https://nextelite.vercel.app">
     <h2 align="center">NextElite</h2>
   </a>
 </p>
 
 <p align="center">🎉Next Generation Ecommerce Site</p>
 <p align="center">
-  <a href="http://www.nextelite.live/">Demo</a>
+  <a href="https://nextelite.vercel.app">Demo</a>
  </p>
 
 ![GitHub deployments](https://img.shields.io/github/deployments/rahathosen/next-commerce-tailwind/production?label=vercel&logo=vercel&logoColor=white)
